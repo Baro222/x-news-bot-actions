@@ -126,7 +126,7 @@ def _process_batch(tweets: List[Dict]) -> List[Dict]:
     
     try:
         response = client.chat.completions.create(
-            model="gpt-4o",
+            model="gpt-5-mini",
             messages=[
                 {"role": "system", "content": "당신은 글로벌 뉴스와 금융 시장을 전문적으로 분석하는 뉴스 큐레이터입니다."},
                 {"role": "user", "content": prompt}
