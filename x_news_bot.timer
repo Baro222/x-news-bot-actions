@@ -1,0 +1,12 @@
+[Unit]
+Description=X News Bot 2시간 주기 타이머
+Requires=x_news_bot.service
+
+[Timer]
+# 2시간마다 실행 (00:00, 02:00, 04:00, 06:00, 08:00, 10:00, 12:00, 14:00, 16:00, 18:00, 20:00, 22:00)
+OnCalendar=*-*-* 00,02,04,06,08,10,12,14,16,18,20,22:00:00
+Persistent=true
+Unit=x_news_bot.service
+
+[Install]
+WantedBy=timers.target

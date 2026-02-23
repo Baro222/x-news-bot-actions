@@ -1,0 +1,15 @@
+[Unit]
+Description=X News Bot - 글로벌 뉴스 자동 수집 및 텔레그램 발송
+After=network.target
+
+[Service]
+Type=oneshot
+User=ubuntu
+WorkingDirectory=/home/ubuntu/x_news_bot
+ExecStart=/usr/bin/python3.11 /home/ubuntu/x_news_bot/main.py
+StandardOutput=journal
+StandardError=journal
+Environment=PYTHONPATH=/home/ubuntu/x_news_bot
+
+[Install]
+WantedBy=multi-user.target
