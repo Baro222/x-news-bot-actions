@@ -2,7 +2,7 @@ name: X News Bot 4-Hour Update
 
 on:
   schedule:
-    - cron: '0 2,6,10,14,18,21,22 * * *'  # KST 11, 15, 19, 23, 3, 6, 7시 실행 (UTC 기준)
+    - cron: '5 2,6,10,14,18,21,22 * * *'  # KST 11:05, 15:05, 19:05, 23:05, 3:05, 6:05, 7:05 실행 (UTC 기준)
   workflow_dispatch:      # 수동 실행 허용
 
 jobs:
