@@ -92,7 +92,7 @@ def _process_batch(tweets: List[Dict]) -> List[Dict]:
     
     tweets_text = "\n\n---\n\n".join(tweet_list)
     
-    prompt = f"""다음 트윗들을 분석하여 각각을 분류하고 요약해주세요.
+    prompt = f"""다음 트윗들을 분석하여 각각을 분류하고 요약해주세요. 모든 응답은 반드시 한국어로 작성되어야 합니다.
 
 분류 기준:
 - 지정학: 전쟁, 분쟁, 군사, 외교, 국제관계, 지역갈등 등
@@ -107,9 +107,9 @@ def _process_batch(tweets: List[Dict]) -> List[Dict]:
     {{
       "index": 0,
       "category": "경제",
-      "headline": "헤드라인 (20자 이내, 명사형으로 끝내기)",
-      "summary": "핵심 내용 요약 (2-3문장, 명사형으로 끝내기)",
-      "analysis": "간단한 배경/원인 분석 (1-2문장, 명사형으로 끝내기)",
+      "headline": "헤드라인 (20자 이내, 명사형으로 끝내기, 반드시 한국어)",
+      "summary": "핵심 내용 요약 (2-3문장, 명사형으로 끝내기, 반드시 한국어)",
+      "analysis": "간단한 배경/원인 분석 (1-2문장, 명사형으로 끝내기, 반드시 한국어)",
       "importance": 1~10 (중요도 점수)
     }}
   ]
@@ -312,11 +312,11 @@ def rank_and_filter_by_category(processed_tweets: List[Dict]) -> Dict[str, List[
         logger.info(f"  [{category}] TOP {len(ranked[category])}개 선정:")
         for i, t in enumerate(ranked[category][:3], 1):
             logger.info(
-                f"    {i}. [{t.get('_final_score',0):.1f}점] "
-                f"키워드:{t.get('_keyword_score',0):.1f} "
-                f"중요도:{t.get('_importance',0)*4:.0f} "
-                f"최신:{t.get('_recency_score',0):.1f} | "
-                f"{t.get('_headline','')[:40]}"
+                f"    {i}. [{t.get("_final_score",0):.1f}점] "
+                f"키워드:{t.get("_keyword_score",0):.1f} "
+                f"중요도:{t.get("_importance",0)*4:.0f} "
+                f"최신:{t.get("_recency_score",0):.1f} | "
+                f"{t.get("_headline","")[:40]}"
             )
     
     return ranked
