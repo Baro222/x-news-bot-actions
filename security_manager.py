@@ -204,16 +204,16 @@ def create_github_safe_copy(src_dir: str, dst_dir: str) -> bool:
 
 
 def initialize_vault():
-    """현재 config.py의 민감 정보를 vault에 암호화 저장"""
+    """환경 변수에서 민감 정보를 읽어 vault에 암호화 저장"""
     sensitive_data = {
-        "TELEGRAM_BOT_TOKEN":  "REMOVED_BOT_TOKEN",
-        "TELEGRAM_CHANNEL_ID": "-1000000000000",
-        "TELEGRAM_API_ID":     00000000,
-        "TELEGRAM_API_HASH":   "REMOVED_API_HASH",
-        "TELEGRAM_SESSION":    "REMOVED_SESSION",
-        "TWITTER_API_KEY":     "REMOVED_TWITTER_API_KEY",
-        "PHONE_NUMBER":        "+821000000000",
-        "TWITTERAPI_IO_KEY":   "REMOVED_TWITTER_API_KEY",
+        "TELEGRAM_BOT_TOKEN":  os.environ.get("TELEGRAM_BOT_TOKEN", "YOUR_BOT_TOKEN_HERE"),
+        "TELEGRAM_CHANNEL_ID": os.environ.get("TELEGRAM_CHANNEL_ID", "YOUR_CHANNEL_ID_HERE"),
+        "TELEGRAM_API_ID":     int(os.environ.get("TELEGRAM_API_ID", "0")),
+        "TELEGRAM_API_HASH":   os.environ.get("TELEGRAM_API_HASH", "YOUR_API_HASH_HERE"),
+        "TELEGRAM_SESSION":    os.environ.get("TELEGRAM_SESSION", "YOUR_SESSION_STRING_HERE"),
+        "TWITTER_API_KEY":     os.environ.get("TWITTER_API_KEY", "YOUR_TWITTER_API_KEY_HERE"),
+        "PHONE_NUMBER":        os.environ.get("PHONE_NUMBER", "+821000000000"),
+        "TWITTERAPI_IO_KEY":   os.environ.get("TWITTERAPI_IO_KEY", "YOUR_TWITTERAPI_IO_KEY_HERE"),
     }
     return encrypt_vault(sensitive_data)
 
@@ -238,7 +238,7 @@ if __name__ == "__main__":
 
     # 2. 디렉토리 보안 스캔
     print("\n[2] 프로젝트 보안 스캔...")
-    result = scan_directory_for_secrets("/home/ubuntu/x_news_bot")
+    result = scan_directory_for_secrets(os.getcwd())
     print(f"  스캔된 파일: {result['scanned_files']}개")
     print(f"  발견된 민감 정보: {result['total_findings']}건")
     if result['findings']:
@@ -246,11 +246,5 @@ if __name__ == "__main__":
             print(f"  ⚠  {f['file'].split('/')[-1]}:{f['line']} - {f['label']}: {f['preview']}")
         if len(result['findings']) > 5:
             print(f"  ... 외 {len(result['findings'])-5}건")
-
-    # 3. GitHub 안전 복사본 생성
-    print("\n[3] GitHub 안전 복사본 생성...")
-    if create_github_safe_copy("/home/ubuntu/x_news_bot", "/home/ubuntu/x_news_bot_github"):
-        print("  ✅ /home/ubuntu/x_news_bot_github 생성 완료")
-        print("  (민감 정보 마스킹 처리됨)")
 
     print("\n✅ 보안 시스템 초기화 완료")
