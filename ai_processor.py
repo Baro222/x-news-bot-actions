@@ -66,7 +66,7 @@ def classify_and_summarize_batch(tweets: List[Dict]) -> List[Dict]:
     if not tweets:
         return []
     
-    # 트윗 텍스트 준비 (최대 50개씩 처리)
+    # 트윗 텍스트 준비 (최대 30개씩 처리)
     batch_size = 30
     results = []
     
@@ -118,8 +118,9 @@ def _process_batch(tweets: List[Dict]) -> List[Dict]:
 중요 규칙:
 1. 헤드라인과 요약은 반드시 명사형으로 끝내야 합니다 (예: "~비판", "~발표", "~확대", "~하락")
 2. "했습니다", "합니다", "됩니다" 등 서술형 종결어미 사용 금지
-3. 영어 트윗은 한국어로 번역하여 요약
-4. 중요도는 파급력, 시장 영향, 사회적 관심도를 기준으로 평가
+3. 모든 외국어(영어 등) 트윗은 반드시 한국어로 번역하여 요약 및 분석을 작성하세요.
+4. 중요도는 파급력, 시장 영향, 사회적 관심도를 기준으로 평가하세요.
+5. 내용이 중복되거나 매우 유사한 트윗들은 하나로 합치거나 가장 정보가 많은 것을 선택하여 중복을 피하세요.
 
 트윗 목록:
 {tweets_text}"""
@@ -140,18 +141,28 @@ def _process_batch(tweets: List[Dict]) -> List[Dict]:
         result_data = json.loads(result_text)
         ai_results = result_data.get("results", [])
         
-        # 원본 트윗 데이터와 AI 결과 합치기
+        # 원본 트윗 데이터와 AI 결과 합치기 (중복 제거 포함)
         processed_tweets = []
+        seen_headlines = set()
+        
         for ai_result in ai_results:
             idx = ai_result.get("index", -1)
+            headline = ai_result.get("headline", "").strip()
+            
+            # 헤드라인 기준 중복 제거 (간단한 유사도 체크 대용)
+            if not headline or headline in seen_headlines:
+                continue
+            
             if 0 <= idx < len(tweets):
                 tweet = tweets[idx].copy()
                 tweet["_category"] = ai_result.get("category", "기타")
-                tweet["_headline"] = ai_result.get("headline", "")
+                tweet["_headline"] = headline
                 tweet["_summary"] = ai_result.get("summary", "")
                 tweet["_analysis"] = ai_result.get("analysis", "")
                 tweet["_importance"] = ai_result.get("importance", 5)
+                
                 processed_tweets.append(tweet)
+                seen_headlines.add(headline)
         
         return processed_tweets
         
@@ -312,81 +323,11 @@ def rank_and_filter_by_category(processed_tweets: List[Dict]) -> Dict[str, List[
 
 
 def process_tweets(tweets: List[Dict]) -> Dict[str, List[Dict]]:
-    """트윗 전체 처리 파이프라인: 분류 -> 요약 -> 랭킹"""
-    logger.info(f"총 {len(tweets)}개 트윗 AI 처리 시작...")
+    """트윗 목록을 처리하여 카테고리별 랭킹된 뉴스를 반환합니다."""
+    # 1. AI를 사용한 분류 및 요약
+    processed_tweets = classify_and_summarize_batch(tweets)
     
-    # 기타 카테고리 제외하고 관련 트윗만 처리
-    # 먼저 키워드로 빠르게 필터링
-    relevant_tweets = []
-    for tweet in tweets:
-        text = tweet.get("text", "")
-        category = classify_tweet_simple(text)
-        if category:
-            tweet["_pre_category"] = category
-            relevant_tweets.append(tweet)
-        else:
-            # 키워드 없어도 GPT에게 판단 맡김
-            tweet["_pre_category"] = "미분류"
-            relevant_tweets.append(tweet)
+    # 2. 카테고리별 랭킹 및 필터링
+    ranked_news = rank_and_filter_by_category(processed_tweets)
     
-    logger.info(f"AI 분류·요약 처리 중... ({len(relevant_tweets)}개)")
-    
-    # GPT로 분류 및 요약
-    processed = classify_and_summarize_batch(relevant_tweets)
-    
-    # 기타 제외하고 4개 카테고리만 필터링
-    filtered = [t for t in processed if t.get("_category") in ["지정학", "경제", "트럼프", "암호화폐"]]
-    
-    logger.info(f"분류 완료: {len(filtered)}개 (기타 제외)")
-    
-    # 카테고리별 랭킹
-    ranked = rank_and_filter_by_category(filtered)
-    
-    # 결과 요약 로그
-    for cat, items in ranked.items():
-        logger.info(f"  {cat}: {len(items)}개")
-    
-    return ranked
-
-
-if __name__ == "__main__":
-    logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
-    
-    # 테스트 데이터
-    test_tweets = [
-        {
-            "text": "US housing market activity has rarely been weaker: The US Pending Home Sales Index fell -0.8% MoM in January, to 70.9, an all-time low.",
-            "_account": "KobeissiLetter",
-            "_engagement_score": 2913,
-            "_url": "https://x.com/KobeissiLetter/status/123"
-        },
-        {
-            "text": "Bitcoin surges past $100,000 as institutional demand continues to grow. ETF inflows hit record levels.",
-            "_account": "CoinTelegraph",
-            "_engagement_score": 1500,
-            "_url": "https://x.com/CoinTelegraph/status/456"
-        },
-        {
-            "text": "Trump signs executive order on immigration, expanding border enforcement measures significantly.",
-            "_account": "FoxNews",
-            "_engagement_score": 3000,
-            "_url": "https://x.com/FoxNews/status/789"
-        },
-        {
-            "text": "Russia launches major offensive in eastern Ukraine, NATO allies call emergency meeting.",
-            "_account": "Reuters",
-            "_engagement_score": 5000,
-            "_url": "https://x.com/Reuters/status/101"
-        }
-    ]
-    
-    print("AI 처리 테스트 시작...")
-    result = process_tweets(test_tweets)
-    
-    for category, items in result.items():
-        print(f"\n=== {category} ({len(items)}개) ===")
-        for i, item in enumerate(items, 1):
-            print(f"{i}. {item.get('_headline', 'N/A')}")
-            print(f"   요약: {item.get('_summary', 'N/A')[:100]}")
-            print(f"   분석: {item.get('_analysis', 'N/A')[:80]}")
-            print(f"   링크: {item.get('_url', 'N/A')}")
+    return ranked_news

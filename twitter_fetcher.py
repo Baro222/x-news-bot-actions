@@ -168,13 +168,14 @@ def parse_tweet_time(created_at_str: str) -> Optional[datetime]:
         return None
 
 
-def filter_recent_tweets(tweets: List[Dict], hours: int = FETCH_HOURS) -> List[Dict]:
-    """최근 N시간 이내의 트윗만 엄격하게 필터링합니다.
+def filter_recent_tweets(tweets: List[Dict], hours: int = 4) -> List[Dict]:
+    """최근 N시간 이내의 트윗만 엄격하게 필터링합니다. (기본 4시간)
     
     - 날짜 정보가 없거나 파싱 불가능한 트윗은 제외
     - cutoff_time 이전 트윗은 모두 제외 (전날, 그 이전 포함)
     """
     now_utc = datetime.now(timezone.utc)
+    # FETCH_HOURS 대신 명시적으로 4시간을 사용하거나 config 값을 따름
     cutoff_time = now_utc - timedelta(hours=hours)
     recent_tweets = []
     excluded_count = 0
@@ -201,7 +202,7 @@ def filter_recent_tweets(tweets: List[Dict], hours: int = FETCH_HOURS) -> List[D
             excluded_count += 1
             continue
 
-        # cutoff_time 이후 트윗만 포함
+        # cutoff_time 이후 트윗만 포함 (엄격한 4시간 필터링)
         if tweet_time >= cutoff_time:
             tweet["_created_at_dt"] = tweet_time  # datetime 객체 저장
             tweet["_age_hours"] = (now_utc - tweet_time).total_seconds() / 3600
@@ -215,7 +216,7 @@ def filter_recent_tweets(tweets: List[Dict], hours: int = FETCH_HOURS) -> List[D
             )
 
     if excluded_count > 0:
-        logger.debug(f"시간 필터: {excluded_count}개 제외, {len(recent_tweets)}개 통과")
+        logger.info(f"시간 필터: {excluded_count}개 제외, {len(recent_tweets)}개 통과 (기준: {hours}시간 이내)")
 
     return recent_tweets
 
