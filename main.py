@@ -9,8 +9,8 @@ import os
 import json
 from datetime import datetime, timezone, timedelta
 
-# 로깅 설정
-LOG_DIR = "/home/ubuntu/x_news_bot/logs"
+# 로깅 설정 (GitHub Actions 환경을 고려하여 상대 경로 사용)
+LOG_DIR = "logs"
 os.makedirs(LOG_DIR, exist_ok=True)
 
 # 루트 로거에 핸들러가 없을 때만 추가 (중복 방지)
