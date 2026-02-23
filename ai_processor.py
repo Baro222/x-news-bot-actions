@@ -312,11 +312,11 @@ def rank_and_filter_by_category(processed_tweets: List[Dict]) -> Dict[str, List[
         logger.info(f"  [{category}] TOP {len(ranked[category])}개 선정:")
         for i, t in enumerate(ranked[category][:3], 1):
             logger.info(
-                f"    {i}. [{t.get("_final_score",0):.1f}점] "
-                f"키워드:{t.get("_keyword_score",0):.1f} "
-                f"중요도:{t.get("_importance",0)*4:.0f} "
-                f"최신:{t.get("_recency_score",0):.1f} | "
-                f"{t.get("_headline","")[:40]}"
+                f"    {i}. [{t.get('_final_score', 0):.1f}점] "
+                f"키워드:{t.get('_keyword_score', 0):.1f} "
+                f"중요도:{t.get('_importance', 0)*4:.0f} "
+                f"최신:{t.get('_recency_score', 0):.1f} | "
+                f"{t.get('_headline', '')[:40]}"
             )
     
     return ranked
