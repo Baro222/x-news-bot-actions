@@ -13,7 +13,7 @@ from config import OPENAI_API_KEY, MAX_NEWS_PER_CATEGORY, MIN_NEWS_PER_CATEGORY
 logger = logging.getLogger(__name__)
 
 # OpenAI 클라이언트 초기화
-client = OpenAI()  # OPENAI_API_KEY 환경변수에서 자동으로 가져옴
+client = OpenAI(base_url=os.getenv("OPENAI_BASE_URL", "https://api.openai.com/v1"))  # OPENAI_API_KEY 환경변수에서 자동으로 가져옴
 
 
 CATEGORY_KEYWORDS = {
@@ -126,7 +126,7 @@ def _process_batch(tweets: List[Dict]) -> List[Dict]:
     
     try:
         response = client.chat.completions.create(
-            model="gpt-4.1-mini",
+            model="gpt-4o",
             messages=[
                 {"role": "system", "content": "당신은 글로벌 뉴스와 금융 시장을 전문적으로 분석하는 뉴스 큐레이터입니다."},
                 {"role": "user", "content": prompt}
