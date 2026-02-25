@@ -5,7 +5,7 @@ import os
 TELEGRAM_BOT_TOKEN = os.environ.get("TELEGRAM_BOT_TOKEN", "")
 
 # 텔레그램 채널 ID
-TELEGRAM_CHANNEL_ID = os.environ.get("TELEGRAM_CHANNEL_ID", "-1000000000000")
+TELEGRAM_CHANNEL_ID = os.environ.get("TELEGRAM_CHANNEL_ID", "")
 
 # 텔레그램 프리미엄 계정 (Telethon)
 TELEGRAM_API_ID = int(os.environ.get("TELEGRAM_API_ID", "0"))
