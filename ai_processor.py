@@ -1,19 +1,21 @@
 """
-OpenAI GPT를 사용하여 트윗을 분류, 요약, 랭킹 처리하는 모듈
+Google Gemini API를 사용하여 트윗을 분류, 요약, 랭킹 처리하는 모듈
 4개 대주제: 지정학, 경제, 트럼프, 암호화폐
 """
 
 import json
 import logging
 import os
+import requests
 from typing import List, Dict, Optional, Tuple
-from openai import OpenAI
 from config import OPENAI_API_KEY, MAX_NEWS_PER_CATEGORY, MIN_NEWS_PER_CATEGORY
 
 logger = logging.getLogger(__name__)
 
-# OpenAI 클라이언트 초기화
-client = OpenAI(base_url=os.getenv("OPENAI_BASE_URL", "https://api.openai.com/v1"))  # OPENAI_API_KEY 환경변수에서 자동으로 가져옴
+# Gemini API 설정
+GEMINI_API_KEY = os.getenv("OPENAI_API_KEY")  # 기존 환경변수 이름을 그대로 사용 (GitHub Secrets 호환성)
+GEMINI_MODEL = "gemini-2.5-flash"
+GEMINI_API_URL = f"https://generativelanguage.googleapis.com/v1beta/models/{GEMINI_MODEL}:generateContent?key={GEMINI_API_KEY}"
 
 
 CATEGORY_KEYWORDS = {
@@ -62,7 +64,7 @@ def classify_tweet_simple(tweet_text: str) -> Optional[str]:
 
 
 def classify_and_summarize_batch(tweets: List[Dict]) -> List[Dict]:
-    """GPT를 사용하여 트윗 배치를 분류하고 요약합니다."""
+    """Gemini를 사용하여 트윗 배치를 분류하고 요약합니다."""
     if not tweets:
         return []
     
@@ -79,7 +81,7 @@ def classify_and_summarize_batch(tweets: List[Dict]) -> List[Dict]:
 
 
 def _process_batch(tweets: List[Dict]) -> List[Dict]:
-    """트윗 배치를 GPT로 처리합니다."""
+    """트윗 배치를 Gemini로 처리합니다."""
     
     # 트윗 목록 준비
     tweet_list = []
@@ -126,20 +128,26 @@ def _process_batch(tweets: List[Dict]) -> List[Dict]:
 {tweets_text}"""
     
     try:
-        response = client.chat.completions.create(
-            model="gpt-5-mini",
-            messages=[
-                {"role": "system", "content": "당신은 글로벌 뉴스와 금융 시장을 전문적으로 분석하는 뉴스 큐레이터입니다."},
-                {"role": "user", "content": prompt}
-            ],
-            response_format={"type": "json_object"},
-            temperature=0.3,
-            max_tokens=4000
-        )
+        payload = {
+            "contents": [{
+                "parts": [{"text": prompt}]
+            }],
+            "generationConfig": {
+                "temperature": 0.3,
+                "maxOutputTokens": 4000,
+                "responseMimeType": "application/json"
+            }
+        }
         
-        result_text = response.choices[0].message.content
-        result_data = json.loads(result_text)
-        ai_results = result_data.get("results", [])
+        response = requests.post(GEMINI_API_URL, json=payload, timeout=60)
+        response.raise_for_status()
+        
+        result_data = response.json()
+        result_text = result_data['candidates'][0]['content']['parts'][0]['text']
+        
+        # JSON 파싱
+        ai_data = json.loads(result_text)
+        ai_results = ai_data.get("results", [])
         
         # 원본 트윗 데이터와 AI 결과 합치기 (중복 제거 포함)
         processed_tweets = []
@@ -167,7 +175,7 @@ def _process_batch(tweets: List[Dict]) -> List[Dict]:
         return processed_tweets
         
     except Exception as e:
-        logger.error(f"GPT 처리 오류: {e}")
+        logger.error(f"Gemini 처리 오류: {e}")
         # 폴백: 키워드 기반 분류
         fallback_results = []
         for tweet in tweets:
