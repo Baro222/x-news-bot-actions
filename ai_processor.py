@@ -94,7 +94,7 @@ def _process_batch(tweets: List[Dict]) -> List[Dict]:
     
     tweets_text = "\n\n---\n\n".join(tweet_list)
     
-    prompt = f"""[중요 지시사항] 당신은 한국어 뉴스 분석 전문가입니다. 다음 트윗들을 분석하여 각각을 분류하고 요약해주세요.
+    prompt = f"""당신은 글로벌 금융, 암호화폐, 정치 시장 분석 전문가입니다. 다음 트윗들을 심층 분석하여 각각을 분류하고 요약해주세요.
 
 ★ 절대 준수 규칙 (CRITICAL RULES):
 1. 모든 응답은 반드시 100% 한국어로만 작성되어야 합니다.
@@ -104,33 +104,35 @@ def _process_batch(tweets: List[Dict]) -> List[Dict]:
 5. 번역되지 않은 영어 단어나 문장이 있으면 절대 안 됩니다.
 
 분류 기준:
-- 지정학: 전쟁, 분쟁, 군사, 외교, 국제관계, 지역갈등 등
-- 경제: 경제지표, 금융시장, 무역, 통화정책, 기업실적 등
-- 트럼프: 트럼프 관련 정책, 발언, 행정부 소식 등
-- 암호화폐: 비트코인, 이더리움, 크립토 시장, 블록체인 등
-- 기타: 위 4가지에 해당하지 않는 경우
+- 지정학: 전쟁, 분쟁, 군사, 외교, 국제관계, 지역갈등, 제재, 동맹 등
+- 경제: 경제지표, 금융시장, 무역, 통화정책, 기업실적, 인플레이션, 금리, 주식시장 등
+- 트럼프: 트럼프 정책, 발언, 행정부 소식, 대선 관련 뉴스 등
+- 암호화폐: 비트코인, 이더리움, 크립토 시장, 블록체인, 규제, 거래소 뉴스 등
 
 각 트윗에 대해 다음 JSON 형식으로 응답하세요 (모든 값은 한국어):
 {{
   "results": [
     {{
       "index": 0,
-      "category": "경제",
-      "headline": "헤드라인 (20자 이내, 명사형으로 끝내기, 한국어만 사용)",
-      "summary": "핵심 내용 요약 (2-3문장, 명사형으로 끝내기, 한국어만 사용)",
-      "analysis": "간단한 배경/원인 분석 (1-2문장, 명사형으로 끝내기, 한국어만 사용)",
-      "importance": 1~10 (중요도 점수)
+      "category": "암호화폐",
+      "headline": "비트코인 사상 최고가 돌파 (15-20자, 명사형으로 끝내기)",
+      "summary": "비트코인이 사상 최고가를 경신했으며, 기관투자자들의 수요 증가가 주요 요인. 이더리움 등 주요 알트코인도 동반 상승 추세 보임.",
+      "analysis": "연방준비제도의 금리 인하 신호와 인플레이션 완화 기대감이 암호화폐 시장에 긍정적 영향. 기관투자자들의 진입 확대로 시장 구조 변화 가속화.",
+      "importance": 9,
+      "market_impact": "암호화폐 전체 시장에 강한 긍정 신호. 기관투자자 진입 가속화 예상"
     }}
   ]
 }}
 
 응답 작성 규칙:
-1. 헤드라인과 요약은 반드시 명사형으로 끝내야 합니다 (예: "~비판", "~발표", "~확대", "~하락")
-2. "했습니다", "합니다", "됩니다" 등 서술형 종결어미 사용 금지
-3. 모든 외국어 트윗은 먼저 한국어로 번역한 후 분석하세요.
-4. 중요도는 파급력, 시장 영향, 사회적 관심도를 기준으로 평가하세요.
-5. 내용이 중복되거나 매우 유사한 트윗들은 하나로 합치거나 가장 정보가 많은 것을 선택하여 중복을 피하세요.
-6. 응답에 영어가 포함되면 안 됩니다. 모든 내용을 한국어로 번역하세요.
+1. 헤드라인: 15-20자, 명사형으로 끝내기 (예: "~상승", "~발표", "~규제", "~하락")
+2. 요약: 2-3문장, 핵심 내용과 시장 영향 포함, 명사형으로 끝내기
+3. 분석: 1-2문장, 원인/배경/시장 영향 분석, 명사형으로 끝내기
+4. market_impact: 시장에 미치는 실질적 영향을 명확하게 기술
+5. 중요도: 파급력(1~3점), 시장 영향(4~6점), 긴급성(7~10점) 기준 평가
+6. 모든 외국어 트윗은 먼저 한국어로 번역한 후 분석하세요.
+7. 내용이 중복되거나 매우 유사한 트윗들은 가장 정보가 많은 것만 선택하세요.
+8. 응답에 영어가 포함되면 안 됩니다. 모든 내용을 한국어로 번역하세요.
 
 트윗 목록:
 {tweets_text}"""
@@ -140,6 +142,11 @@ def _process_batch(tweets: List[Dict]) -> List[Dict]:
             "contents": [{
                 "parts": [{"text": prompt}]
             }],
+            "systemInstruction": {
+                "parts": [{
+                    "text": "당신은 글로벌 금융, 암호화폐, 정치 시장 분석 전문가입니다. 모든 응답은 100% 한국어로만 작성하세요. 영어나 다른 외국어를 절대 사용하면 안 됩니다. 트윗을 분석할 때 시장 영향, 연관성, 중요도를 심층적으로 평가하세요."
+                }]
+            },
             "generationConfig": {
                 "temperature": 0.3,
                 "maxOutputTokens": 4000,
@@ -175,6 +182,7 @@ def _process_batch(tweets: List[Dict]) -> List[Dict]:
                 tweet["_headline"] = headline
                 tweet["_summary"] = ai_result.get("summary", "")
                 tweet["_analysis"] = ai_result.get("analysis", "")
+                tweet["_market_impact"] = ai_result.get("market_impact", "")
                 tweet["_importance"] = ai_result.get("importance", 5)
                 
                 processed_tweets.append(tweet)
@@ -194,6 +202,7 @@ def _process_batch(tweets: List[Dict]) -> List[Dict]:
             tweet_copy["_headline"] = text[:50] + "..."
             tweet_copy["_summary"] = text[:200]
             tweet_copy["_analysis"] = ""
+            tweet_copy["_market_impact"] = ""
             tweet_copy["_importance"] = 5
             fallback_results.append(tweet_copy)
         return fallback_results
@@ -262,7 +271,7 @@ def rank_and_filter_by_category(processed_tweets: List[Dict]) -> Dict[str, List[
     
     랭킹 기준 (우선순위):
     1. 키워드 중복도: 여러 계정이 동시에 언급하는 주제일수록 높은 점수
-    2. AI 중요도: GPT가 평가한 뉴스 중요도 (1~10)
+    2. AI 중요도: Gemini가 평가한 뉴스 중요도 (1~10)
     3. 최신성: 최근에 올라온 포스팅일수록 높은 점수
     4. 참여도: 좋아요/리트윗 등 (Nitter RSS에서는 0이므로 보조 지표)
     """
