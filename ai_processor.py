@@ -1,6 +1,7 @@
 """
 Google Gemini API를 사용하여 트윗을 분류, 요약, 랭킹 처리하는 모듈
 4개 대주제: 지정학, 경제, 트럼프, 암호화폐
+2중 한국어 강제 로직 포함: AI 응답 후 영어 비중 검사 및 재번역
 """
 
 import json
@@ -45,6 +46,63 @@ CATEGORY_KEYWORDS = {
         "비트코인", "이더리움", "암호화폐", "블록체인", "디파이", "솔라나", "토큰"
     ]
 }
+
+
+def is_korean_text(text: str) -> bool:
+    """텍스트가 한국어인지 확인합니다."""
+    korean_count = sum(1 for c in text if ord(c) >= 0xAC00 and ord(c) <= 0xD7A3)
+    english_count = sum(1 for c in text if c.isalpha() and ord(c) < 128)
+    
+    # 한국어가 30% 이상이면 한국어로 간주
+    total_chars = korean_count + english_count
+    if total_chars == 0:
+        return True
+    
+    return korean_count / total_chars >= 0.3
+
+
+def translate_to_korean_if_needed(text: str) -> str:
+    """영어 비중이 높으면 한국어로 재번역합니다 (2중 방어)."""
+    if is_korean_text(text):
+        return text
+    
+    # 영어가 많으면 재번역 요청
+    logger.warning(f"영어 비중이 높은 텍스트 감지, 한국어 재번역 시도: {text[:100]}")
+    
+    try:
+        # Gemini를 사용한 긴급 재번역
+        prompt = f"""다음 텍스트를 한국어로 번역하세요. 반드시 한국어로만 응답하세요:
+
+{text}
+
+한국어 번역:"""
+        
+        payload = {
+            "contents": [{
+                "parts": [{"text": prompt}]
+            }],
+            "systemInstruction": {
+                "parts": [{
+                    "text": "당신은 전문 번역가입니다. 모든 응답은 100% 한국어로만 작성하세요. 영어나 다른 외국어를 절대 사용하면 안 됩니다."
+                }]
+            },
+            "generationConfig": {
+                "temperature": 0.3,
+                "maxOutputTokens": 2000
+            }
+        }
+        
+        response = requests.post(GEMINI_API_URL, json=payload, timeout=30)
+        response.raise_for_status()
+        
+        result_data = response.json()
+        translated = result_data['candidates'][0]['content']['parts'][0]['text'].strip()
+        logger.info(f"재번역 완료: {translated[:100]}")
+        return translated
+        
+    except Exception as e:
+        logger.error(f"재번역 실패: {e}, 원본 텍스트 반환")
+        return text
 
 
 def classify_tweet_simple(tweet_text: str) -> Optional[str]:
@@ -94,14 +152,17 @@ def _process_batch(tweets: List[Dict]) -> List[Dict]:
     
     tweets_text = "\n\n---\n\n".join(tweet_list)
     
+    # ★★★ 극단적 한국어 강제 프롬프트 ★★★
     prompt = f"""당신은 글로벌 금융, 암호화폐, 정치 시장 분석 전문가입니다. 다음 트윗들을 심층 분석하여 각각을 분류하고 요약해주세요.
 
-★ 절대 준수 규칙 (CRITICAL RULES):
+★★★ 절대 준수 규칙 (CRITICAL - 이 규칙을 어기면 안 됩니다) ★★★
 1. 모든 응답은 반드시 100% 한국어로만 작성되어야 합니다.
-2. 어떠한 경우에도 영어, 중국어, 일본어 등 다른 외국어를 사용하면 안 됩니다.
+2. 어떠한 경우에도 영어, 중국어, 일본어, 기타 외국어를 사용하면 안 됩니다.
 3. 영어 트윗이 입력되면 반드시 한국어로 번역한 후 분석하세요.
-4. JSON 필드의 값(value)도 모두 한국어여야 합니다.
+4. JSON 필드의 모든 값(value)도 100% 한국어여야 합니다.
 5. 번역되지 않은 영어 단어나 문장이 있으면 절대 안 됩니다.
+6. 회사명, 인물명, 기술용어도 한국어로 표기하세요 (예: 비트코인, 이더리움, 연준, 나스닥).
+7. 응답에 영어가 1글자라도 포함되면 실패입니다.
 
 분류 기준:
 - 지정학: 전쟁, 분쟁, 군사, 외교, 국제관계, 지역갈등, 제재, 동맹 등
@@ -133,6 +194,7 @@ def _process_batch(tweets: List[Dict]) -> List[Dict]:
 6. 모든 외국어 트윗은 먼저 한국어로 번역한 후 분석하세요.
 7. 내용이 중복되거나 매우 유사한 트윗들은 가장 정보가 많은 것만 선택하세요.
 8. 응답에 영어가 포함되면 안 됩니다. 모든 내용을 한국어로 번역하세요.
+9. 마지막 확인: 응답을 다시 읽고 영어가 있는지 확인하세요. 영어가 있으면 한국어로 수정하세요.
 
 트윗 목록:
 {tweets_text}"""
@@ -144,7 +206,7 @@ def _process_batch(tweets: List[Dict]) -> List[Dict]:
             }],
             "systemInstruction": {
                 "parts": [{
-                    "text": "당신은 글로벌 금융, 암호화폐, 정치 시장 분석 전문가입니다. 모든 응답은 100% 한국어로만 작성하세요. 영어나 다른 외국어를 절대 사용하면 안 됩니다. 트윗을 분석할 때 시장 영향, 연관성, 중요도를 심층적으로 평가하세요."
+                    "text": "당신은 글로벌 금융, 암호화폐, 정치 시장 분석 전문가입니다. ★★★ 중요: 모든 응답은 100% 한국어로만 작성하세요. 영어나 다른 외국어를 절대 사용하면 안 됩니다. 회사명, 인물명, 기술용어도 모두 한국어로 표기하세요. 응답에 영어가 1글자라도 포함되면 안 됩니다. ★★★"
                 }]
             },
             "generationConfig": {
@@ -160,6 +222,13 @@ def _process_batch(tweets: List[Dict]) -> List[Dict]:
         result_data = response.json()
         result_text = result_data['candidates'][0]['content']['parts'][0]['text']
         
+        # ★★★ 2중 방어: 응답 전체 한국어 검증 ★★★
+        logger.info(f"Gemini 원본 응답 (처음 200자): {result_text[:200]}")
+        
+        if not is_korean_text(result_text):
+            logger.warning(f"영어 비중이 높은 응답 감지, 재번역 시도")
+            result_text = translate_to_korean_if_needed(result_text)
+        
         # JSON 파싱
         ai_data = json.loads(result_text)
         ai_results = ai_data.get("results", [])
@@ -172,7 +241,23 @@ def _process_batch(tweets: List[Dict]) -> List[Dict]:
             idx = ai_result.get("index", -1)
             headline = ai_result.get("headline", "").strip()
             
-            # 헤드라인 기준 중복 제거 (간단한 유사도 체크 대용)
+            # ★ 각 필드 한국어 재검증 ★
+            if not is_korean_text(headline):
+                headline = translate_to_korean_if_needed(headline)
+            
+            summary = ai_result.get("summary", "").strip()
+            if not is_korean_text(summary):
+                summary = translate_to_korean_if_needed(summary)
+            
+            analysis = ai_result.get("analysis", "").strip()
+            if not is_korean_text(analysis):
+                analysis = translate_to_korean_if_needed(analysis)
+            
+            market_impact = ai_result.get("market_impact", "").strip()
+            if not is_korean_text(market_impact):
+                market_impact = translate_to_korean_if_needed(market_impact)
+            
+            # 헤드라인 기준 중복 제거
             if not headline or headline in seen_headlines:
                 continue
             
@@ -180,14 +265,15 @@ def _process_batch(tweets: List[Dict]) -> List[Dict]:
                 tweet = tweets[idx].copy()
                 tweet["_category"] = ai_result.get("category", "기타")
                 tweet["_headline"] = headline
-                tweet["_summary"] = ai_result.get("summary", "")
-                tweet["_analysis"] = ai_result.get("analysis", "")
-                tweet["_market_impact"] = ai_result.get("market_impact", "")
+                tweet["_summary"] = summary
+                tweet["_analysis"] = analysis
+                tweet["_market_impact"] = market_impact
                 tweet["_importance"] = ai_result.get("importance", 5)
                 
                 processed_tweets.append(tweet)
                 seen_headlines.add(headline)
         
+        logger.info(f"처리 완료: {len(processed_tweets)}개 트윗 (모두 한국어)")
         return processed_tweets
         
     except Exception as e:
