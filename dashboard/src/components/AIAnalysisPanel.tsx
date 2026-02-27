@@ -8,7 +8,7 @@ import { MARKET_IMPACT_CONFIG, PRIORITY_CONFIG, type AIAnalysis } from '@/lib/ty
 import { mockAIAnalyses } from '@/lib/mockData';
 import { timeAgo } from '@/lib/utils';
 
-const AI_BG_URL = 'https://files.manuscdn.com/user_upload_by_module/session_file/310519663374440652/goeSFoxMvDPHDlfk.png';
+const AI_BG_URL = 'https://files.manuscdn.com/user_upload_by_module/session_file/310519663374440652/kTnVolubwkPmlYFt.png';
 
 export default function AIAnalysisPanel() {
   return (

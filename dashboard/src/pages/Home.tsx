@@ -20,7 +20,7 @@ import SystemStatusBar from '@/components/SystemStatusBar';
 import { mockNews } from '@/lib/mockData';
 import type { Category, NewsItem } from '@/lib/types';
 
-const HERO_BG_URL = 'https://files.manuscdn.com/user_upload_by_module/session_file/310519663374440652/qKAspvaHACDHaDak.png';
+const HERO_BG_URL = 'https://files.manuscdn.com/user_upload_by_module/session_file/310519663374440652/jsuGVpDbDGzMAfzd.png';
 
 export default function Home() {
   const [selectedCategory, setSelectedCategory] = useState<Category | 'all'>('all');
