@@ -2,8 +2,8 @@ name: X News Bot Auto Update
 
 on:
   schedule:
-    # KST 기준: 03:05, 07:05, 11:05, 15:05, 19:05, 23:05 (UTC 기준)
-    - cron: '5 2,6,10,14,18,22 * * *'
+    # 매 4시간마다 실행 (UTC 기준). 예: 0 */4 * * *
+    - cron: '0 */4 * * *'
   workflow_dispatch:      # 수동 실행 허용
 
 jobs:
@@ -45,6 +45,7 @@ jobs:
         run: python main.py
 
       - name: Update homepage
+        if: false  # 홈페이지 업데이트는 오늘 미루고 텔레그램 포스팅만 수행
         run: |
           if [ -f "scripts/update_homepage.py" ]; then
             python scripts/update_homepage.py
