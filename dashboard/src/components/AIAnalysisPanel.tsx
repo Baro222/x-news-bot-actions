@@ -38,7 +38,7 @@ export default function AIAnalysisPanel({ news }: AIAnalysisPanelProps) {
           default: return 0;
         }
       });
-      const avgScore = scores.reduce((a, b) => a + b, 0) / scores.length;
+      const avgScore = (scores as number[]).reduce((a: number, b: number) => a + b, 0) / scores.length;
 
       let sentiment: AIAnalysis['sentiment'];
       if (avgScore > 1) sentiment = 'very_bullish';

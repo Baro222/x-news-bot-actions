@@ -4,7 +4,7 @@
 
 import os
 
-# twitterapi.io API 키
+# twitterapi.io API 키 (현재 미사용 - Nitter RSS 방식)
 TWITTER_API_KEY = os.environ.get("TWITTER_API_KEY", "")
 
 # 텔레그램 봇 토큰
@@ -18,8 +18,12 @@ TELEGRAM_API_ID = int(os.environ.get("TELEGRAM_API_ID", "0") or "0")
 TELEGRAM_API_HASH = os.environ.get("TELEGRAM_API_HASH", "")
 TELEGRAM_SESSION = os.environ.get("TELEGRAM_SESSION", "")
 
-# OpenAI API 키
+# OpenAI 호환 API 키 (Gemini, OpenAI, 기타 호환 서비스)
+# Gemini 사용 시: OPENAI_BASE_URL=https://generativelanguage.googleapis.com/v1beta/openai/
 OPENAI_API_KEY = os.environ.get("OPENAI_API_KEY", "")
+
+# AI 모델명 (환경변수로 오버라이드 가능)
+AI_MODEL = os.environ.get("AI_MODEL", "gemini-2.0-flash")
 
 # 모니터링할 X 계정 목록
 ACCOUNTS = [

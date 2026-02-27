@@ -1,8 +1,9 @@
-name: X News Bot 4-Hour Update
+name: X News Bot Auto Update
 
 on:
   schedule:
-    - cron: '5 2,6,10,14,18,21,22 * * *'  # KST 11:05, 15:05, 19:05, 23:05, 3:05, 6:05, 7:05 실행 (UTC 기준)
+    # KST 기준: 03:05, 07:05, 11:05, 15:05, 19:05, 23:05 (UTC 기준)
+    - cron: '5 2,6,10,14,18,22 * * *'
   workflow_dispatch:      # 수동 실행 허용
 
 jobs:
@@ -13,7 +14,7 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Set up Python
         uses: actions/setup-python@v4
@@ -27,33 +28,42 @@ jobs:
 
       - name: Run News Bot
         env:
+          # Gemini API (OpenAI 호환 모드)
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-          OPENAI_BASE_URL: https://api.githubcopilot.com
+          OPENAI_BASE_URL: https://generativelanguage.googleapis.com/v1beta/openai/
+          AI_MODEL: gemini-2.0-flash
+          # 텔레그램
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHANNEL_ID: ${{ secrets.TELEGRAM_CHANNEL_ID }}
           TELEGRAM_API_ID: ${{ secrets.TELEGRAM_API_ID }}
           TELEGRAM_API_HASH: ${{ secrets.TELEGRAM_API_HASH }}
           TELEGRAM_SESSION: ${{ secrets.TELEGRAM_SESSION }}
+          # 로그 디렉토리
+          LOG_DIR: ${{ github.workspace }}/logs
         run: python main.py
 
-      - name: Commit processed_news.json to dashboard
+      - name: Update homepage
+        run: |
+          if [ -f "scripts/update_homepage.py" ]; then
+            python scripts/update_homepage.py
+          fi
+
+      - name: Commit and push all changes
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
           
-          # processed_news.json이 생성된 경우에만 커밋
-          if [ -f "dashboard/public/processed_news.json" ]; then
-            git add dashboard/public/processed_news.json
-            
-            # 변경사항이 있는 경우에만 커밋
-            if git diff --staged --quiet; then
-              echo "No changes to processed_news.json, skipping commit."
-            else
-              TIMESTAMP=$(date -u +"%Y-%m-%d %H:%M UTC")
-              git commit -m "data: 뉴스 데이터 업데이트 [${TIMESTAMP}]"
-              git push
-              echo "processed_news.json committed and pushed successfully."
-            fi
+          # 변경된 파일 모두 추가
+          git add dashboard/public/processed_news.json 2>/dev/null || true
+          git add data/processed_news.json 2>/dev/null || true
+          git add homepage.html 2>/dev/null || true
+          
+          # 변경사항이 있는 경우에만 커밋
+          if git diff --staged --quiet; then
+            echo "No changes to commit, skipping."
           else
-            echo "processed_news.json not found, skipping commit."
+            TIMESTAMP=$(date -u +"%Y-%m-%d %H:%M UTC")
+            git commit -m "data: 뉴스 데이터 자동 업데이트 [${TIMESTAMP}]"
+            git push origin main
+            echo "Changes committed and pushed successfully."
           fi

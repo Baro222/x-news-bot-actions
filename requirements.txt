@@ -1,5 +1,6 @@
 telethon
-openai
+openai>=1.0.0
 beautifulsoup4
 requests
 lxml
+cryptography
