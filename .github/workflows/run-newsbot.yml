@@ -4,7 +4,12 @@ on:
   schedule:
     # run every 4 hours (at minute 5 to avoid overlap)
     - cron: '5 */4 * * *'
-  workflow_dispatch: {}
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: 'Run in dry run mode (1 = safe, 0 = send)'
+        required: false
+        default: '1'
 
 jobs:
   run-and-publish:
@@ -23,12 +28,21 @@ jobs:
           python -m pip install --upgrade pip
           if [ -f requirements.txt ]; then python -m pip install -r requirements.txt; fi
 
+      - name: Preflight: check Telegram token (non-blocking)
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHANNEL_ID: ${{ secrets.TELEGRAM_CHANNEL_ID }}
+        run: |
+          if [ -z "${{ secrets.TELEGRAM_BOT_TOKEN }}" ]; then echo "No TELEGRAM_BOT_TOKEN set"; exit 0; fi
+          resp=$(curl -s "https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/getMe") || true
+          echo "getMe: $resp"
+
       - name: Run newsbot (main.py)
         env:
           # Ensure a writable LOG_DIR in Actions runners
           LOG_DIR: ${{ github.workspace }}/logs
-          # DRY_RUN prevents outbound sends; set to 0 to enable sends
-          DRY_RUN: '1'
+          # DRY_RUN prevents outbound sends; set via workflow input (default 1)
+          DRY_RUN: ${{ github.event.inputs.dry_run || '1' }}
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHANNEL_ID: ${{ secrets.TELEGRAM_CHANNEL_ID }}
           TELEGRAM_API_ID: ${{ secrets.TELEGRAM_API_ID }}
