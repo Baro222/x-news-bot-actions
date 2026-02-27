@@ -84,8 +84,15 @@ def _ce(emoji_id: int, fallback: str = "●") -> str:
 
 
 def _send_via_bot(text: str) -> bool:
-    """봇 API를 통한 폴백 발송"""
-    from config import TELEGRAM_BOT_TOKEN, TELEGRAM_CHANNEL_ID
+    """봇 API를 통한 폴백 발송
+    실패 시 예외를 던지지 않고 False를 반환하도록 안전 모드로 동작합니다.
+    """
+    try:
+        from config import TELEGRAM_BOT_TOKEN, TELEGRAM_CHANNEL_ID
+    except Exception:
+        logger.warning("텔레그램 토큰 미설정 - 발송 건너뜀")
+        return False
+
     url = f"https://api.telegram.org/bot{TELEGRAM_BOT_TOKEN}/sendMessage"
     payload = {
         "chat_id": TELEGRAM_CHANNEL_ID,

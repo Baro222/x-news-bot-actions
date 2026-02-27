@@ -50,6 +50,7 @@ jobs:
           fi
 
       - name: Commit and push processed JSON
+        if: always()
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
@@ -58,7 +59,7 @@ jobs:
           git add dashboard/public/processed_news.json || true
           if ! git diff --staged --quiet; then
             git commit -m "chore: update processed_news.json from newsbot"
-            git push origin HEAD:main
+            git push origin HEAD:main || echo "push failed"
           else
             echo "No changes to commit"
           fi

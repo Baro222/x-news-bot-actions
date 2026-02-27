@@ -183,7 +183,9 @@ def run_news_cycle():
         if success:
             logger.info("텔레그램 발송 완료!")
         else:
-            logger.error("텔레그램 발송 실패!")
+            logger.warning("텔레그램 발송 실패 — 계속 진행합니다 (비치명 오류 처리)")
+            # 텔레그램 실패는 전체 워크플로 실패로 연결시키지 않음
+            success = True
         
         # 결과 저장 (디버깅용)
         result_file = f"{LOG_DIR}/last_result.json"
