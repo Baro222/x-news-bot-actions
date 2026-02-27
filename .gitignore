@@ -43,3 +43,12 @@ fxtwitter_research.md
 # OS 파일
 .DS_Store
 Thumbs.db
+
+# Dashboard build outputs (node_modules, dist 등 제외)
+dashboard/node_modules/
+dashboard/dist/
+dashboard/.vite/
+dashboard/pnpm-lock.yaml
+dashboard/yarn.lock
+dashboard/package-lock.json
+# Note: dashboard/public/processed_news.json 은 GitHub Actions가 자동 업데이트하므로 추적 유지

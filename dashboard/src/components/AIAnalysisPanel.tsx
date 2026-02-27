@@ -1,16 +1,76 @@
 /**
  * Command Center - AI Analysis Panel
  * 우측 AI 종합 분석 패널
- * Gemini AI 분석 결과 표시
+ * 실제 뉴스 데이터 기반 동적 분석 생성
  */
 
-import { MARKET_IMPACT_CONFIG, PRIORITY_CONFIG, type AIAnalysis } from '@/lib/types';
+import { useMemo } from 'react';
+import { MARKET_IMPACT_CONFIG, PRIORITY_CONFIG, CATEGORY_CONFIG, type NewsItem, type AIAnalysis, type Category } from '@/lib/types';
 import { mockAIAnalyses } from '@/lib/mockData';
 import { timeAgo } from '@/lib/utils';
 
 const AI_BG_URL = 'https://files.manuscdn.com/user_upload_by_module/session_file/310519663374440652/kTnVolubwkPmlYFt.png';
 
-export default function AIAnalysisPanel() {
+interface AIAnalysisPanelProps {
+  news: NewsItem[];
+}
+
+export default function AIAnalysisPanel({ news }: AIAnalysisPanelProps) {
+  // 실제 뉴스 데이터가 있으면 카테고리별 분석 생성, 없으면 mockData 사용
+  const analyses: AIAnalysis[] = useMemo(() => {
+    if (!news || news.length === 0) return mockAIAnalyses;
+
+    const categories = ['지정학', '경제', '트럼프', '암호화폐'] as Category[];
+    const result: AIAnalysis[] = [];
+
+    for (const category of categories) {
+      const catNews = news.filter(n => n.category === category);
+      if (catNews.length === 0) continue;
+
+      // 카테고리 내 센티먼트 집계
+      const scores = catNews.map(n => {
+        switch (n.marketImpact) {
+          case 'very_bullish': return 2;
+          case 'bullish': return 1;
+          case 'neutral': return 0;
+          case 'bearish': return -1;
+          case 'very_bearish': return -2;
+          default: return 0;
+        }
+      });
+      const avgScore = scores.reduce((a, b) => a + b, 0) / scores.length;
+
+      let sentiment: AIAnalysis['sentiment'];
+      if (avgScore > 1) sentiment = 'very_bullish';
+      else if (avgScore > 0.3) sentiment = 'bullish';
+      else if (avgScore < -1) sentiment = 'very_bearish';
+      else if (avgScore < -0.3) sentiment = 'bearish';
+      else sentiment = 'neutral';
+
+      // 최고 중요도 뉴스
+      const topNews = [...catNews].sort((a, b) => b.impactScore - a.impactScore).slice(0, 3);
+      const maxPriority = catNews.some(n => n.priority === 'critical') ? 'critical'
+        : catNews.some(n => n.priority === 'high') ? 'high'
+        : catNews.some(n => n.priority === 'medium') ? 'medium' : 'low';
+
+      const config = CATEGORY_CONFIG[category];
+
+      result.push({
+        id: `analysis-${category}`,
+        title: `${config.icon} ${category} 동향 분석`,
+        content: `${category} 카테고리에서 ${catNews.length}건의 뉴스가 수집되었습니다. ` +
+          `주요 이슈: ${topNews.map(n => n.title).join(' / ')}`,
+        timestamp: new Date().toISOString(),
+        category,
+        sentiment,
+        keyInsights: topNews.map(n => n.summary ? n.summary.slice(0, 80) + (n.summary.length > 80 ? '...' : '') : n.title),
+        riskLevel: maxPriority,
+      });
+    }
+
+    return result.length > 0 ? result : mockAIAnalyses;
+  }, [news]);
+
   return (
     <div className="space-y-4">
       {/* AI Brain Banner */}
@@ -40,7 +100,7 @@ export default function AIAnalysisPanel() {
       </div>
 
       {/* Analysis Cards */}
-      {mockAIAnalyses.map((analysis) => (
+      {analyses.map((analysis) => (
         <AnalysisCard key={analysis.id} analysis={analysis} />
       ))}
     </div>
@@ -53,7 +113,6 @@ function AnalysisCard({ analysis }: { analysis: AIAnalysis }) {
 
   return (
     <div className="border border-border/50 rounded-lg overflow-hidden" style={{ background: 'oklch(0.14 0.02 260)' }}>
-      {/* Header */}
       <div className="px-4 py-3 border-b border-border/30 flex items-center justify-between">
         <div className="flex items-center gap-2">
           <div className="w-1.5 h-1.5 rounded-full pulse-indicator" style={{ background: sentimentConfig.color }} />
@@ -63,7 +122,6 @@ function AnalysisCard({ analysis }: { analysis: AIAnalysis }) {
       </div>
 
       <div className="p-4 space-y-3">
-        {/* Sentiment & Risk */}
         <div className="flex items-center gap-3">
           <div className="flex items-center gap-1.5 px-2 py-1 rounded border" style={{
             background: `${sentimentConfig.color}10`,
@@ -86,12 +144,10 @@ function AnalysisCard({ analysis }: { analysis: AIAnalysis }) {
           </div>
         </div>
 
-        {/* Content Preview */}
         <p className="font-sans text-xs text-foreground/80 leading-relaxed line-clamp-4">
           {analysis.content}
         </p>
 
-        {/* Key Insights */}
         <div>
           <div className="font-mono text-[10px] text-muted-foreground tracking-wider mb-2">핵심 인사이트</div>
           <div className="space-y-1.5">

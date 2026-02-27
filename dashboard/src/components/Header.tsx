@@ -1,24 +1,29 @@
 /**
  * Command Center Header
  * 군사 정보 스타일 상단 네비게이션 바
- * Dark navy background, cyber green accents, scan line overlay
  */
 
 import { useState, useEffect } from 'react';
 import { mockSystemStatus } from '@/lib/mockData';
 import { getCountdown } from '@/lib/utils';
+import type { SystemStatus } from '@/lib/types';
 
-export default function Header() {
-  const [countdown, setCountdown] = useState(getCountdown(mockSystemStatus.nextUpdate));
+interface HeaderProps {
+  systemStatus?: SystemStatus;
+}
+
+export default function Header({ systemStatus }: HeaderProps) {
+  const status = systemStatus ?? mockSystemStatus;
+  const [countdown, setCountdown] = useState(getCountdown(status.nextUpdate));
   const [currentTime, setCurrentTime] = useState(new Date());
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setCountdown(getCountdown(mockSystemStatus.nextUpdate));
+      setCountdown(getCountdown(status.nextUpdate));
       setCurrentTime(new Date());
     }, 1000);
     return () => clearInterval(timer);
-  }, []);
+  }, [status.nextUpdate]);
 
   return (
     <header className="sticky top-0 z-50 border-b border-border/50" style={{ background: 'oklch(0.1 0.02 260 / 0.95)', backdropFilter: 'blur(12px)' }}>
@@ -45,17 +50,17 @@ export default function Header() {
         <div className="hidden md:flex items-center gap-6">
           <StatusIndicator
             label="시스템"
-            value={mockSystemStatus.systemHealth === 'operational' ? '정상' : '점검중'}
-            color={mockSystemStatus.systemHealth === 'operational' ? 'green' : 'amber'}
+            value={status.systemHealth === 'operational' ? '정상' : '점검중'}
+            color={status.systemHealth === 'operational' ? 'green' : 'amber'}
           />
           <StatusIndicator
             label="모니터링"
-            value={`${mockSystemStatus.activeAccounts}/${mockSystemStatus.totalAccounts}`}
+            value={`${status.activeAccounts}/${status.totalAccounts}`}
             color="green"
           />
           <StatusIndicator
             label="수집 트윗"
-            value={`${mockSystemStatus.tweetsCollected}건`}
+            value={`${status.tweetsCollected}건`}
             color="blue"
           />
           <div className="h-6 w-px bg-border/50" />
@@ -68,21 +73,22 @@ export default function Header() {
         {/* Right: Time & Telegram */}
         <div className="flex items-center gap-4">
           <div className="hidden sm:flex flex-col items-end">
-            <span className="font-mono text-[10px] text-muted-foreground tracking-wider">KST</span>
-            <span className="font-mono text-xs text-foreground">
+            <span className="font-mono text-xs text-foreground font-semibold">
               {currentTime.toLocaleTimeString('ko-KR', { hour: '2-digit', minute: '2-digit', second: '2-digit' })}
+            </span>
+            <span className="font-mono text-[10px] text-muted-foreground">
+              {currentTime.toLocaleDateString('ko-KR', { year: 'numeric', month: '2-digit', day: '2-digit' })} KST
             </span>
           </div>
           <a
             href="https://t.me/baroBTC"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-1.5 px-3 py-1.5 rounded border border-primary/30 text-primary text-xs font-mono hover:bg-primary/10 transition-colors"
+            className="flex items-center gap-1.5 px-3 py-1.5 rounded border border-border/50 hover:border-primary/50 transition-colors"
+            style={{ background: 'oklch(0.14 0.02 260)' }}
           >
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
-            </svg>
-            @baroBTC
+            <span className="text-sm">✈</span>
+            <span className="font-mono text-[11px] text-muted-foreground hover:text-primary transition-colors">텔레그램</span>
           </a>
         </div>
       </div>
@@ -90,21 +96,17 @@ export default function Header() {
   );
 }
 
-function StatusIndicator({ label, value, color }: { label: string; value: string; color: 'green' | 'amber' | 'blue' | 'red' }) {
+function StatusIndicator({ label, value, color }: { label: string; value: string; color: 'green' | 'amber' | 'blue' }) {
   const colorMap = {
-    green: { dot: 'bg-primary', text: 'text-primary' },
-    amber: { dot: 'bg-amber-alert', text: 'text-amber-alert' },
-    blue: { dot: 'bg-chart-2', text: 'text-chart-2' },
-    red: { dot: 'bg-destructive', text: 'text-destructive' },
+    green: 'oklch(0.85 0.25 155)',
+    amber: 'oklch(0.82 0.18 80)',
+    blue: 'oklch(0.65 0.18 220)',
   };
 
   return (
-    <div className="flex items-center gap-2">
-      <div className={`w-1.5 h-1.5 rounded-full ${colorMap[color].dot} pulse-indicator`} />
-      <div className="flex flex-col">
-        <span className="font-mono text-[10px] text-muted-foreground tracking-wider">{label}</span>
-        <span className={`font-mono text-xs font-medium ${colorMap[color].text}`}>{value}</span>
-      </div>
+    <div className="flex flex-col items-center">
+      <span className="font-mono text-[10px] text-muted-foreground tracking-wider">{label}</span>
+      <span className="font-mono text-xs font-semibold" style={{ color: colorMap[color] }}>{value}</span>
     </div>
   );
 }

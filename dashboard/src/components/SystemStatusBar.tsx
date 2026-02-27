@@ -1,22 +1,27 @@
 /**
  * Command Center - System Status Bar
  * 하단 시스템 상태 모니터링 바
- * 실시간 시스템 상태, 업데이트 주기, 계정 상태 표시
  */
 
 import { useState, useEffect } from 'react';
-import { mockSystemStatus, mockAccounts } from '@/lib/mockData';
+import { mockAccounts } from '@/lib/mockData';
 import { getCountdown, formatDate } from '@/lib/utils';
+import type { SystemStatus } from '@/lib/types';
 
-export default function SystemStatusBar() {
-  const [countdown, setCountdown] = useState(getCountdown(mockSystemStatus.nextUpdate));
+interface SystemStatusBarProps {
+  systemStatus: SystemStatus;
+}
+
+export default function SystemStatusBar({ systemStatus }: SystemStatusBarProps) {
+  const [countdown, setCountdown] = useState(getCountdown(systemStatus.nextUpdate));
 
   useEffect(() => {
+    setCountdown(getCountdown(systemStatus.nextUpdate));
     const timer = setInterval(() => {
-      setCountdown(getCountdown(mockSystemStatus.nextUpdate));
+      setCountdown(getCountdown(systemStatus.nextUpdate));
     }, 1000);
     return () => clearInterval(timer);
-  }, []);
+  }, [systemStatus.nextUpdate]);
 
   const priorityAccounts = mockAccounts.filter(a => a.isPriority);
 
@@ -30,7 +35,7 @@ export default function SystemStatusBar() {
         </div>
         <div className="flex items-center gap-1">
           <span className="font-mono text-[10px] text-muted-foreground">UPTIME</span>
-          <span className="font-mono text-[10px] text-primary font-semibold">{mockSystemStatus.uptime}</span>
+          <span className="font-mono text-[10px] text-primary font-semibold">{systemStatus.uptime}</span>
         </div>
       </div>
 
@@ -39,7 +44,7 @@ export default function SystemStatusBar() {
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-4">
           <StatusCard
             label="시스템 상태"
-            value={mockSystemStatus.systemHealth === 'operational' ? '정상 운영' : '점검중'}
+            value={systemStatus.systemHealth === 'operational' ? '정상 운영' : '점검중'}
             color="green"
             icon="●"
           />
@@ -51,13 +56,13 @@ export default function SystemStatusBar() {
           />
           <StatusCard
             label="수집 트윗"
-            value={`${mockSystemStatus.tweetsCollected}건`}
+            value={`${systemStatus.tweetsCollected}건`}
             color="blue"
             icon="📥"
           />
           <StatusCard
             label="AI 분석"
-            value={`${mockSystemStatus.aiAnalysisCount}건`}
+            value={`${systemStatus.aiAnalysisCount}건`}
             color="amber"
             icon="🧠"
           />
@@ -69,14 +74,14 @@ export default function SystemStatusBar() {
           <div className="flex items-center gap-2">
             <div className="flex items-center gap-1">
               <div className="w-2 h-2 rounded-full bg-primary" />
-              <span className="font-mono text-[10px] text-foreground">마지막: {formatDate(mockSystemStatus.lastUpdate)}</span>
+              <span className="font-mono text-[10px] text-foreground">마지막: {formatDate(systemStatus.lastUpdate)}</span>
             </div>
             <div className="flex-1 h-px bg-border/30 relative">
               <div className="absolute left-1/3 top-1/2 -translate-y-1/2 w-1.5 h-1.5 rounded-full bg-primary/50 pulse-indicator" />
             </div>
             <div className="flex items-center gap-1">
               <div className="w-2 h-2 rounded-full border border-primary/50" />
-              <span className="font-mono text-[10px] text-muted-foreground">다음: {formatDate(mockSystemStatus.nextUpdate)}</span>
+              <span className="font-mono text-[10px] text-muted-foreground">다음: {formatDate(systemStatus.nextUpdate)}</span>
             </div>
           </div>
         </div>

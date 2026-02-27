@@ -4,22 +4,22 @@
  * 군사 정보 스타일 - 카테고리별 필터링 및 통계
  */
 
-import { CATEGORY_CONFIG, type Category } from '@/lib/types';
-import { mockNews } from '@/lib/mockData';
+import { CATEGORY_CONFIG, type Category, type NewsItem } from '@/lib/types';
 import { cn } from '@/lib/utils';
 
 interface CategorySidebarProps {
   selectedCategory: Category | 'all';
   onSelectCategory: (category: Category | 'all') => void;
+  news: NewsItem[];
 }
 
-export default function CategorySidebar({ selectedCategory, onSelectCategory }: CategorySidebarProps) {
-  const categoryCounts = mockNews.reduce((acc, item) => {
+export default function CategorySidebar({ selectedCategory, onSelectCategory, news }: CategorySidebarProps) {
+  const categoryCounts = news.reduce((acc, item) => {
     acc[item.category] = (acc[item.category] || 0) + 1;
     return acc;
   }, {} as Record<string, number>);
 
-  const totalCount = mockNews.length;
+  const totalCount = news.length;
 
   return (
     <aside className="w-full lg:w-56 shrink-0">

@@ -1,14 +1,16 @@
 /**
  * Command Center - News Ticker
  * 히어로 배너 하단의 실시간 뉴스 스크롤 틱커
- * 긴급 뉴스와 주요 이벤트를 스크롤하며 표시
  */
 
 import { useEffect, useRef } from 'react';
-import { mockNews } from '@/lib/mockData';
-import { CATEGORY_CONFIG } from '@/lib/types';
+import { CATEGORY_CONFIG, type NewsItem } from '@/lib/types';
 
-export default function NewsTicker() {
+interface NewsTickerProps {
+  news: NewsItem[];
+}
+
+export default function NewsTicker({ news }: NewsTickerProps) {
   const scrollRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -29,9 +31,11 @@ export default function NewsTicker() {
 
     animationId = requestAnimationFrame(animate);
     return () => cancelAnimationFrame(animationId);
-  }, []);
+  }, [news]);
 
-  const tickerItems = mockNews.slice(0, 6);
+  const tickerItems = news.slice(0, 8);
+
+  if (tickerItems.length === 0) return null;
 
   return (
     <div className="border-b border-border/30 overflow-hidden" style={{ background: 'oklch(0.11 0.02 260)' }}>
@@ -42,12 +46,12 @@ export default function NewsTicker() {
         </div>
         <div className="overflow-hidden flex-1">
           <div ref={scrollRef} className="flex items-center gap-8 whitespace-nowrap" style={{ width: 'max-content' }}>
-            {[...tickerItems, ...tickerItems].map((news, i) => {
-              const config = CATEGORY_CONFIG[news.category];
+            {[...tickerItems, ...tickerItems].map((item, i) => {
+              const config = CATEGORY_CONFIG[item.category];
               return (
-                <div key={`${news.id}-${i}`} className="flex items-center gap-2">
-                  <span className="text-[10px]">{config.icon}</span>
-                  <span className="font-mono text-[11px] text-foreground/80">{news.title}</span>
+                <div key={`${item.id}-${i}`} className="flex items-center gap-2">
+                  <span className="text-[10px]">{config?.icon ?? '📰'}</span>
+                  <span className="font-mono text-[11px] text-foreground/80">{item.title}</span>
                   <span className="font-mono text-[10px] text-muted-foreground">|</span>
                 </div>
               );

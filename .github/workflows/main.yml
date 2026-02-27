@@ -8,6 +8,9 @@ on:
 jobs:
   update-news:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write   # processed_news.json 커밋을 위해 필요
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
@@ -32,3 +35,25 @@ jobs:
           TELEGRAM_API_HASH: ${{ secrets.TELEGRAM_API_HASH }}
           TELEGRAM_SESSION: ${{ secrets.TELEGRAM_SESSION }}
         run: python main.py
+
+      - name: Commit processed_news.json to dashboard
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          
+          # processed_news.json이 생성된 경우에만 커밋
+          if [ -f "dashboard/public/processed_news.json" ]; then
+            git add dashboard/public/processed_news.json
+            
+            # 변경사항이 있는 경우에만 커밋
+            if git diff --staged --quiet; then
+              echo "No changes to processed_news.json, skipping commit."
+            else
+              TIMESTAMP=$(date -u +"%Y-%m-%d %H:%M UTC")
+              git commit -m "data: 뉴스 데이터 업데이트 [${TIMESTAMP}]"
+              git push
+              echo "processed_news.json committed and pushed successfully."
+            fi
+          else
+            echo "processed_news.json not found, skipping commit."
+          fi

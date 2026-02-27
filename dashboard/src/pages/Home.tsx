@@ -17,7 +17,7 @@ import MarketSentimentGauge from '@/components/MarketSentimentGauge';
 import CategoryDistribution from '@/components/CategoryDistribution';
 import ActivityLog from '@/components/ActivityLog';
 import SystemStatusBar from '@/components/SystemStatusBar';
-import { mockNews } from '@/lib/mockData';
+import { useNewsData } from '@/hooks/useNewsData';
 import type { Category, NewsItem } from '@/lib/types';
 
 const HERO_BG_URL = 'https://files.manuscdn.com/user_upload_by_module/session_file/310519663374440652/jsuGVpDbDGzMAfzd.png';
@@ -28,12 +28,14 @@ export default function Home() {
   const [showMobileMenu, setShowMobileMenu] = useState(false);
   const [activeTab, setActiveTab] = useState<'feed' | 'analysis'>('feed');
 
-  const filteredNews = useMemo(() => {
-    if (selectedCategory === 'all') return mockNews;
-    return mockNews.filter((item) => item.category === selectedCategory);
-  }, [selectedCategory]);
+  const { news, systemStatus, isLoading, isLiveData } = useNewsData();
 
-  const criticalCount = mockNews.filter(n => n.priority === 'critical').length;
+  const filteredNews = useMemo(() => {
+    if (selectedCategory === 'all') return news;
+    return news.filter((item) => item.category === selectedCategory);
+  }, [selectedCategory, news]);
+
+  const criticalCount = news.filter(n => n.priority === 'critical').length;
 
   return (
     <div className="min-h-screen bg-background grid-pattern">
@@ -42,12 +44,12 @@ export default function Home() {
 
       {/* Header */}
       <div className="relative z-10">
-        <Header />
+        <Header systemStatus={systemStatus} />
       </div>
 
       {/* News Ticker */}
       <div className="relative z-10">
-        <NewsTicker />
+        <NewsTicker news={news} />
       </div>
 
       {/* Hero Banner */}
@@ -62,13 +64,20 @@ export default function Home() {
             <div className="flex-1">
               <div className="flex items-center gap-3 mb-1">
                 <div className="px-2 py-0.5 rounded border border-primary/30 bg-primary/10">
-                  <span className="font-mono text-[10px] text-primary font-semibold tracking-wider">LIVE</span>
+                  <span className="font-mono text-[10px] text-primary font-semibold tracking-wider">
+                    {isLoading ? 'LOADING...' : isLiveData ? 'LIVE' : 'DEMO'}
+                  </span>
                 </div>
                 {criticalCount > 0 && (
                   <div className="px-2 py-0.5 rounded border border-destructive/30 bg-destructive/10 animate-pulse">
                     <span className="font-mono text-[10px] text-destructive font-semibold tracking-wider">
                       긴급 {criticalCount}건
                     </span>
+                  </div>
+                )}
+                {isLiveData && (
+                  <div className="px-2 py-0.5 rounded border border-primary/20 bg-primary/5">
+                    <span className="font-mono text-[10px] text-primary/70 tracking-wider">실시간 데이터</span>
                   </div>
                 )}
               </div>
@@ -82,9 +91,9 @@ export default function Home() {
 
             {/* Quick Stats */}
             <div className="hidden lg:flex items-center gap-3">
-              <QuickStat label="총 뉴스" value={mockNews.length.toString()} suffix="건" />
+              <QuickStat label="총 뉴스" value={news.length.toString()} suffix="건" />
               <QuickStat label="긴급" value={criticalCount.toString()} suffix="건" isAlert={criticalCount > 0} />
-              <QuickStat label="모니터링" value="60" suffix="계정" />
+              <QuickStat label="모니터링" value={systemStatus.totalAccounts.toString()} suffix="계정" />
             </div>
           </div>
         </div>
@@ -119,7 +128,7 @@ export default function Home() {
       {/* Mobile Category Filter */}
       {showMobileMenu && (
         <div className="lg:hidden relative z-10 border-b border-border/30 px-4 py-3" style={{ background: 'oklch(0.13 0.02 260)' }}>
-          <CategorySidebar selectedCategory={selectedCategory} onSelectCategory={(cat) => { setSelectedCategory(cat); setShowMobileMenu(false); }} />
+          <CategorySidebar selectedCategory={selectedCategory} onSelectCategory={(cat) => { setSelectedCategory(cat); setShowMobileMenu(false); }} news={news} />
         </div>
       )}
 
@@ -129,7 +138,7 @@ export default function Home() {
           {/* Left: Category Sidebar + Activity Log (hidden on mobile) */}
           <div className="hidden lg:block">
             <div className="sticky top-16 space-y-4">
-              <CategorySidebar selectedCategory={selectedCategory} onSelectCategory={setSelectedCategory} />
+              <CategorySidebar selectedCategory={selectedCategory} onSelectCategory={setSelectedCategory} news={news} />
               <ActivityLog />
             </div>
           </div>
@@ -153,18 +162,28 @@ export default function Home() {
               </div>
             </div>
 
-            {/* News Cards */}
-            <div className="space-y-3">
-              {filteredNews.map((news) => (
-                <NewsCard
-                  key={news.id}
-                  news={news}
-                  onSelect={setSelectedNews}
-                />
-              ))}
-            </div>
+            {/* Loading state */}
+            {isLoading && (
+              <div className="border border-border/30 rounded-lg p-8 text-center" style={{ background: 'oklch(0.14 0.02 260)' }}>
+                <div className="w-4 h-4 border-2 border-primary/30 border-t-primary rounded-full animate-spin mx-auto mb-3" />
+                <p className="font-mono text-xs text-muted-foreground">뉴스 데이터 로딩 중...</p>
+              </div>
+            )}
 
-            {filteredNews.length === 0 && (
+            {/* News Cards */}
+            {!isLoading && (
+              <div className="space-y-3">
+                {filteredNews.map((item) => (
+                  <NewsCard
+                    key={item.id}
+                    news={item}
+                    onSelect={setSelectedNews}
+                  />
+                ))}
+              </div>
+            )}
+
+            {!isLoading && filteredNews.length === 0 && (
               <div className="border border-border/30 rounded-lg p-8 text-center" style={{ background: 'oklch(0.14 0.02 260)' }}>
                 <span className="text-2xl opacity-30 block mb-2">📭</span>
                 <p className="font-mono text-xs text-muted-foreground">선택한 카테고리에 해당하는 뉴스가 없습니다</p>
@@ -173,7 +192,7 @@ export default function Home() {
 
             {/* System Status - Below News Feed */}
             <div className="mt-4">
-              <SystemStatusBar />
+              <SystemStatusBar systemStatus={systemStatus} />
             </div>
           </div>
 
@@ -186,13 +205,13 @@ export default function Home() {
               )}
 
               {/* Market Sentiment Gauge */}
-              <MarketSentimentGauge />
+              <MarketSentimentGauge news={news} />
 
               {/* Category Distribution */}
-              <CategoryDistribution />
+              <CategoryDistribution news={news} />
 
               {/* AI Analysis Panel */}
-              <AIAnalysisPanel />
+              <AIAnalysisPanel news={news} />
             </div>
           </div>
         </div>

@@ -3,11 +3,14 @@
  * 카테고리별 뉴스 분포를 시각적 바 차트로 표시
  */
 
-import { mockNews } from '@/lib/mockData';
-import { CATEGORY_CONFIG, type Category } from '@/lib/types';
+import { CATEGORY_CONFIG, type Category, type NewsItem } from '@/lib/types';
 
-export default function CategoryDistribution() {
-  const categoryCounts = mockNews.reduce((acc, item) => {
+interface CategoryDistributionProps {
+  news: NewsItem[];
+}
+
+export default function CategoryDistribution({ news }: CategoryDistributionProps) {
+  const categoryCounts = news.reduce((acc, item) => {
     acc[item.category] = (acc[item.category] || 0) + 1;
     return acc;
   }, {} as Record<string, number>);

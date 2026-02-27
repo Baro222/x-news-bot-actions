@@ -3,12 +3,14 @@
  * 전체 시장 센티먼트를 시각적으로 표시하는 게이지
  */
 
-import { mockNews } from '@/lib/mockData';
-import { MARKET_IMPACT_CONFIG } from '@/lib/types';
+import { MARKET_IMPACT_CONFIG, type NewsItem } from '@/lib/types';
 
-export default function MarketSentimentGauge() {
-  // Calculate overall sentiment
-  const sentimentScores = mockNews.map(n => {
+interface MarketSentimentGaugeProps {
+  news: NewsItem[];
+}
+
+export default function MarketSentimentGauge({ news }: MarketSentimentGaugeProps) {
+  const sentimentScores = news.map(n => {
     switch (n.marketImpact) {
       case 'very_bullish': return 2;
       case 'bullish': return 1;
@@ -18,11 +20,12 @@ export default function MarketSentimentGauge() {
     }
   });
 
-  const avgScore = sentimentScores.reduce<number>((a, b) => a + b, 0) / sentimentScores.length;
-  const sentimentPercent = ((avgScore + 2) / 4) * 100; // 0-100 scale
+  const avgScore = sentimentScores.length > 0
+    ? sentimentScores.reduce<number>((a, b) => a + b, 0) / sentimentScores.length
+    : 0;
+  const sentimentPercent = ((avgScore + 2) / 4) * 100;
 
-  // Count by sentiment
-  const sentimentCounts = mockNews.reduce((acc, n) => {
+  const sentimentCounts = news.reduce((acc, n) => {
     acc[n.marketImpact] = (acc[n.marketImpact] || 0) + 1;
     return acc;
   }, {} as Record<string, number>);
@@ -38,7 +41,6 @@ export default function MarketSentimentGauge() {
       </div>
 
       <div className="p-4">
-        {/* Gauge Bar */}
         <div className="mb-3">
           <div className="flex items-center justify-between mb-1.5">
             <span className="font-mono text-[10px] text-destructive">부정</span>
@@ -64,7 +66,6 @@ export default function MarketSentimentGauge() {
           </div>
         </div>
 
-        {/* Sentiment Distribution */}
         <div className="grid grid-cols-5 gap-1">
           {(Object.entries(MARKET_IMPACT_CONFIG) as [string, { label: string; color: string; icon: string }][]).map(([key, config]) => (
             <div key={key} className="text-center">

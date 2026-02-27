@@ -1,21 +1,24 @@
 # 설정 파일
+# 모든 민감 정보는 환경변수 또는 GitHub Secrets에서 가져옵니다.
+# 로컬 실행 시: .env 파일에 설정 (절대 GitHub에 업로드 금지)
+
+import os
 
 # twitterapi.io API 키
-TWITTER_API_KEY = "new1_23710e6a69be4ad68f60d24285c99a2f"
+TWITTER_API_KEY = os.environ.get("TWITTER_API_KEY", "")
 
 # 텔레그램 봇 토큰
-TELEGRAM_BOT_TOKEN = "8237707628:AAHQRzAzayLpSsgKpSe1KO3nBeGS8KY_RHU"
+TELEGRAM_BOT_TOKEN = os.environ.get("TELEGRAM_BOT_TOKEN", "")
 
-# 텔레그램 채널 ID (앞에 -100 추가)
-TELEGRAM_CHANNEL_ID = "-1001645099595"
+# 텔레그램 채널 ID
+TELEGRAM_CHANNEL_ID = os.environ.get("TELEGRAM_CHANNEL_ID", "")
 
 # 텔레그램 프리미엄 계정 (Telethon - 커스텀 이모지 사용)
-TELEGRAM_API_ID = 39695050
-TELEGRAM_API_HASH = "1107f6b4296cf6fcf30ab09604e85111"
-TELEGRAM_SESSION = "1BVtsOIIBu1SJGtmzYt3ox3qiB2st_IcdOPR2RKs4wqgGcaez1xbYP65TI8zSVHbAKVjg85tzkyfU2gBZjRRiBTApuiHGt-LTxrMUlBThVyH4g703lQ7GKylKUvuS6N-utGZhpw1v6IaiqOEaBOHllm7IZt4Kiwx_-sGEjkRIdPSbKGc61skoBVf62td5-ffY9n3ys7MLC2_SdyMRIvFTcwvg_l1vZtrRciTe1ytTMew-w02Az47ZMHXxE0Gs3NuF1GazJjLUF-GwlD5gKkkCj_kIX2sjvrzbKlmcxN52mvBS_au419TJ229Q4OEtthf0cZEsxUDxVN5ujSUwlfdTcbI8PbYM8kU="
+TELEGRAM_API_ID = int(os.environ.get("TELEGRAM_API_ID", "0") or "0")
+TELEGRAM_API_HASH = os.environ.get("TELEGRAM_API_HASH", "")
+TELEGRAM_SESSION = os.environ.get("TELEGRAM_SESSION", "")
 
-# OpenAI API 키 (환경변수에서 가져옴)
-import os
+# OpenAI API 키
 OPENAI_API_KEY = os.environ.get("OPENAI_API_KEY", "")
 
 # 모니터링할 X 계정 목록
