@@ -10,19 +10,35 @@ import json
 from datetime import datetime, timezone, timedelta
 
 # 로깅 설정
-LOG_DIR = "/home/ubuntu/x_news_bot/logs"
-os.makedirs(LOG_DIR, exist_ok=True)
+# 기본 로그 디렉토리는 환경변수 LOG_DIR 또는 레포지토리 내부 ./logs 를 사용합니다.
+repo_root = os.path.dirname(os.path.abspath(__file__))
+LOG_DIR = os.environ.get('LOG_DIR', os.path.join(repo_root, 'logs'))
+try:
+    os.makedirs(LOG_DIR, exist_ok=True)
+except Exception:
+    # 실패 시 fallback으로 현재 디렉토리 사용
+    LOG_DIR = os.path.join(repo_root, 'logs')
+    try:
+        os.makedirs(LOG_DIR, exist_ok=True)
+    except Exception:
+        # 마지막 수단: 현재 작업 디렉토리에 로그파일을 못만들면 스트림 전용으로 동작
+        pass
 
 # 루트 로거에 핸들러가 없을 때만 추가 (중복 방지)
 root_logger = logging.getLogger()
 if not root_logger.handlers:
+    handlers = [logging.StreamHandler(sys.stdout)]
+    # 파일 핸들러는 로그 디렉토리가 쓰기 가능할 때만 추가
+    try:
+        fh = logging.FileHandler(os.path.join(LOG_DIR, 'news_bot.log'), encoding='utf-8')
+        handlers.insert(0, fh)
+    except Exception:
+        pass
+
     logging.basicConfig(
         level=logging.INFO,
         format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
-        handlers=[
-            logging.FileHandler(f"{LOG_DIR}/news_bot.log", encoding='utf-8'),
-            logging.StreamHandler(sys.stdout)
-        ]
+        handlers=handlers
     )
 logger = logging.getLogger(__name__)
 
