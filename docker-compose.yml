@@ -1,0 +1,13 @@
+version: '3.7'
+services:
+  libretranslate:
+    image: libretranslate/libretranslate:latest
+    container_name: libretranslate
+    restart: unless-stopped
+    ports:
+      - "5000:5000"
+    environment:
+      - LISTEN_ADDR=0.0.0.0
+      - DEFAULT_LANGUAGE=en
+    volumes:
+      - ./libre_data:/data

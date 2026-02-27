@@ -292,6 +292,10 @@ EN_KO_KEYWORDS = {
     "dollar": "달러", "oil": "유가", "gold": "금", "silver": "은",
     "bank": "은행", "debt": "부채", "deficit": "적자", "surplus": "흑자",
     "jobs": "고용", "layoff": "해고", "hiring": "채용",
+    # 추가 확장 키워드
+    "ipo": "기업공개", "merger": "인수합병", "acquisition": "인수", "earnings": "실적", "revenue": "매출",
+    "sec": "미 SEC", "fed rate": "연준금리", "fed minutes": "연준회의록", "cpi": "소비자물가지수",
+    "etf": "상장지수펀드", "bloomberg": "블룸버그", "biden": "바이든", "china economy": "중국 경제",
 }
 
 CATEGORY_KO = {
@@ -328,6 +332,26 @@ def _translate_headline(text: str) -> str:
                     return translated.text
             except Exception as e:
                 logger.warning(f"googletrans 번역 실패: {e} - 다음 폴백 시도")
+        # googletrans가 없거나 실패하면 Hugging Face Inference API 시도 (환경변수 HF_API_TOKEN 필요)
+        hf_token = os.environ.get('HF_API_TOKEN')
+        if hf_token:
+            try:
+                hf_headers = {'Authorization': f'Bearer {hf_token}'}
+                # 모델 선택: Helsinki 또는 다른 적합한 번역 모델
+                hf_model = os.environ.get('HF_TRANSLATE_MODEL', 'Helsinki-NLP/opus-mt-en-ko')
+                hf_url = f'https://api-inference.huggingface.co/models/{hf_model}'
+                hf_resp = requests.post(hf_url, headers=hf_headers, json={'inputs': text}, timeout=20)
+                if hf_resp.status_code == 200:
+                    hf_j = hf_resp.json()
+                    if isinstance(hf_j, dict) and 'error' in hf_j:
+                        raise Exception(hf_j['error'])
+                    # HF inference returns list or dict depending on model
+                    if isinstance(hf_j, list) and len(hf_j) and 'translation_text' in hf_j[0]:
+                        return hf_j[0]['translation_text']
+                    if isinstance(hf_j, dict) and 'translation_text' in hf_j:
+                        return hf_j['translation_text']
+            except Exception as e:
+                logger.warning(f"HuggingFace 번역 실패: {e} - 다음 폴백 시도")
         # googletrans가 없거나 실패하면 LibreTranslate 공개 인스턴스 시도
         if requests is not None and _libre_url:
             try:
