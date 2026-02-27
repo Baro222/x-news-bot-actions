@@ -28,6 +28,8 @@ jobs:
 
       - name: Run News Bot
         env:
+          # DRY_RUN: 안전을 위해 기본값을 0으로 설정합니다 (0=실전 발송, 1=테스트 모드)
+          DRY_RUN: '0'
           # Gemini API (OpenAI 호환 모드)
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           OPENAI_BASE_URL: https://generativelanguage.googleapis.com/v1beta/openai/
