@@ -4,4 +4,3 @@ beautifulsoup4
 requests
 lxml
 cryptography
-google-generativeai
