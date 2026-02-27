@@ -4,3 +4,5 @@ beautifulsoup4
 requests
 lxml
 cryptography
+# Optional translation fallbacks
+googletrans==4.0.0-rc1
