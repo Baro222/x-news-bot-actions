@@ -81,6 +81,36 @@ def run_news_cycle():
         }
         with open(result_file, "w", encoding="utf-8") as f:
             json.dump(save_data, f, ensure_ascii=False, indent=2)
+
+        # 홈페이지 연동용: processed_news.json 생성 (repo/data/processed_news.json)
+        try:
+            repo_root = os.path.dirname(os.path.abspath(__file__))
+            data_dir = os.path.join(repo_root, 'data')
+            os.makedirs(data_dir, exist_ok=True)
+            processed_path = os.path.join(data_dir, 'processed_news.json')
+
+            # Flatten ranked_news into a list
+            out_list = []
+            for category, items in ranked_news.items():
+                for it in items:
+                    out_item = {
+                        'title': it.get('_headline') or it.get('headline') or '' ,
+                        'summary': it.get('_summary') or it.get('summary') or '',
+                        'source': it.get('_account') or it.get('source') or '',
+                        'url': it.get('_url') or it.get('url') or '',
+                        'category': category,
+                        'timestamp': it.get('_timestamp') or it.get('timestamp') or start_time.isoformat()
+                    }
+                    out_list.append(out_item)
+
+            # atomic write
+            tmp_path = processed_path + '.tmp'
+            with open(tmp_path, 'w', encoding='utf-8') as f:
+                json.dump(out_list, f, ensure_ascii=False, indent=2)
+            os.replace(tmp_path, processed_path)
+            logger.info(f"processed_news.json 생성: {processed_path} ({len(out_list)} 항목)")
+        except Exception as e:
+            logger.error(f"processed_news.json 생성 실패: {e}", exc_info=True)
         
         end_time = datetime.now(KST)
         elapsed = (end_time - start_time).total_seconds()
