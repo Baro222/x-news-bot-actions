@@ -272,13 +272,15 @@ CATEGORY_KO = {
 
 
 def _translate_headline(text: str) -> str:
-    """영어 텍스트를 간단히 한국어로 변환 (폴백용)"""
+    """영어 텍스트를 간단히 한국어로 변환 (폴백용)
+
+    주의: 모든 텍스트를 강제로 한국어로 변환하도록 변경했습니다 —
+    기존의 "이미 한글 포함 시 그대로 반환" 조건을 제거하여 영어인 경우에도
+    반드시 한국어 변환/치환을 시도합니다.
+    """
     if not text:
         return ""
-    # 이미 한국어가 포함된 경우 그대로 반환
-    if any('\uAC00' <= c <= '\uD7A3' for c in text):
-        return text
-    # 영어 키워드를 한국어로 치환
+    # 영어 키워드를 한국어로 치환 (대소문자 대응)
     result = text
     for en, ko in EN_KO_KEYWORDS.items():
         result = result.replace(en.upper(), ko).replace(en.capitalize(), ko).replace(en, ko)
