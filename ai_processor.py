@@ -10,6 +10,13 @@ import os
 import time
 from typing import List, Dict, Optional
 
+# Google Translate 폴백용
+try:
+    from googletrans import Translator
+    _translator = Translator()
+except Exception:
+    _translator = None
+
 logger = logging.getLogger(__name__)
 
 # config에서 상수 import (실패 시 기본값 사용)
@@ -106,37 +113,50 @@ def classify_tweet_simple(tweet_text: str) -> Optional[str]:
 
 
 def _call_gemini_with_fallback(prompt: str, system_prompt: str) -> Optional[str]:
-    """Gemini API를 호출하며, 429(한도 초과) 시 자동으로 다음 모델로 우회합니다."""
+    """Gemini API를 호출하며, 429(한도 초과) 시 지수 백오프 후 재시도하고, 모델 간 우회합니다.
+
+    백오프 시퀀스: 2s -> 4s -> 8s -> 16s (모델 변경 전 재시도 포함)
+    각 요청에 timeout=30 초를 적용합니다.
+    """
     if _openai_client is None:
         return None
 
+    backoff_base = 2
     for model in GEMINI_MODELS_FALLBACK:
-        try:
-            logger.info(f"Gemini 모델 시도: {model}")
-            response = _openai_client.chat.completions.create(
-                model=model,
-                messages=[
-                    {"role": "system", "content": system_prompt},
-                    {"role": "user", "content": prompt}
-                ],
-                temperature=0.3,
-                max_tokens=4000
-            )
-            result = response.choices[0].message.content
-            logger.info(f"Gemini 모델 성공: {model}")
-            return result
-        except Exception as e:
-            err_str = str(e)
-            if "429" in err_str or "RESOURCE_EXHAUSTED" in err_str or "quota" in err_str.lower():
-                logger.warning(f"모델 {model} 한도 초과 (429) - 다음 모델로 우회...")
-                time.sleep(2)
-                continue
-            elif "404" in err_str or "not found" in err_str.lower():
-                logger.warning(f"모델 {model} 미지원 - 다음 모델로 우회...")
-                continue
-            else:
-                logger.error(f"모델 {model} 오류: {e}")
-                continue
+        attempt = 0
+        while attempt < 4:
+            try:
+                logger.info(f"Gemini 모델 시도: {model} (attempt {attempt+1})")
+                response = _openai_client.chat.completions.create(
+                    model=model,
+                    messages=[
+                        {"role": "system", "content": system_prompt},
+                        {"role": "user", "content": prompt}
+                    ],
+                    temperature=0.3,
+                    max_tokens=4000,
+                    timeout=30
+                )
+                result = response.choices[0].message.content
+                logger.info(f"Gemini 모델 성공: {model}")
+                return result
+            except Exception as e:
+                err_str = str(e)
+                # 429 관련이면 지수 백오프
+                if "429" in err_str or "RESOURCE_EXHAUSTED" in err_str or "quota" in err_str.lower():
+                    wait = backoff_base * (2 ** attempt)
+                    logger.warning(f"모델 {model} 한도 초과 (429) - {wait}s 후 재시도...")
+                    time.sleep(wait)
+                    attempt += 1
+                    continue
+                elif "404" in err_str or "not found" in err_str.lower():
+                    logger.warning(f"모델 {model} 미지원 - 다음 모델로 우회...")
+                    break
+                else:
+                    logger.error(f"모델 {model} 오류: {e}")
+                    break
+        # 다음 모델로 넘어감
+        logger.info(f"다음 모델로 우회합니다")
 
     logger.error("모든 Gemini 모델 한도 초과 또는 오류 - 키워드 폴백 사용")
     return None
@@ -147,14 +167,15 @@ def classify_and_summarize_batch(tweets: List[Dict]) -> List[Dict]:
     if not tweets:
         return []
 
-    batch_size = 25
+    batch_size = 10
+    request_delay = 0.5
     results = []
     for i in range(0, len(tweets), batch_size):
         batch = tweets[i:i + batch_size]
         batch_results = _process_batch(batch)
         results.extend(batch_results)
         if i + batch_size < len(tweets):
-            time.sleep(1)  # API 레이트 리밋 방지
+            time.sleep(request_delay)  # API 레이트 리밋 방지
     return results
 
 
@@ -272,26 +293,41 @@ CATEGORY_KO = {
 
 
 def _translate_headline(text: str) -> str:
-    """영어 텍스트를 간단히 한국어로 변환 (폴백용)
+    """영어 텍스트를 한국어로 변환하는 2단계 전략 (폴백용)
 
-    주의: 모든 텍스트를 강제로 한국어로 변환하도록 변경했습니다 —
-    기존의 "이미 한글 포함 시 그대로 반환" 조건을 제거하여 영어인 경우에도
-    반드시 한국어 변환/치환을 시도합니다.
+    1) 빠른 키워드 치환: EN_KO_KEYWORDS 매핑을 사용하여 핵심 용어를 치환
+    2) 문장 번역 필요 시(영어 비중이 높으면): googletrans를 사용하여 전체 문장 번역
     """
     if not text:
         return ""
-    # 영어 키워드를 한국어로 치환 (대소문자 대응)
+
+    # 1) 키워드 치환
     result = text
     for en, ko in EN_KO_KEYWORDS.items():
         result = result.replace(en.upper(), ko).replace(en.capitalize(), ko).replace(en, ko)
-    # 너무 길면 자르기
-    if len(result) > 50:
-        result = result[:47] + "..."
+
+    # 2) 영어 비중 판단: 영어 알파벳 수 / 전체 문자 수
+    letters = sum(1 for c in text if ('a' <= c.lower() <= 'z'))
+    total = max(1, len(text))
+    eng_ratio = letters / total
+
+    # 영어 비중이 30% 이상이면 googletrans로 전체 문장 번역 시도 (정확도 우선)
+    if eng_ratio >= 0.3 and _translator is not None:
+        try:
+            translated = _translator.translate(text, dest='ko')
+            if getattr(translated, 'text', None):
+                return translated.text
+        except Exception as e:
+            logger.warning(f"googletrans 번역 실패: {e} - 키워드 치환 결과 사용")
+
+    # 결과 길이 제한
+    if len(result) > 200:
+        result = result[:197] + '...'
     return result
 
 
 def _fallback_classify(tweets: List[Dict]) -> List[Dict]:
-    """키워드 기반 폴백 분류 (한국어 출력 포함)"""
+    """키워드 기반 폴백 분류 — 모든 헤드라인/요약을 한국어로 변환하여 반환"""
     fallback_results = []
     for tweet in tweets:
         text = tweet.get("text", "")
@@ -299,15 +335,15 @@ def _fallback_classify(tweets: List[Dict]) -> List[Dict]:
         tweet_copy = tweet.copy()
         tweet_copy["_category"] = category
 
-        # 헤드라인: 영어면 번역 시도, 한국어면 그대로
         raw_text = text.strip().replace('\n', ' ')
-        headline = _translate_headline(raw_text[:50])
+        # 헤드라인: _translate_headline으로 강제 한글 변환
+        headline = _translate_headline(raw_text[:120])
         tweet_copy["_headline"] = headline if headline else raw_text[:50]
 
-        # 요약: 원문 앞부분 사용 (영어면 번역 키워드 치환)
-        summary_raw = raw_text[:200]
+        # 요약: _translate_headline으로 한글 변환
+        summary_raw = raw_text[:400]
         tweet_copy["_summary"] = _translate_headline(summary_raw) if summary_raw else ""
-        tweet_copy["_analysis"] = "(키워드 기반 자동 분류)"
+        tweet_copy["_analysis"] = "(AI 폴백 자동 분류)"
         tweet_copy["_importance"] = 5
         fallback_results.append(tweet_copy)
     return fallback_results
