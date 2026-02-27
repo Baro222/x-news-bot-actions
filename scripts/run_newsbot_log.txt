@@ -1,0 +1,26 @@
+﻿2026-02-27T03:19:30.0001643Z ##[group]Run python main.py
+2026-02-27T03:19:30.0001964Z [36;1mpython main.py[0m
+2026-02-27T03:19:30.0052974Z shell: /usr/bin/bash -e {0}
+2026-02-27T03:19:30.0053222Z env:
+2026-02-27T03:19:30.0053484Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.14/x64
+2026-02-27T03:19:30.0053926Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.14/x64/lib/pkgconfig
+2026-02-27T03:19:30.0054537Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.14/x64
+2026-02-27T03:19:30.0054913Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.14/x64
+2026-02-27T03:19:30.0055294Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.14/x64
+2026-02-27T03:19:30.0055672Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.14/x64/lib
+2026-02-27T03:19:30.0056317Z   OPENAI_API_KEY: ***
+2026-02-27T03:19:30.0056718Z   OPENAI_BASE_URL: https://api.githubcopilot.com
+2026-02-27T03:19:30.0057136Z   TELEGRAM_BOT_TOKEN: ***
+2026-02-27T03:19:30.0057400Z   TELEGRAM_CHANNEL_ID: ***
+2026-02-27T03:19:30.0057636Z   TELEGRAM_API_ID: ***
+2026-02-27T03:19:30.0057938Z   TELEGRAM_API_HASH: ***
+2026-02-27T03:19:30.0059756Z   TELEGRAM_SESSION: ***
+2026-02-27T03:19:30.0059979Z ##[endgroup]
+2026-02-27T03:19:30.0396746Z Traceback (most recent call last):
+2026-02-27T03:19:30.0403955Z   File "/home/runner/work/x-news-bot-actions/x-news-bot-actions/main.py", line 14, in <module>
+2026-02-27T03:19:30.0404798Z     os.makedirs(LOG_DIR, exist_ok=True)
+2026-02-27T03:19:30.0405255Z   File "<frozen os>", line 215, in makedirs
+2026-02-27T03:19:30.0405685Z   File "<frozen os>", line 215, in makedirs
+2026-02-27T03:19:30.0406092Z   File "<frozen os>", line 225, in makedirs
+2026-02-27T03:19:30.0406554Z PermissionError: [Errno 13] Permission denied: '/home/ubuntu'
+2026-02-27T03:19:30.0453954Z ##[error]Process completed with exit code 1.
