@@ -1,22 +1,19 @@
 """
-Google Gemini API를 사용하여 트윗을 분류, 요약, 랭킹 처리하는 모듈
+OpenAI GPT를 사용하여 트윗을 분류, 요약, 랭킹 처리하는 모듈
 4개 대주제: 지정학, 경제, 트럼프, 암호화폐
-2중 한국어 강제 로직 포함: AI 응답 후 영어 비중 검사 및 재번역
 """
 
 import json
 import logging
 import os
-import requests
 from typing import List, Dict, Optional, Tuple
+from openai import OpenAI
 from config import OPENAI_API_KEY, MAX_NEWS_PER_CATEGORY, MIN_NEWS_PER_CATEGORY
 
 logger = logging.getLogger(__name__)
 
-# Gemini API 설정
-GEMINI_API_KEY = os.getenv("OPENAI_API_KEY")  # 기존 환경변수 이름을 그대로 사용 (GitHub Secrets 호환성)
-GEMINI_MODEL = "gemini-2.5-flash"
-GEMINI_API_URL = f"https://generativelanguage.googleapis.com/v1beta/models/{GEMINI_MODEL}:generateContent?key={GEMINI_API_KEY}"
+# OpenAI 클라이언트 초기화
+client = OpenAI()  # OPENAI_API_KEY 환경변수에서 자동으로 가져옴
 
 
 CATEGORY_KEYWORDS = {
@@ -48,63 +45,6 @@ CATEGORY_KEYWORDS = {
 }
 
 
-def is_korean_text(text: str) -> bool:
-    """텍스트가 한국어인지 확인합니다."""
-    korean_count = sum(1 for c in text if ord(c) >= 0xAC00 and ord(c) <= 0xD7A3)
-    english_count = sum(1 for c in text if c.isalpha() and ord(c) < 128)
-    
-    # 한국어가 30% 이상이면 한국어로 간주
-    total_chars = korean_count + english_count
-    if total_chars == 0:
-        return True
-    
-    return korean_count / total_chars >= 0.3
-
-
-def translate_to_korean_if_needed(text: str) -> str:
-    """영어 비중이 높으면 한국어로 재번역합니다 (2중 방어)."""
-    if is_korean_text(text):
-        return text
-    
-    # 영어가 많으면 재번역 요청
-    logger.warning(f"영어 비중이 높은 텍스트 감지, 한국어 재번역 시도: {text[:100]}")
-    
-    try:
-        # Gemini를 사용한 긴급 재번역
-        prompt = f"""다음 텍스트를 한국어로 번역하세요. 반드시 한국어로만 응답하세요:
-
-{text}
-
-한국어 번역:"""
-        
-        payload = {
-            "contents": [{
-                "parts": [{"text": prompt}]
-            }],
-            "systemInstruction": {
-                "parts": [{
-                    "text": "당신은 전문 번역가입니다. 모든 응답은 100% 한국어로만 작성하세요. 영어나 다른 외국어를 절대 사용하면 안 됩니다."
-                }]
-            },
-            "generationConfig": {
-                "temperature": 0.3,
-                "maxOutputTokens": 2000
-            }
-        }
-        
-        response = requests.post(GEMINI_API_URL, json=payload, timeout=30)
-        response.raise_for_status()
-        
-        result_data = response.json()
-        translated = result_data['candidates'][0]['content']['parts'][0]['text'].strip()
-        logger.info(f"재번역 완료: {translated[:100]}")
-        return translated
-        
-    except Exception as e:
-        logger.error(f"재번역 실패: {e}, 원본 텍스트 반환")
-        return text
-
-
 def classify_tweet_simple(tweet_text: str) -> Optional[str]:
     """키워드 기반으로 트윗을 빠르게 분류합니다."""
     text_lower = tweet_text.lower()
@@ -122,11 +62,11 @@ def classify_tweet_simple(tweet_text: str) -> Optional[str]:
 
 
 def classify_and_summarize_batch(tweets: List[Dict]) -> List[Dict]:
-    """Gemini를 사용하여 트윗 배치를 분류하고 요약합니다."""
+    """GPT를 사용하여 트윗 배치를 분류하고 요약합니다."""
     if not tweets:
         return []
     
-    # 트윗 텍스트 준비 (최대 30개씩 처리)
+    # 트윗 텍스트 준비 (최대 50개씩 처리)
     batch_size = 30
     results = []
     
@@ -139,7 +79,7 @@ def classify_and_summarize_batch(tweets: List[Dict]) -> List[Dict]:
 
 
 def _process_batch(tweets: List[Dict]) -> List[Dict]:
-    """트윗 배치를 Gemini로 처리합니다."""
+    """트윗 배치를 GPT로 처리합니다."""
     
     # 트윗 목록 준비
     tweet_list = []
@@ -152,132 +92,71 @@ def _process_batch(tweets: List[Dict]) -> List[Dict]:
     
     tweets_text = "\n\n---\n\n".join(tweet_list)
     
-    # ★★★ 극단적 한국어 강제 프롬프트 ★★★
-    prompt = f"""당신은 글로벌 금융, 암호화폐, 정치 시장 분석 전문가입니다. 다음 트윗들을 심층 분석하여 각각을 분류하고 요약해주세요.
-
-★★★ 절대 준수 규칙 (CRITICAL - 이 규칙을 어기면 안 됩니다) ★★★
-1. 모든 응답은 반드시 100% 한국어로만 작성되어야 합니다.
-2. 어떠한 경우에도 영어, 중국어, 일본어, 기타 외국어를 사용하면 안 됩니다.
-3. 영어 트윗이 입력되면 반드시 한국어로 번역한 후 분석하세요.
-4. JSON 필드의 모든 값(value)도 100% 한국어여야 합니다.
-5. 번역되지 않은 영어 단어나 문장이 있으면 절대 안 됩니다.
-6. 회사명, 인물명, 기술용어도 한국어로 표기하세요 (예: 비트코인, 이더리움, 연준, 나스닥).
-7. 응답에 영어가 1글자라도 포함되면 실패입니다.
+    prompt = f"""다음 트윗들을 분석하여 각각을 분류하고 요약해주세요.
 
 분류 기준:
-- 지정학: 전쟁, 분쟁, 군사, 외교, 국제관계, 지역갈등, 제재, 동맹 등
-- 경제: 경제지표, 금융시장, 무역, 통화정책, 기업실적, 인플레이션, 금리, 주식시장 등
-- 트럼프: 트럼프 정책, 발언, 행정부 소식, 대선 관련 뉴스 등
-- 암호화폐: 비트코인, 이더리움, 크립토 시장, 블록체인, 규제, 거래소 뉴스 등
+- 지정학: 전쟁, 분쟁, 군사, 외교, 국제관계, 지역갈등 등
+- 경제: 경제지표, 금융시장, 무역, 통화정책, 기업실적 등
+- 트럼프: 트럼프 관련 정책, 발언, 행정부 소식 등
+- 암호화폐: 비트코인, 이더리움, 크립토 시장, 블록체인 등
+- 기타: 위 4가지에 해당하지 않는 경우
 
-각 트윗에 대해 다음 JSON 형식으로 응답하세요 (모든 값은 한국어):
+각 트윗에 대해 다음 JSON 형식으로 응답하세요:
 {{
   "results": [
     {{
       "index": 0,
-      "category": "암호화폐",
-      "headline": "비트코인 사상 최고가 돌파 (15-20자, 명사형으로 끝내기)",
-      "summary": "비트코인이 사상 최고가를 경신했으며, 기관투자자들의 수요 증가가 주요 요인. 이더리움 등 주요 알트코인도 동반 상승 추세 보임.",
-      "analysis": "연방준비제도의 금리 인하 신호와 인플레이션 완화 기대감이 암호화폐 시장에 긍정적 영향. 기관투자자들의 진입 확대로 시장 구조 변화 가속화.",
-      "importance": 9,
-      "market_impact": "암호화폐 전체 시장에 강한 긍정 신호. 기관투자자 진입 가속화 예상"
+      "category": "경제",
+      "headline": "헤드라인 (20자 이내, 명사형으로 끝내기)",
+      "summary": "핵심 내용 요약 (2-3문장, 명사형으로 끝내기)",
+      "analysis": "간단한 배경/원인 분석 (1-2문장, 명사형으로 끝내기)",
+      "importance": 1~10 (중요도 점수)
     }}
   ]
 }}
 
-응답 작성 규칙:
-1. 헤드라인: 15-20자, 명사형으로 끝내기 (예: "~상승", "~발표", "~규제", "~하락")
-2. 요약: 2-3문장, 핵심 내용과 시장 영향 포함, 명사형으로 끝내기
-3. 분석: 1-2문장, 원인/배경/시장 영향 분석, 명사형으로 끝내기
-4. market_impact: 시장에 미치는 실질적 영향을 명확하게 기술
-5. 중요도: 파급력(1~3점), 시장 영향(4~6점), 긴급성(7~10점) 기준 평가
-6. 모든 외국어 트윗은 먼저 한국어로 번역한 후 분석하세요.
-7. 내용이 중복되거나 매우 유사한 트윗들은 가장 정보가 많은 것만 선택하세요.
-8. 응답에 영어가 포함되면 안 됩니다. 모든 내용을 한국어로 번역하세요.
-9. 마지막 확인: 응답을 다시 읽고 영어가 있는지 확인하세요. 영어가 있으면 한국어로 수정하세요.
+중요 규칙:
+1. 헤드라인과 요약은 반드시 명사형으로 끝내야 합니다 (예: "~비판", "~발표", "~확대", "~하락")
+2. "했습니다", "합니다", "됩니다" 등 서술형 종결어미 사용 금지
+3. 영어 트윗은 한국어로 번역하여 요약
+4. 중요도는 파급력, 시장 영향, 사회적 관심도를 기준으로 평가
 
 트윗 목록:
 {tweets_text}"""
     
     try:
-        payload = {
-            "contents": [{
-                "parts": [{"text": prompt}]
-            }],
-            "systemInstruction": {
-                "parts": [{
-                    "text": "당신은 글로벌 금융, 암호화폐, 정치 시장 분석 전문가입니다. ★★★ 중요: 모든 응답은 100% 한국어로만 작성하세요. 영어나 다른 외국어를 절대 사용하면 안 됩니다. 회사명, 인물명, 기술용어도 모두 한국어로 표기하세요. 응답에 영어가 1글자라도 포함되면 안 됩니다. ★★★"
-                }]
-            },
-            "generationConfig": {
-                "temperature": 0.3,
-                "maxOutputTokens": 4000,
-                "responseMimeType": "application/json"
-            }
-        }
+        response = client.chat.completions.create(
+            model="gpt-4.1-mini",
+            messages=[
+                {"role": "system", "content": "당신은 글로벌 뉴스와 금융 시장을 전문적으로 분석하는 뉴스 큐레이터입니다."},
+                {"role": "user", "content": prompt}
+            ],
+            response_format={"type": "json_object"},
+            temperature=0.3,
+            max_tokens=4000
+        )
         
-        response = requests.post(GEMINI_API_URL, json=payload, timeout=60)
-        response.raise_for_status()
+        result_text = response.choices[0].message.content
+        result_data = json.loads(result_text)
+        ai_results = result_data.get("results", [])
         
-        result_data = response.json()
-        result_text = result_data['candidates'][0]['content']['parts'][0]['text']
-        
-        # ★★★ 2중 방어: 응답 전체 한국어 검증 ★★★
-        logger.info(f"Gemini 원본 응답 (처음 200자): {result_text[:200]}")
-        
-        if not is_korean_text(result_text):
-            logger.warning(f"영어 비중이 높은 응답 감지, 재번역 시도")
-            result_text = translate_to_korean_if_needed(result_text)
-        
-        # JSON 파싱
-        ai_data = json.loads(result_text)
-        ai_results = ai_data.get("results", [])
-        
-        # 원본 트윗 데이터와 AI 결과 합치기 (중복 제거 포함)
+        # 원본 트윗 데이터와 AI 결과 합치기
         processed_tweets = []
-        seen_headlines = set()
-        
         for ai_result in ai_results:
             idx = ai_result.get("index", -1)
-            headline = ai_result.get("headline", "").strip()
-            
-            # ★ 각 필드 한국어 재검증 ★
-            if not is_korean_text(headline):
-                headline = translate_to_korean_if_needed(headline)
-            
-            summary = ai_result.get("summary", "").strip()
-            if not is_korean_text(summary):
-                summary = translate_to_korean_if_needed(summary)
-            
-            analysis = ai_result.get("analysis", "").strip()
-            if not is_korean_text(analysis):
-                analysis = translate_to_korean_if_needed(analysis)
-            
-            market_impact = ai_result.get("market_impact", "").strip()
-            if not is_korean_text(market_impact):
-                market_impact = translate_to_korean_if_needed(market_impact)
-            
-            # 헤드라인 기준 중복 제거
-            if not headline or headline in seen_headlines:
-                continue
-            
             if 0 <= idx < len(tweets):
                 tweet = tweets[idx].copy()
                 tweet["_category"] = ai_result.get("category", "기타")
-                tweet["_headline"] = headline
-                tweet["_summary"] = summary
-                tweet["_analysis"] = analysis
-                tweet["_market_impact"] = market_impact
+                tweet["_headline"] = ai_result.get("headline", "")
+                tweet["_summary"] = ai_result.get("summary", "")
+                tweet["_analysis"] = ai_result.get("analysis", "")
                 tweet["_importance"] = ai_result.get("importance", 5)
-                
                 processed_tweets.append(tweet)
-                seen_headlines.add(headline)
         
-        logger.info(f"처리 완료: {len(processed_tweets)}개 트윗 (모두 한국어)")
         return processed_tweets
         
     except Exception as e:
-        logger.error(f"Gemini 처리 오류: {e}")
+        logger.error(f"GPT 처리 오류: {e}")
         # 폴백: 키워드 기반 분류
         fallback_results = []
         for tweet in tweets:
@@ -288,7 +167,6 @@ def _process_batch(tweets: List[Dict]) -> List[Dict]:
             tweet_copy["_headline"] = text[:50] + "..."
             tweet_copy["_summary"] = text[:200]
             tweet_copy["_analysis"] = ""
-            tweet_copy["_market_impact"] = ""
             tweet_copy["_importance"] = 5
             fallback_results.append(tweet_copy)
         return fallback_results
@@ -357,7 +235,7 @@ def rank_and_filter_by_category(processed_tweets: List[Dict]) -> Dict[str, List[
     
     랭킹 기준 (우선순위):
     1. 키워드 중복도: 여러 계정이 동시에 언급하는 주제일수록 높은 점수
-    2. AI 중요도: Gemini가 평가한 뉴스 중요도 (1~10)
+    2. AI 중요도: GPT가 평가한 뉴스 중요도 (1~10)
     3. 최신성: 최근에 올라온 포스팅일수록 높은 점수
     4. 참여도: 좋아요/리트윗 등 (Nitter RSS에서는 0이므로 보조 지표)
     """
@@ -423,22 +301,92 @@ def rank_and_filter_by_category(processed_tweets: List[Dict]) -> Dict[str, List[
         logger.info(f"  [{category}] TOP {len(ranked[category])}개 선정:")
         for i, t in enumerate(ranked[category][:3], 1):
             logger.info(
-                f"    {i}. [{t.get('_final_score', 0):.1f}점] "
-                f"키워드:{t.get('_keyword_score', 0):.1f} "
-                f"중요도:{t.get('_importance', 0)*4:.0f} "
-                f"최신:{t.get('_recency_score', 0):.1f} | "
-                f"{t.get('_headline', '')[:40]}"
+                f"    {i}. [{t.get('_final_score',0):.1f}점] "
+                f"키워드:{t.get('_keyword_score',0):.1f} "
+                f"중요도:{t.get('_importance',0)*4:.0f} "
+                f"최신:{t.get('_recency_score',0):.1f} | "
+                f"{t.get('_headline','')[:40]}"
             )
     
     return ranked
 
 
 def process_tweets(tweets: List[Dict]) -> Dict[str, List[Dict]]:
-    """트윗 목록을 처리하여 카테고리별 랭킹된 뉴스를 반환합니다."""
-    # 1. AI를 사용한 분류 및 요약
-    processed_tweets = classify_and_summarize_batch(tweets)
+    """트윗 전체 처리 파이프라인: 분류 -> 요약 -> 랭킹"""
+    logger.info(f"총 {len(tweets)}개 트윗 AI 처리 시작...")
     
-    # 2. 카테고리별 랭킹 및 필터링
-    ranked_news = rank_and_filter_by_category(processed_tweets)
+    # 기타 카테고리 제외하고 관련 트윗만 처리
+    # 먼저 키워드로 빠르게 필터링
+    relevant_tweets = []
+    for tweet in tweets:
+        text = tweet.get("text", "")
+        category = classify_tweet_simple(text)
+        if category:
+            tweet["_pre_category"] = category
+            relevant_tweets.append(tweet)
+        else:
+            # 키워드 없어도 GPT에게 판단 맡김
+            tweet["_pre_category"] = "미분류"
+            relevant_tweets.append(tweet)
     
-    return ranked_news
+    logger.info(f"AI 분류·요약 처리 중... ({len(relevant_tweets)}개)")
+    
+    # GPT로 분류 및 요약
+    processed = classify_and_summarize_batch(relevant_tweets)
+    
+    # 기타 제외하고 4개 카테고리만 필터링
+    filtered = [t for t in processed if t.get("_category") in ["지정학", "경제", "트럼프", "암호화폐"]]
+    
+    logger.info(f"분류 완료: {len(filtered)}개 (기타 제외)")
+    
+    # 카테고리별 랭킹
+    ranked = rank_and_filter_by_category(filtered)
+    
+    # 결과 요약 로그
+    for cat, items in ranked.items():
+        logger.info(f"  {cat}: {len(items)}개")
+    
+    return ranked
+
+
+if __name__ == "__main__":
+    logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+    
+    # 테스트 데이터
+    test_tweets = [
+        {
+            "text": "US housing market activity has rarely been weaker: The US Pending Home Sales Index fell -0.8% MoM in January, to 70.9, an all-time low.",
+            "_account": "KobeissiLetter",
+            "_engagement_score": 2913,
+            "_url": "https://x.com/KobeissiLetter/status/123"
+        },
+        {
+            "text": "Bitcoin surges past $100,000 as institutional demand continues to grow. ETF inflows hit record levels.",
+            "_account": "CoinTelegraph",
+            "_engagement_score": 1500,
+            "_url": "https://x.com/CoinTelegraph/status/456"
+        },
+        {
+            "text": "Trump signs executive order on immigration, expanding border enforcement measures significantly.",
+            "_account": "FoxNews",
+            "_engagement_score": 3000,
+            "_url": "https://x.com/FoxNews/status/789"
+        },
+        {
+            "text": "Russia launches major offensive in eastern Ukraine, NATO allies call emergency meeting.",
+            "_account": "Reuters",
+            "_engagement_score": 5000,
+            "_url": "https://x.com/Reuters/status/101"
+        }
+    ]
+    
+    print("AI 처리 테스트 시작...")
+    result = process_tweets(test_tweets)
+    
+    for category, items in result.items():
+        print(f"\n=== {category} ({len(items)}개) ===")
+        for i, item in enumerate(items, 1):
+            print(f"{i}. {item.get('_headline', 'N/A')}")
+            print(f"   요약: {item.get('_summary', 'N/A')[:100]}")
+            print(f"   분석: {item.get('_analysis', 'N/A')[:80]}")
+            print(f"   링크: {item.get('_url', 'N/A')}")

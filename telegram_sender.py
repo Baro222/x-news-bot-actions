@@ -75,8 +75,12 @@ CATEGORY_ANALYSIS_EMOJI = {
 
 
 def _ce(emoji_id: int, fallback: str = "●") -> str:
-    """커스텀 이모지 HTML 태그 생성"""
-    return f'<tg-emoji emoji-id="{emoji_id}">{fallback}</tg-emoji>'
+    """커스텀 이모지 태그 대신 안전한 유니코드 폴백을 반환합니다.
+    환경에서 Telethon/프리미엄 이모지 전송이 불안정하므로, 빠른 복구를 위해
+    항상 fallback 유니코드 이모지를 사용하도록 변경합니다.
+    """
+    # 안전 모드: 커스텀 tg-emoji 태그 대신 유니코드 폴백만 사용
+    return fallback
 
 
 def _send_via_bot(text: str) -> bool:
@@ -95,11 +99,22 @@ def _send_via_bot(text: str) -> bool:
            "-d", payload_json]
     try:
         result = subprocess.run(cmd, capture_output=True, text=True, timeout=35)
-        if result.returncode == 0 and result.stdout:
-            response = json.loads(result.stdout)
-            return response.get("ok", False)
+        stdout = (result.stdout or '').strip()
+        stderr = (result.stderr or '').strip()
+        logger.debug(f"curl stdout: {stdout}")
+        if stderr:
+            logger.debug(f"curl stderr: {stderr}")
+        if result.returncode == 0 and stdout:
+            try:
+                response = json.loads(stdout)
+                if not response.get("ok", False):
+                    logger.warning(f"봇 API 응답 오류: {response}")
+                return response.get("ok", False)
+            except Exception as e:
+                logger.error(f"봇 API 응답 파싱 실패: {e} - raw: {stdout}")
+                return False
     except Exception as e:
-        logger.error(f"봇 API 발송 실패: {e}")
+        logger.error(f"봇 API 발송 실패: {e}", exc_info=True)
     return False
 
 
@@ -253,20 +268,17 @@ def send_news_report(ranked_news: Dict[str, List[Dict]]) -> bool:
 
 
 def _send_telethon_or_bot(messages: List[str]) -> bool:
-    """Telethon 우선, 실패 시 봇 API 폴백"""
-    try:
-        success = asyncio.run(_send_via_telethon(messages))
-        if success:
-            logger.info(f"Telethon으로 {len(messages)}개 메시지 발송 완료")
-            return True
-    except Exception as e:
-        logger.warning(f"Telethon 발송 실패, 봇 API로 폴백: {e}")
-
-    # 봇 API 폴백
+    """Bot API 전용 모드: Telethon 경로를 우회하고 봇 API로만 발송합니다.
+    (환경에서 Telethon 실행이 불안정하므로 안전하게 Bot API만 사용)
+    """
+    # 봇 API로 직접 발송
     success_count = 0
     for msg in messages:
-        if _send_via_bot(msg):
-            success_count += 1
+        try:
+            if _send_via_bot(msg):
+                success_count += 1
+        except Exception as e:
+            logger.error(f"봇 API 발송 중 예외: {e}")
     logger.info(f"봇 API로 {success_count}/{len(messages)}개 메시지 발송")
     return success_count > 0
 

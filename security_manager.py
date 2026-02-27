@@ -204,16 +204,16 @@ def create_github_safe_copy(src_dir: str, dst_dir: str) -> bool:
 
 
 def initialize_vault():
-    """환경 변수에서 민감 정보를 읽어 vault에 암호화 저장"""
+    """현재 config.py의 민감 정보를 vault에 암호화 저장"""
     sensitive_data = {
-        "TELEGRAM_BOT_TOKEN":  os.environ.get("TELEGRAM_BOT_TOKEN", "YOUR_BOT_TOKEN_HERE"),
-        "TELEGRAM_CHANNEL_ID": os.environ.get("TELEGRAM_CHANNEL_ID", "YOUR_CHANNEL_ID_HERE"),
-        "TELEGRAM_API_ID":     int(os.environ.get("TELEGRAM_API_ID", "0")),
-        "TELEGRAM_API_HASH":   os.environ.get("TELEGRAM_API_HASH", "YOUR_API_HASH_HERE"),
-        "TELEGRAM_SESSION":    os.environ.get("TELEGRAM_SESSION", "YOUR_SESSION_STRING_HERE"),
-        "TWITTER_API_KEY":     os.environ.get("TWITTER_API_KEY", "YOUR_TWITTER_API_KEY_HERE"),
-        "PHONE_NUMBER":        os.environ.get("PHONE_NUMBER", "+821000000000"),
-        "TWITTERAPI_IO_KEY":   os.environ.get("TWITTERAPI_IO_KEY", "YOUR_TWITTERAPI_IO_KEY_HERE"),
+        "TELEGRAM_BOT_TOKEN":  "8237707628:AAHQRzAzayLpSsgKpSe1KO3nBeGS8KY_RHU",
+        "TELEGRAM_CHANNEL_ID": "-1001645099595",
+        "TELEGRAM_API_ID":     39695050,
+        "TELEGRAM_API_HASH":   "1107f6b4296cf6fcf30ab09604e85111",
+        "TELEGRAM_SESSION":    "1BVtsOIIBu1SJGtmzYt3ox3qiB2st_IcdOPR2RKs4wqgGcaez1xbYP65TI8zSVHbAKVjg85tzkyfU2gBZjRRiBTApuiHGt-LTxrMUlBThVyH4g703lQ7GKylKUvuS6N-utGZhpw1v6IaiqOEaBOHllm7IZt4Kiwx_-sGEjkRIdPSbKGc61skoBVf62td5-ffY9n3ys7MLC2_SdyMRIvFTcwvg_l1vZtrRciTe1ytTMew-w02Az47ZMHXxE0Gs3NuF1GazJjLUF-GwlD5gKkkCj_kIX2sjvrzbKlmcxN52mvBS_au419TJ229Q4OEtthf0cZEsxUDxVN5ujSUwlfdTcbI8PbYM8kU=",
+        "TWITTER_API_KEY":     "new1_23710e6a69be4ad68f60d24285c99a2f",
+        "PHONE_NUMBER":        "+8201034553075",
+        "TWITTERAPI_IO_KEY":   "new1_23710e6a69be4ad68f60d24285c99a2f",
     }
     return encrypt_vault(sensitive_data)
 
@@ -238,7 +238,7 @@ if __name__ == "__main__":
 
     # 2. 디렉토리 보안 스캔
     print("\n[2] 프로젝트 보안 스캔...")
-    result = scan_directory_for_secrets(os.getcwd())
+    result = scan_directory_for_secrets("/home/ubuntu/x_news_bot")
     print(f"  스캔된 파일: {result['scanned_files']}개")
     print(f"  발견된 민감 정보: {result['total_findings']}건")
     if result['findings']:
@@ -246,5 +246,11 @@ if __name__ == "__main__":
             print(f"  ⚠  {f['file'].split('/')[-1]}:{f['line']} - {f['label']}: {f['preview']}")
         if len(result['findings']) > 5:
             print(f"  ... 외 {len(result['findings'])-5}건")
+
+    # 3. GitHub 안전 복사본 생성
+    print("\n[3] GitHub 안전 복사본 생성...")
+    if create_github_safe_copy("/home/ubuntu/x_news_bot", "/home/ubuntu/x_news_bot_github"):
+        print("  ✅ /home/ubuntu/x_news_bot_github 생성 완료")
+        print("  (민감 정보 마스킹 처리됨)")
 
     print("\n✅ 보안 시스템 초기화 완료")

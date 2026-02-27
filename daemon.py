@@ -79,32 +79,19 @@ def main():
     logger.info("=" * 50)
     logger.info("X 뉴스봇 데스 시작")
     logger.info(f"시작 시간: {datetime.now(KST).strftime('%Y-%m-%d %H:%M KST')}")
-    logger.info("실행 주기: 4시간마다 (00:00, 04:00, 08:00, 12:00, 16:00, 20:00 KST)")
+    logger.info("실행 주기: 지금 즉시 실행 후 4시간마다 반복")
     logger.info("=" * 50)
     
-    # 4시간마다 실행 (KST 기준)
-    # 스케줄러는 UTC 기준이므로 KST-9시간 적용
-    # KST 00:00 = UTC 15:00 (전날)
-    # KST 04:00 = UTC 19:00 (전날)
-    # KST 08:00 = UTC 23:00 (전날)
-    # KST 12:00 = UTC 03:00
-    # KST 16:00 = UTC 07:00
-    # KST 20:00 = UTC 11:00
-    schedule.every().day.at("15:00").do(job)  # KST 00:00
-    schedule.every().day.at("19:00").do(job)  # KST 04:00
-    schedule.every().day.at("23:00").do(job)  # KST 08:00
-    schedule.every().day.at("03:00").do(job)  # KST 12:00
-    schedule.every().day.at("07:00").do(job)  # KST 16:00
-    schedule.every().day.at("11:00").do(job)  # KST 20:00
+    # 지금 즉시 실행 후 4시간마다 반복
+    schedule.every(4).hours.do(job)
     
     # 시작 시 즉시 한 번 실행
     logger.info("시작 시 즉시 실행...")
     job()
     
-    # 다음 실행 시간 안내
-    next_run = schedule.next_run()
-    if next_run:
-        logger.info(f"다음 실행 예정: {next_run.strftime('%Y-%m-%d %H:%M')}")
+    # 다음 실행 시간 안내 (4시간 후)
+    next_run_kst = datetime.now(KST) + timedelta(hours=4)
+    logger.info(f"다음 실행 예정: {next_run_kst.strftime('%Y-%m-%d %H:%M KST')} (4시간 후)")
     
     # 스케줄 루프
     while running:

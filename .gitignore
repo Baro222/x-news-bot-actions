@@ -1,23 +1,45 @@
-# Python
-__pycache__/
-*.py[cod]
-*.class
-.venv/
-venv/
-ENV/
-env/
+# ============================================================
+# 보안 규칙: 절대 GitHub에 업로드 금지 파일 목록
+# ============================================================
 
-# Sensitive files
-.env
+# 보안 폴더 (암호화 키, vault)
 .secure/
-*.pid
-logs/
+*.key
+*.enc
+
+# 환경 변수 파일
+.env
+.env.*
+!.env.example
+
+# 세션 및 인증 파일
 *.session
 *.session-journal
+gen_session.py
 
-# Dashboard
-dashboard/node_modules/
-dashboard/dist/
+# 로그 파일
+logs/
+*.log
 
-# OS
+# 임시 파일
+*.pid
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# 개발 도구
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# 조사/임시 스크립트
+search_emoji_packs.py
+get_emoji_ids.py
+fxtwitter_research.md
+
+# OS 파일
 .DS_Store
+Thumbs.db
