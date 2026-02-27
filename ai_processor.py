@@ -7,13 +7,29 @@ import json
 import logging
 import os
 from typing import List, Dict, Optional, Tuple
-from openai import OpenAI
-from config import OPENAI_API_KEY, MAX_NEWS_PER_CATEGORY, MIN_NEWS_PER_CATEGORY
-
-logger = logging.getLogger(__name__)
-
-# OpenAI 클라이언트 초기화
-client = OpenAI()  # OPENAI_API_KEY 환경변수에서 자동으로 가져옴
+# OpenAI 클라이언트 초기화 (옵션)
+# OPENAI API 키가 없거나 클라이언트 초기화에 실패하면 client=None으로 두어
+# 로컬 폴백(키워드 기반)을 사용하도록 합니다.
+try:
+    from openai import OpenAI
+    from config import OPENAI_API_KEY, MAX_NEWS_PER_CATEGORY, MIN_NEWS_PER_CATEGORY
+    logger = logging.getLogger(__name__)
+    try:
+        client = OpenAI()  # 환경변수 OPENAI_API_KEY에서 자동으로 가져옴
+    except Exception as e:
+        logger.warning(f"OpenAI client init failed, falling back to local heuristics: {e}")
+        client = None
+except Exception as e:
+    # openai 패키지가 없거나 import 실패 시 폴백
+    logger = logging.getLogger(__name__)
+    logger.warning(f"openai 모듈 로드 실패, 폴백으로 동작합니다: {e}")
+    client = None
+    # MAX/MIN 설정 기본값 (안정성 목적)
+    try:
+        from config import MAX_NEWS_PER_CATEGORY, MIN_NEWS_PER_CATEGORY
+    except Exception:
+        MAX_NEWS_PER_CATEGORY = 10
+        MIN_NEWS_PER_CATEGORY = 5
 
 
 CATEGORY_KEYWORDS = {
@@ -124,6 +140,22 @@ def _process_batch(tweets: List[Dict]) -> List[Dict]:
 트윗 목록:
 {tweets_text}"""
     
+    # 만약 OpenAI 클라이언트가 초기화되지 않았다면 폴백 로직으로 바로 처리
+    if client is None:
+        logger.info("OpenAI client 미설정 - 폴백 키워드 기반 분류 사용")
+        fallback_results = []
+        for tweet in tweets:
+            text = tweet.get("text", "")
+            category = classify_tweet_simple(text) or "기타"
+            tweet_copy = tweet.copy()
+            tweet_copy["_category"] = category
+            tweet_copy["_headline"] = (text.strip().replace('\n',' ')[:50] + "...") if text else ""
+            tweet_copy["_summary"] = (text.strip().replace('\n',' ')[:200]) if text else ""
+            tweet_copy["_analysis"] = "(자동 폴백 요약)"
+            tweet_copy["_importance"] = 5
+            fallback_results.append(tweet_copy)
+        return fallback_results
+
     try:
         response = client.chat.completions.create(
             model="gpt-4.1-mini",
