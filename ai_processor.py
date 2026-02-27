@@ -8,36 +8,51 @@ import logging
 import os
 from typing import List, Dict, Optional, Tuple
 
-# OpenAI 클라이언트 초기화 (옵션)
-# OPENAI_API_KEY가 없거나 클라이언트 초기화에 실패하면 client=None으로 두어
-# 로컬 폴백(키워드 기반)을 사용하도록 합니다.
+# AI 클라이언트 초기화 (우선순위: google.generativeai -> OpenAI compatibility)
+# OPENAI_API_KEY 환경변수에는 Gemini(Generative AI) 키가 들어있다고 가정합니다.
+logger = logging.getLogger(__name__)
+client = None
+use_genai = False
 try:
-    from openai import OpenAI
-    from config import OPENAI_API_KEY, MAX_NEWS_PER_CATEGORY, MIN_NEWS_PER_CATEGORY
-    logger = logging.getLogger(__name__)
-
-    if OPENAI_API_KEY:
+    import google.generativeai as genai
+    api_key = os.environ.get('OPENAI_API_KEY') or os.environ.get('GENAI_API_KEY')
+    if api_key:
         try:
-            # 환경변수 OPENAI_BASE_URL이 설정되어 있으면 자동으로 사용됨
-            # Gemini: OPENAI_BASE_URL=https://generativelanguage.googleapis.com/v1beta/openai/
-            client = OpenAI()
-            logger.info("OpenAI 호환 클라이언트 초기화 성공")
+            genai.configure(api_key=api_key)
+            client = genai
+            use_genai = True
+            logger.info('google.generativeai (Gemini) 클라이언트 초기화 성공')
         except Exception as e:
-            logger.warning(f"OpenAI client init failed, falling back to local heuristics: {e}")
+            logger.warning(f'google.generativeai 초기화 실패: {e}')
             client = None
     else:
-        logger.info("OPENAI_API_KEY 미설정 - 키워드 기반 폴백 사용")
-        client = None
-except Exception as e:
-    # openai 패키지가 없거나 import 실패 시 폴백
-    logger = logging.getLogger(__name__)
-    logger.warning(f"openai 모듈 로드 실패, 폴백으로 동작합니다: {e}")
-    client = None
+        logger.info('Gemini API 키 미설정 - 다음 클라이언트 시도')
+except Exception:
+    logger.info('google.generativeai 모듈 없음, 다음으로 OpenAI 호환 클라이언트 시도')
+
+# fallback: try OpenAI compatibility layer if google.generativeai not used
+if not use_genai:
     try:
-        from config import MAX_NEWS_PER_CATEGORY, MIN_NEWS_PER_CATEGORY
-    except Exception:
-        MAX_NEWS_PER_CATEGORY = 10
-        MIN_NEWS_PER_CATEGORY = 5
+        from openai import OpenAI
+        from config import OPENAI_API_KEY, MAX_NEWS_PER_CATEGORY, MIN_NEWS_PER_CATEGORY
+        if os.environ.get('OPENAI_API_KEY'):
+            try:
+                client = OpenAI()
+                logger.info('OpenAI 호환 클라이언트 초기화 성공')
+            except Exception as e:
+                logger.warning(f'OpenAI client init failed, falling back to local heuristics: {e}')
+                client = None
+        else:
+            logger.info('OPENAI_API_KEY 미설정 - 키워드 기반 폴백 사용')
+            client = None
+    except Exception as e:
+        logger.warning(f'openai 모듈 로드 실패, 폴백으로 동작합니다: {e}')
+        client = None
+        try:
+            from config import MAX_NEWS_PER_CATEGORY, MIN_NEWS_PER_CATEGORY
+        except Exception:
+            MAX_NEWS_PER_CATEGORY = 10
+            MIN_NEWS_PER_CATEGORY = 5
 
 # AI 모델 설정 (환경변수로 오버라이드 가능)
 AI_MODEL = os.environ.get("AI_MODEL", "gemini-2.0-flash")
