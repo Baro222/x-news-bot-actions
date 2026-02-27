@@ -1,61 +1,60 @@
 """
-OpenAI 호환 API(Gemini 등)를 사용하여 트윗을 분류, 요약, 랭킹 처리하는 모듈
-4개 대주제: 지정학, 경제, 트럼프, 암호화폐
+OpenAI 호환 API를 통해 Gemini를 호출하여 트윗을 분류, 요약, 랭킹 처리하는 모듈
+모델 자동 우회: gemini-2.0-flash → gemini-1.5-flash → gemini-1.5-flash-8b → 키워드 폴백
+모든 출력은 반드시 한국어로 처리됩니다.
 """
 
 import json
 import logging
 import os
-from typing import List, Dict, Optional, Tuple
+import time
+from typing import List, Dict, Optional
 
-# AI 클라이언트 초기화 (우선순위: google.generativeai -> OpenAI compatibility)
-# OPENAI_API_KEY 환경변수에는 Gemini(Generative AI) 키가 들어있다고 가정합니다.
 logger = logging.getLogger(__name__)
-client = None
-use_genai = False
+
+# config에서 상수 import (실패 시 기본값 사용)
 try:
-    import google.generativeai as genai
-    api_key = os.environ.get('OPENAI_API_KEY') or os.environ.get('GENAI_API_KEY')
-    if api_key:
-        try:
-            genai.configure(api_key=api_key)
-            client = genai
-            use_genai = True
-            logger.info('google.generativeai (Gemini) 클라이언트 초기화 성공')
-        except Exception as e:
-            logger.warning(f'google.generativeai 초기화 실패: {e}')
-            client = None
-    else:
-        logger.info('Gemini API 키 미설정 - 다음 클라이언트 시도')
+    from config import OPENAI_API_KEY, MAX_NEWS_PER_CATEGORY, MIN_NEWS_PER_CATEGORY
 except Exception:
-    logger.info('google.generativeai 모듈 없음, 다음으로 OpenAI 호환 클라이언트 시도')
+    OPENAI_API_KEY = os.environ.get("OPENAI_API_KEY", "")
+    MAX_NEWS_PER_CATEGORY = 10
+    MIN_NEWS_PER_CATEGORY = 5
 
-# fallback: try OpenAI compatibility layer if google.generativeai not used
-if not use_genai:
-    try:
-        from openai import OpenAI
-        from config import OPENAI_API_KEY, MAX_NEWS_PER_CATEGORY, MIN_NEWS_PER_CATEGORY
-        if os.environ.get('OPENAI_API_KEY'):
-            try:
-                client = OpenAI()
-                logger.info('OpenAI 호환 클라이언트 초기화 성공')
-            except Exception as e:
-                logger.warning(f'OpenAI client init failed, falling back to local heuristics: {e}')
-                client = None
-        else:
-            logger.info('OPENAI_API_KEY 미설정 - 키워드 기반 폴백 사용')
-            client = None
-    except Exception as e:
-        logger.warning(f'openai 모듈 로드 실패, 폴백으로 동작합니다: {e}')
-        client = None
-        try:
-            from config import MAX_NEWS_PER_CATEGORY, MIN_NEWS_PER_CATEGORY
-        except Exception:
-            MAX_NEWS_PER_CATEGORY = 10
-            MIN_NEWS_PER_CATEGORY = 5
+# Gemini 모델 우회 순서 (한도 초과 시 자동으로 다음 모델 시도)
+GEMINI_MODELS_FALLBACK = [
+    "gemini-2.0-flash",
+    "gemini-1.5-flash",
+    "gemini-1.5-flash-8b",
+    "gemini-1.0-pro",
+]
 
-# AI 모델 설정 (환경변수로 오버라이드 가능)
-AI_MODEL = os.environ.get("AI_MODEL", "gemini-2.0-flash")
+# 환경변수로 첫 번째 모델 오버라이드 가능
+_env_model = os.environ.get("AI_MODEL", "")
+if _env_model and _env_model not in GEMINI_MODELS_FALLBACK:
+    GEMINI_MODELS_FALLBACK.insert(0, _env_model)
+elif _env_model:
+    # 지정된 모델을 맨 앞으로
+    GEMINI_MODELS_FALLBACK = [_env_model] + [m for m in GEMINI_MODELS_FALLBACK if m != _env_model]
+
+# Gemini OpenAI 호환 엔드포인트
+GEMINI_BASE_URL = os.environ.get(
+    "OPENAI_BASE_URL",
+    "https://generativelanguage.googleapis.com/v1beta/openai/"
+)
+
+# OpenAI 클라이언트 초기화
+_openai_client = None
+try:
+    from openai import OpenAI
+    api_key = OPENAI_API_KEY or os.environ.get("OPENAI_API_KEY", "")
+    if api_key:
+        _openai_client = OpenAI(api_key=api_key, base_url=GEMINI_BASE_URL)
+        logger.info(f"Gemini 클라이언트 초기화 성공 (모델 우회 순서: {GEMINI_MODELS_FALLBACK})")
+    else:
+        logger.info("OPENAI_API_KEY 미설정 - 키워드 기반 폴백 사용")
+except Exception as e:
+    logger.warning(f"OpenAI 클라이언트 초기화 실패, 폴백으로 동작: {e}")
+    _openai_client = None
 
 
 CATEGORY_KEYWORDS = {
@@ -64,25 +63,31 @@ CATEGORY_KEYWORDS = {
         "north korea", "iran", "israel", "gaza", "sanctions", "geopolitical", "troops",
         "missile", "nuclear", "diplomacy", "alliance", "invasion", "territory",
         "전쟁", "분쟁", "군사", "러시아", "우크라이나", "중국", "대만", "북한", "이란", "이스라엘",
-        "제재", "지정학", "외교", "동맹", "침공", "영토", "나토"
+        "제재", "지정학", "외교", "동맹", "침공", "영토", "나토", "ceasefire", "peace talks",
+        "tariff", "trade war", "sanctions", "embargo"
     ],
     "경제": [
         "economy", "gdp", "inflation", "fed", "interest rate", "recession", "market",
         "stock", "bond", "dollar", "trade", "tariff", "deficit", "unemployment",
         "jobs", "cpi", "ppi", "housing", "mortgage", "bank", "financial", "fiscal",
         "경제", "금리", "인플레이션", "연준", "경기침체", "시장", "주식", "채권", "달러",
-        "무역", "관세", "적자", "실업", "고용", "주택", "은행", "재정"
+        "무역", "관세", "적자", "실업", "고용", "주택", "은행", "재정", "earnings", "revenue",
+        "profit", "loss", "ipo", "acquisition", "merger", "layoff", "hiring"
     ],
     "트럼프": [
         "trump", "maga", "white house", "executive order", "administration",
         "doge", "elon musk", "republican", "democrat", "congress", "senate",
-        "트럼프", "백악관", "행정명령", "공화당", "민주당", "의회", "상원"
+        "트럼프", "백악관", "행정명령", "공화당", "민주당", "의회", "상원",
+        "oval office", "mar-a-lago", "tariff", "immigration", "border", "deportation",
+        "vance", "rubio", "bessent", "lutnick"
     ],
     "암호화폐": [
         "bitcoin", "btc", "ethereum", "eth", "crypto", "blockchain", "defi",
         "nft", "altcoin", "binance", "coinbase", "solana", "xrp", "ripple",
         "stablecoin", "usdt", "usdc", "web3", "token", "mining", "halving",
-        "비트코인", "이더리움", "암호화폐", "블록체인", "디파이", "솔라나", "토큰"
+        "비트코인", "이더리움", "암호화폐", "블록체인", "디파이", "솔라나", "토큰",
+        "dogecoin", "doge", "shib", "bnb", "avax", "polygon", "matic",
+        "etf", "spot etf", "sec crypto", "crypto regulation"
     ]
 }
 
@@ -90,17 +95,51 @@ CATEGORY_KEYWORDS = {
 def classify_tweet_simple(tweet_text: str) -> Optional[str]:
     """키워드 기반으로 트윗을 빠르게 분류합니다."""
     text_lower = tweet_text.lower()
-
     scores = {}
     for category, keywords in CATEGORY_KEYWORDS.items():
         score = sum(1 for kw in keywords if kw.lower() in text_lower)
         if score > 0:
             scores[category] = score
-
     if not scores:
         return None
-
     return max(scores, key=scores.get)
+
+
+def _call_gemini_with_fallback(prompt: str, system_prompt: str) -> Optional[str]:
+    """Gemini API를 호출하며, 429(한도 초과) 시 자동으로 다음 모델로 우회합니다."""
+    if _openai_client is None:
+        return None
+
+    for model in GEMINI_MODELS_FALLBACK:
+        try:
+            logger.info(f"Gemini 모델 시도: {model}")
+            response = _openai_client.chat.completions.create(
+                model=model,
+                messages=[
+                    {"role": "system", "content": system_prompt},
+                    {"role": "user", "content": prompt}
+                ],
+                temperature=0.3,
+                max_tokens=4000
+            )
+            result = response.choices[0].message.content
+            logger.info(f"Gemini 모델 성공: {model}")
+            return result
+        except Exception as e:
+            err_str = str(e)
+            if "429" in err_str or "RESOURCE_EXHAUSTED" in err_str or "quota" in err_str.lower():
+                logger.warning(f"모델 {model} 한도 초과 (429) - 다음 모델로 우회...")
+                time.sleep(2)
+                continue
+            elif "404" in err_str or "not found" in err_str.lower():
+                logger.warning(f"모델 {model} 미지원 - 다음 모델로 우회...")
+                continue
+            else:
+                logger.error(f"모델 {model} 오류: {e}")
+                continue
+
+    logger.error("모든 Gemini 모델 한도 초과 또는 오류 - 키워드 폴백 사용")
+    return None
 
 
 def classify_and_summarize_batch(tweets: List[Dict]) -> List[Dict]:
@@ -108,22 +147,19 @@ def classify_and_summarize_batch(tweets: List[Dict]) -> List[Dict]:
     if not tweets:
         return []
 
-    # 트윗 텍스트 준비 (최대 30개씩 처리)
-    batch_size = 30
+    batch_size = 25
     results = []
-
     for i in range(0, len(tweets), batch_size):
-        batch = tweets[i:i+batch_size]
+        batch = tweets[i:i + batch_size]
         batch_results = _process_batch(batch)
         results.extend(batch_results)
-
+        if i + batch_size < len(tweets):
+            time.sleep(1)  # API 레이트 리밋 방지
     return results
 
 
 def _process_batch(tweets: List[Dict]) -> List[Dict]:
     """트윗 배치를 AI로 처리합니다."""
-
-    # 트윗 목록 준비
     tweet_list = []
     for idx, tweet in enumerate(tweets):
         text = tweet.get("text", "")
@@ -134,11 +170,17 @@ def _process_batch(tweets: List[Dict]) -> List[Dict]:
 
     tweets_text = "\n\n---\n\n".join(tweet_list)
 
-    prompt = f"""다음 트윗들을 분석하여 각각을 분류하고 요약해주세요.
+    system_prompt = (
+        "당신은 글로벌 뉴스와 금융 시장을 전문적으로 분석하는 한국어 뉴스 큐레이터입니다. "
+        "반드시 JSON 형식으로만 응답하고, 모든 텍스트는 반드시 한국어로 작성하세요. "
+        "영어 트윗은 반드시 한국어로 번역하여 요약하세요."
+    )
+
+    prompt = f"""다음 트윗들을 분석하여 각각을 분류하고 한국어로 요약해주세요.
 
 분류 기준:
-- 지정학: 전쟁, 분쟁, 군사, 외교, 국제관계, 지역갈등 등
-- 경제: 경제지표, 금융시장, 무역, 통화정책, 기업실적 등
+- 지정학: 전쟁, 분쟁, 군사, 외교, 국제관계, 지역갈등, 무역전쟁 등
+- 경제: 경제지표, 금융시장, 무역, 통화정책, 기업실적, 고용 등
 - 트럼프: 트럼프 관련 정책, 발언, 행정부 소식 등
 - 암호화폐: 비트코인, 이더리움, 크립토 시장, 블록체인 등
 - 기타: 위 4가지에 해당하지 않는 경우
@@ -149,42 +191,32 @@ def _process_batch(tweets: List[Dict]) -> List[Dict]:
     {{
       "index": 0,
       "category": "경제",
-      "headline": "헤드라인 (20자 이내, 명사형으로 끝내기)",
-      "summary": "핵심 내용 요약 (2-3문장, 명사형으로 끝내기)",
-      "analysis": "간단한 배경/원인 분석 (1-2문장, 명사형으로 끝내기)",
-      "importance": 1~10 (중요도 점수)
+      "headline": "헤드라인 (20자 이내, 한국어, 명사형으로 끝내기)",
+      "summary": "핵심 내용 요약 (2-3문장, 한국어, 명사형으로 끝내기)",
+      "analysis": "간단한 배경/원인 분석 (1-2문장, 한국어, 명사형으로 끝내기)",
+      "importance": 5
     }}
   ]
 }}
 
 중요 규칙:
-1. 헤드라인과 요약은 반드시 명사형으로 끝내야 합니다 (예: "~비판", "~발표", "~확대", "~하락")
-2. "했습니다", "합니다", "됩니다" 등 서술형 종결어미 사용 금지
-3. 영어 트윗은 한국어로 번역하여 요약
-4. 중요도는 파급력, 시장 영향, 사회적 관심도를 기준으로 평가
+1. 헤드라인, 요약, 분석은 반드시 한국어로 작성
+2. 영어 트윗은 반드시 한국어로 번역하여 요약
+3. 명사형으로 끝내기 (예: "~비판", "~발표", "~확대", "~하락", "~급등")
+4. "했습니다", "합니다", "됩니다" 등 서술형 종결어미 사용 금지
+5. 중요도(importance)는 1~10 정수 (파급력·시장 영향·사회적 관심도 기준)
 
 트윗 목록:
 {tweets_text}"""
 
-    # OpenAI 클라이언트가 초기화되지 않았다면 폴백 로직으로 처리
-    if client is None:
-        logger.info("AI client 미설정 - 폴백 키워드 기반 분류 사용")
+    result_text = _call_gemini_with_fallback(prompt, system_prompt)
+
+    if result_text is None:
+        logger.info("AI 응답 없음 - 키워드 기반 폴백 분류 사용")
         return _fallback_classify(tweets)
 
     try:
-        response = client.chat.completions.create(
-            model=AI_MODEL,
-            messages=[
-                {"role": "system", "content": "당신은 글로벌 뉴스와 금융 시장을 전문적으로 분석하는 뉴스 큐레이터입니다. 반드시 JSON 형식으로만 응답하세요."},
-                {"role": "user", "content": prompt}
-            ],
-            temperature=0.3,
-            max_tokens=4000
-        )
-
-        result_text = response.choices[0].message.content
-
-        # JSON 블록 추출 (```json ... ``` 형식 대응)
+        # JSON 블록 추출
         if "```json" in result_text:
             result_text = result_text.split("```json")[1].split("```")[0].strip()
         elif "```" in result_text:
@@ -193,7 +225,6 @@ def _process_batch(tweets: List[Dict]) -> List[Dict]:
         result_data = json.loads(result_text)
         ai_results = result_data.get("results", [])
 
-        # 원본 트윗 데이터와 AI 결과 합치기
         processed_tweets = []
         for ai_result in ai_results:
             idx = ai_result.get("index", -1)
@@ -203,7 +234,7 @@ def _process_batch(tweets: List[Dict]) -> List[Dict]:
                 tweet["_headline"] = ai_result.get("headline", "")
                 tweet["_summary"] = ai_result.get("summary", "")
                 tweet["_analysis"] = ai_result.get("analysis", "")
-                tweet["_importance"] = ai_result.get("importance", 5)
+                tweet["_importance"] = int(ai_result.get("importance", 5))
                 processed_tweets.append(tweet)
 
         logger.info(f"AI 처리 완료: {len(processed_tweets)}/{len(tweets)}개 트윗")
@@ -217,16 +248,63 @@ def _process_batch(tweets: List[Dict]) -> List[Dict]:
         return _fallback_classify(tweets)
 
 
+# 간단한 영어→한국어 키워드 번역 매핑 (폴백용)
+EN_KO_KEYWORDS = {
+    "bitcoin": "비트코인", "btc": "BTC", "ethereum": "이더리움", "eth": "ETH",
+    "crypto": "암호화폐", "blockchain": "블록체인", "solana": "솔라나",
+    "trump": "트럼프", "white house": "백악관", "executive order": "행정명령",
+    "tariff": "관세", "trade": "무역", "economy": "경제", "inflation": "인플레이션",
+    "fed": "연준", "interest rate": "금리", "recession": "경기침체",
+    "stock": "주식", "market": "시장", "gdp": "GDP", "unemployment": "실업률",
+    "russia": "러시아", "ukraine": "우크라이나", "china": "중국", "taiwan": "대만",
+    "north korea": "북한", "iran": "이란", "israel": "이스라엘", "gaza": "가자",
+    "war": "전쟁", "military": "군사", "nato": "나토", "sanctions": "제재",
+    "ceasefire": "휴전", "peace": "평화", "nuclear": "핵",
+    "dollar": "달러", "oil": "유가", "gold": "금", "silver": "은",
+    "bank": "은행", "debt": "부채", "deficit": "적자", "surplus": "흑자",
+    "jobs": "고용", "layoff": "해고", "hiring": "채용",
+}
+
+CATEGORY_KO = {
+    "지정학": "지정학", "경제": "경제", "트럼프": "트럼프", "암호화폐": "암호화폐",
+    "geopolitics": "지정학", "economy": "경제", "crypto": "암호화폐", "기타": "기타"
+}
+
+
+def _translate_headline(text: str) -> str:
+    """영어 텍스트를 간단히 한국어로 변환 (폴백용)"""
+    if not text:
+        return ""
+    # 이미 한국어가 포함된 경우 그대로 반환
+    if any('\uAC00' <= c <= '\uD7A3' for c in text):
+        return text
+    # 영어 키워드를 한국어로 치환
+    result = text
+    for en, ko in EN_KO_KEYWORDS.items():
+        result = result.replace(en.upper(), ko).replace(en.capitalize(), ko).replace(en, ko)
+    # 너무 길면 자르기
+    if len(result) > 50:
+        result = result[:47] + "..."
+    return result
+
+
 def _fallback_classify(tweets: List[Dict]) -> List[Dict]:
-    """키워드 기반 폴백 분류"""
+    """키워드 기반 폴백 분류 (한국어 출력 포함)"""
     fallback_results = []
     for tweet in tweets:
         text = tweet.get("text", "")
         category = classify_tweet_simple(text) or "기타"
         tweet_copy = tweet.copy()
         tweet_copy["_category"] = category
-        tweet_copy["_headline"] = (text.strip().replace('\n', ' ')[:50] + "...") if text else ""
-        tweet_copy["_summary"] = (text.strip().replace('\n', ' ')[:200]) if text else ""
+
+        # 헤드라인: 영어면 번역 시도, 한국어면 그대로
+        raw_text = text.strip().replace('\n', ' ')
+        headline = _translate_headline(raw_text[:50])
+        tweet_copy["_headline"] = headline if headline else raw_text[:50]
+
+        # 요약: 원문 앞부분 사용 (영어면 번역 키워드 치환)
+        summary_raw = raw_text[:200]
+        tweet_copy["_summary"] = _translate_headline(summary_raw) if summary_raw else ""
         tweet_copy["_analysis"] = "(키워드 기반 자동 분류)"
         tweet_copy["_importance"] = 5
         fallback_results.append(tweet_copy)
@@ -271,10 +349,8 @@ def calculate_keyword_overlap_score(tweet: Dict, all_tweets_in_category: List[Di
             continue
         other_text = other_tweet.get('text', '') + ' ' + other_tweet.get('_headline', '') + ' ' + other_tweet.get('_summary', '')
         other_keywords = set(extract_keywords_from_text(other_text))
-
         if not other_keywords:
             continue
-
         intersection = tweet_keywords & other_keywords
         union = tweet_keywords | other_keywords
         if union:
@@ -286,9 +362,7 @@ def calculate_keyword_overlap_score(tweet: Dict, all_tweets_in_category: List[Di
 
 def rank_and_filter_by_category(processed_tweets: List[Dict]) -> Dict[str, List[Dict]]:
     """카테고리별로 트윗을 랭킹하고 필터링합니다."""
-    from datetime import datetime, timezone
-
-    categorized = {
+    categorized: Dict[str, List[Dict]] = {
         "지정학": [],
         "경제": [],
         "트럼프": [],
@@ -300,7 +374,7 @@ def rank_and_filter_by_category(processed_tweets: List[Dict]) -> Dict[str, List[
         if category in categorized:
             categorized[category].append(tweet)
 
-    ranked = {}
+    ranked: Dict[str, List[Dict]] = {}
     for category, tweets in categorized.items():
         if not tweets:
             ranked[category] = []
@@ -310,18 +384,11 @@ def rank_and_filter_by_category(processed_tweets: List[Dict]) -> Dict[str, List[
             importance = tweet.get("_importance", 5)
             engagement = tweet.get("_engagement_score", 0)
 
-            # 1. 키워드 중복도 점수 (0~50점)
             keyword_score = calculate_keyword_overlap_score(tweet, tweets)
             keyword_score_normalized = min(keyword_score * 5, 50)
-
-            # 2. AI 중요도 점수 (0~40점)
             importance_score = importance * 4
-
-            # 3. 최신성 점수 (0~20점)
             age_hours = tweet.get("_age_hours", 4.0)
             recency_score = max(0, 20 - (age_hours / 4.0) * 20)
-
-            # 4. 참여도 점수 (0~10점)
             engagement_score = min(engagement / 100, 10)
 
             tweet["_final_score"] = (
@@ -339,11 +406,11 @@ def rank_and_filter_by_category(processed_tweets: List[Dict]) -> Dict[str, List[
         logger.info(f"  [{category}] TOP {len(ranked[category])}개 선정:")
         for i, t in enumerate(ranked[category][:3], 1):
             logger.info(
-                f"    {i}. [{t.get('_final_score',0):.1f}점] "
-                f"키워드:{t.get('_keyword_score',0):.1f} "
-                f"중요도:{t.get('_importance',0)*4:.0f} "
-                f"최신:{t.get('_recency_score',0):.1f} | "
-                f"{t.get('_headline','')[:40]}"
+                f"    {i}. [{t.get('_final_score', 0):.1f}점] "
+                f"키워드:{t.get('_keyword_score', 0):.1f} "
+                f"중요도:{t.get('_importance', 0) * 4:.0f} "
+                f"최신:{t.get('_recency_score', 0):.1f} | "
+                f"{t.get('_headline', '')[:40]}"
             )
 
     return ranked
@@ -359,10 +426,9 @@ def process_tweets(tweets: List[Dict]) -> Dict[str, List[Dict]]:
         category = classify_tweet_simple(text)
         if category:
             tweet["_pre_category"] = category
-            relevant_tweets.append(tweet)
         else:
             tweet["_pre_category"] = "미분류"
-            relevant_tweets.append(tweet)
+        relevant_tweets.append(tweet)
 
     logger.info(f"AI 분류·요약 처리 중... ({len(relevant_tweets)}개)")
 
@@ -396,10 +462,16 @@ if __name__ == "__main__":
             "_engagement_score": 1500,
             "_url": "https://x.com/CoinTelegraph/status/456"
         },
+        {
+            "text": "Trump signs executive order imposing 25% tariffs on all imports from Canada and Mexico starting March 1.",
+            "_account": "Reuters",
+            "_engagement_score": 8000,
+            "_url": "https://x.com/Reuters/status/789"
+        },
     ]
 
     result = process_tweets(test_tweets)
     for cat, items in result.items():
         print(f"\n[{cat}] {len(items)}건:")
         for item in items:
-            print(f"  - {item.get('_headline', '')}")
+            print(f"  - {item.get('_headline', '')} | {item.get('_summary', '')[:50]}")
