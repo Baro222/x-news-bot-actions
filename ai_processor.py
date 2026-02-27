@@ -17,6 +17,14 @@ try:
 except Exception:
     _translator = None
 
+# LibreTranslate 폴백 (공개 인스턴스 사용)
+try:
+    import requests
+    _libre_url = os.environ.get('LIBRETRANSLATE_URL', 'https://libretranslate.de/translate')
+except Exception:
+    requests = None
+    _libre_url = None
+
 logger = logging.getLogger(__name__)
 
 # config에서 상수 import (실패 시 기본값 사용)
@@ -312,13 +320,29 @@ def _translate_headline(text: str) -> str:
     eng_ratio = letters / total
 
     # 영어 비중이 30% 이상이면 googletrans로 전체 문장 번역 시도 (정확도 우선)
-    if eng_ratio >= 0.3 and _translator is not None:
-        try:
-            translated = _translator.translate(text, dest='ko')
-            if getattr(translated, 'text', None):
-                return translated.text
-        except Exception as e:
-            logger.warning(f"googletrans 번역 실패: {e} - 키워드 치환 결과 사용")
+    if eng_ratio >= 0.3:
+        if _translator is not None:
+            try:
+                translated = _translator.translate(text, dest='ko')
+                if getattr(translated, 'text', None):
+                    return translated.text
+            except Exception as e:
+                logger.warning(f"googletrans 번역 실패: {e} - 다음 폴백 시도")
+        # googletrans가 없거나 실패하면 LibreTranslate 공개 인스턴스 시도
+        if requests is not None and _libre_url:
+            try:
+                resp = requests.post(_libre_url, data={
+                    'q': text,
+                    'source': 'en',
+                    'target': 'ko',
+                    'format': 'text'
+                }, timeout=10)
+                if resp.status_code == 200:
+                    j = resp.json()
+                    if 'translatedText' in j:
+                        return j['translatedText']
+            except Exception as e:
+                logger.warning(f"LibreTranslate 번역 실패: {e} - 키워드 치환 결과 사용")
 
     # 결과 길이 제한
     if len(result) > 200:
