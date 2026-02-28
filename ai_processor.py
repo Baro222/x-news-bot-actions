@@ -175,8 +175,9 @@ def classify_and_summarize_batch(tweets: List[Dict]) -> List[Dict]:
     if not tweets:
         return []
 
-    batch_size = 5
-    request_delay = 1.0
+    # Tuneable via environment for emergency mitigation
+    batch_size = int(os.environ.get('AI_BATCH_SIZE', '3'))
+    request_delay = float(os.environ.get('AI_REQUEST_DELAY', '2.0'))
     results = []
     for i in range(0, len(tweets), batch_size):
         batch = tweets[i:i + batch_size]
@@ -364,10 +365,16 @@ def _translate_headline(text: str) -> str:
                     'target': 'ko',
                     'format': 'text'
                 }, timeout=10)
-                if resp.status_code == 200:
+                # Guard against non-JSON or empty responses
+                if resp.status_code == 200 and resp.text and resp.headers.get('Content-Type','').lower().startswith('application/json'):
                     j = resp.json()
-                    if 'translatedText' in j:
+                    if isinstance(j, dict) and 'translatedText' in j:
                         return j['translatedText']
+                    # some instances return {'translatedText': ...} or simple string
+                    if isinstance(j, str) and j.strip():
+                        return j
+                else:
+                    logger.warning(f"LibreTranslate 응답 비정상(status={resp.status_code}, len={len(resp.text)}), 헤더={resp.headers.get('Content-Type')}")
             except Exception as e:
                 logger.warning(f"LibreTranslate 번역 실패: {e} - 키워드 치환 결과 사용")
 
