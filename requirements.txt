@@ -5,4 +5,5 @@ requests
 lxml
 cryptography
 # Optional translation fallbacks
-googletrans==4.0.0-rc1
+# googletrans removed due to dependency conflicts with openai/httpx
+# Use Hugging Face API (HF_API_TOKEN) or LibreTranslate self-host as free fallbacks
