@@ -175,13 +175,16 @@ def classify_and_summarize_batch(tweets: List[Dict]) -> List[Dict]:
     if not tweets:
         return []
 
-    batch_size = 10
-    request_delay = 0.5
+    batch_size = 5
+    request_delay = 1.0
     results = []
     for i in range(0, len(tweets), batch_size):
         batch = tweets[i:i + batch_size]
-        batch_results = _process_batch(batch)
-        results.extend(batch_results)
+        try:
+            batch_results = _process_batch(batch)
+            results.extend(batch_results)
+        except Exception as e:
+            logger.warning(f"배치 처리 중 오류 발생, 해당 배치 스킵: {e}")
         if i + batch_size < len(tweets):
             time.sleep(request_delay)  # API 레이트 리밋 방지
     return results
