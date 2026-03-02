@@ -11,7 +11,7 @@ TWITTER_API_KEY = os.environ.get("TWITTER_API_KEY", "")
 TELEGRAM_BOT_TOKEN = os.environ.get("TELEGRAM_BOT_TOKEN", "")
 
 # 텔레그램 채널 ID
-TELEGRAM_CHANNEL_ID = os.environ.get("TELEGRAM_CHANNEL_ID", "")
+TELEGRAM_CHANNEL_ID = os.environ.get("TELEGRAM_CHANNEL_ID", "-1003683270211")
 
 # 텔레그램 프리미엄 계정 (Telethon - 커스텀 이모지 사용)
 TELEGRAM_API_ID = int(os.environ.get("TELEGRAM_API_ID", "0") or "0")
