@@ -32,7 +32,7 @@ NITTER_INSTANCES = [
 _current_instance_idx = 0
 
 # 요청 간 딜레이 (초) - Nitter 서버 부하 방지
-REQUEST_DELAY = 1.5
+REQUEST_DELAY = 0.5  # 1.5초 → 0.5초로 단축 (GitHub Actions 타임아웃 방지)
 
 
 def get_nitter_rss(username: str, instance: str) -> Optional[str]:
