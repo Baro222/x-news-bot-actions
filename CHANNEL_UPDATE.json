@@ -1,0 +1,9 @@
+{
+  "channel_change": {
+    "old_channel_id": "-1001645099595",
+    "new_channel_id": "-1003683270211",
+    "timestamp": "2026-03-01T16:20:00Z",
+    "reason": "채널 변경 요청",
+    "action": "GitHub Secrets에서 TELEGRAM_CHANNEL_ID를 -1003683270211로 변경 필요"
+  }
+}
