@@ -14,7 +14,12 @@ TELEGRAM_BOT_TOKEN = os.environ.get("TELEGRAM_BOT_TOKEN", "")
 TELEGRAM_CHANNEL_ID = os.environ.get("TELEGRAM_CHANNEL_ID", "-1003683270211")
 
 # 텔레그램 프리미엄 계정 (Telethon - 커스텀 이모지 사용)
-TELEGRAM_API_ID = int(os.environ.get("TELEGRAM_API_ID", "0") or "0")
+# TELEGRAM_API_ID 안전한 변환 (숫자가 아닌 경우 0으로 설정)
+try:
+    api_id_str = os.environ.get("TELEGRAM_API_ID", "0") or "0"
+    TELEGRAM_API_ID = int(api_id_str) if api_id_str.isdigit() else 0
+except (ValueError, TypeError):
+    TELEGRAM_API_ID = 0
 TELEGRAM_API_HASH = os.environ.get("TELEGRAM_API_HASH", "")
 TELEGRAM_SESSION = os.environ.get("TELEGRAM_SESSION", "")
 
