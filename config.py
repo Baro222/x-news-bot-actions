@@ -30,28 +30,13 @@ OPENAI_API_KEY = os.environ.get("OPENAI_API_KEY", "")
 # AI 모델명 (환경변수로 오버라이드 가능)
 AI_MODEL = os.environ.get("AI_MODEL", "gemini-2.0-flash")
 
-# 모니터링할 X 계정 목록 (주요 계정 20개로 축소 - GitHub Actions 타임아웃 방지)
+# 모니터링할 X 계정 목록 (테스트용 5개로 극도로 축소 - GitHub Actions 타임아웃 방지)
 ACCOUNTS = [
     "visegrad24",           # 지정학
     "TrumpTruthOnX",        # 트럼프
     "zerohedge",            # 경제
-    "DeItaone",             # 스톡 뉴스
-    "financialjuice",       # 경제
-    "InsiderWire",          # 스톡 뉴스
-    "KobeissiLetter",       # 스톡 뉴스
     "Cointelegraph",        # 암호화폐
-    "coinbureau",           # 암호화폐
-    "CryptoHayes",          # 암호화폐
     "nytimes",              # 뉴스
-    "CNN",                  # 뉴스
-    "Reuters",              # 뉴스
-    "washingtonpost",       # 뉴스
-    "BBCNews",              # 뉴스
-    "WSJ",                  # 뉴스
-    "AP",                   # 뉴스
-    "lookonchain",          # 암호화폐
-    "FirstSquawk",          # 스톡 뉴스
-    "cz_binance",           # 암호화폐
 ]
 
 # 카테고리 정의
