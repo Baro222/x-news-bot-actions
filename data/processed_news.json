@@ -1,12 +1,12 @@
 {
-  "timestamp": "2026-04-12T01:02:50.984677+09:00",
-  "tweets_collected": 25,
-  "news_processed": 15,
+  "timestamp": "2026-04-12T03:54:50.864570+09:00",
+  "tweets_collected": 29,
+  "news_processed": 19,
   "categories": {
     "지정학": 10,
-    "경제": 2,
-    "트럼프": 1,
-    "암호화폐": 2
+    "경제": 4,
+    "트럼프": 4,
+    "암호화폐": 1
   },
   "success": true
 }
