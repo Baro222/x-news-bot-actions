@@ -119,8 +119,8 @@ CATEGORIES = {
     "지정학": "geopolitics",
 }
 
-# 수집 시간 범위 (시간)
-FETCH_HOURS = 4
+# 수집 시간 범위 (시간) - 24시간으로 확대
+FETCH_HOURS = 24
 
 # 카테고리별 최대 뉴스 수
 MAX_NEWS_PER_CATEGORY = 10

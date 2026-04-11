@@ -183,7 +183,10 @@ def filter_recent_tweets(tweets: List[Dict], hours: int = FETCH_HOURS) -> List[D
         created_at_str = tweet.get("createdAt", "")
         dt = parse_tweet_time(created_at_str)
         
-        if dt and dt >= cutoff_time:
+        # 날짜 파싱 실패 시 포함 (안전한 기본값)
+        if dt is None:
+            recent_tweets.append(tweet)
+        elif dt >= cutoff_time:
             recent_tweets.append(tweet)
 
     return recent_tweets
