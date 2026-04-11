@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-04-11T16:41:58.469457+09:00",
+  "timestamp": "2026-04-11T17:23:37.821897+09:00",
   "news": [
     {
       "id": "2042837584955552072#m",
@@ -12,7 +12,7 @@
       "source": "Cointelegraph",
       "sourceHandle": "@Cointelegraph",
       "sourceUrl": "https://x.com/Cointelegraph/status/2042837584955552072#m",
-      "timestamp": "2026-04-11T16:41:58.469457+09:00",
+      "timestamp": "2026-04-11T17:23:37.821897+09:00",
       "relatedAccounts": [],
       "tags": [],
       "impactScore": 50
@@ -28,39 +28,7 @@
       "source": "visegrad24",
       "sourceHandle": "@visegrad24",
       "sourceUrl": "https://x.com/visegrad24/status/2042824368959397977#m",
-      "timestamp": "2026-04-11T16:41:58.469457+09:00",
-      "relatedAccounts": [],
-      "tags": [],
-      "impactScore": 50
-    },
-    {
-      "id": "2042813653712273408#m",
-      "title": "\"I'm ready to deploy 100,000 Ugandan soldiers in I",
-      "summary": "\"I'm ready to deploy 100,000 Ugandan soldiers i...",
-      "fullAnalysis": "(키워드 기반 자동 분류)",
-      "category": "지정학",
-      "priority": "medium",
-      "marketImpact": "neutral",
-      "source": "visegrad24",
-      "sourceHandle": "@visegrad24",
-      "sourceUrl": "https://x.com/visegrad24/status/2042813653712273408#m",
-      "timestamp": "2026-04-11T16:41:58.469457+09:00",
-      "relatedAccounts": [],
-      "tags": [],
-      "impactScore": 50
-    },
-    {
-      "id": "2042811905102807134#m",
-      "title": "A Perfect Storm: Wall Street Launches Private Cred",
-      "summary": "A Perfect Storm: Wall Street Launches Private C...",
-      "fullAnalysis": "(키워드 기반 자동 분류)",
-      "category": "경제",
-      "priority": "medium",
-      "marketImpact": "bullish",
-      "source": "zerohedge",
-      "sourceHandle": "@zerohedge",
-      "sourceUrl": "https://x.com/zerohedge/status/2042811905102807134#m",
-      "timestamp": "2026-04-11T16:41:58.469457+09:00",
+      "timestamp": "2026-04-11T17:23:37.821897+09:00",
       "relatedAccounts": [],
       "tags": [],
       "impactScore": 50
@@ -76,7 +44,7 @@
       "source": "Cointelegraph",
       "sourceHandle": "@Cointelegraph",
       "sourceUrl": "https://x.com/Cointelegraph/status/2042867786834219449#m",
-      "timestamp": "2026-04-11T16:41:58.469457+09:00",
+      "timestamp": "2026-04-11T17:23:37.821897+09:00",
       "relatedAccounts": [],
       "tags": [],
       "impactScore": 50
@@ -92,7 +60,7 @@
       "source": "Cointelegraph",
       "sourceHandle": "@Cointelegraph",
       "sourceUrl": "https://x.com/Cointelegraph/status/2042852677990670633#m",
-      "timestamp": "2026-04-11T16:41:58.469457+09:00",
+      "timestamp": "2026-04-11T17:23:37.821897+09:00",
       "relatedAccounts": [],
       "tags": [],
       "impactScore": 50
@@ -108,7 +76,7 @@
       "source": "visegrad24",
       "sourceHandle": "@visegrad24",
       "sourceUrl": "https://x.com/visegrad24/status/2042827578105323828#m",
-      "timestamp": "2026-04-11T16:41:58.469457+09:00",
+      "timestamp": "2026-04-11T17:23:37.821897+09:00",
       "relatedAccounts": [],
       "tags": [],
       "impactScore": 50
@@ -124,19 +92,19 @@
       "source": "Cointelegraph",
       "sourceHandle": "@Cointelegraph",
       "sourceUrl": "https://x.com/Cointelegraph/status/2042822484748071227#m",
-      "timestamp": "2026-04-11T16:41:58.469457+09:00",
+      "timestamp": "2026-04-11T17:23:37.821897+09:00",
       "relatedAccounts": [],
       "tags": [],
       "impactScore": 50
     }
   ],
   "systemStatus": {
-    "lastUpdate": "2026-04-11T16:41:58.469457+09:00",
-    "nextUpdate": "2026-04-11T20:41:58.469457+09:00",
+    "lastUpdate": "2026-04-11T17:23:37.821897+09:00",
+    "nextUpdate": "2026-04-11T21:23:37.821897+09:00",
     "totalAccounts": 60,
     "activeAccounts": 60,
-    "tweetsCollected": 8,
-    "aiAnalysisCount": 8,
+    "tweetsCollected": 6,
+    "aiAnalysisCount": 6,
     "systemHealth": "operational",
     "uptime": "99.9%"
   }
