@@ -1,11 +1,11 @@
 {
-  "timestamp": "2026-04-12T07:38:33.470972+09:00",
-  "tweets_collected": 70,
-  "news_processed": 19,
+  "timestamp": "2026-04-12T13:50:56.346872+09:00",
+  "tweets_collected": 73,
+  "news_processed": 18,
   "categories": {
     "뉴스": 10,
-    "경제": 3,
-    "암호화폐": 6
+    "암호화폐": 6,
+    "경제": 2
   },
   "success": true
 }
