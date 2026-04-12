@@ -15,20 +15,20 @@ from config import ACCOUNTS_FLAT, FETCH_HOURS
 logger = logging.getLogger(__name__)
 logger.propagate = True
 
-# Nitter 인스턴스 목록
+# Nitter 인스턴스 목록 (우선순위 순서)
 NITTER_INSTANCES = [
     "nitter.net",
+    "nitter.space",
     "nitter.privacyredirect.com",
     "nitter.poast.org",
-    "xcancel.com",
-    "nitter.space",
     "lightbrd.com",
     "nitter.catsarch.com",
+    "xcancel.com",  # 화이트리스트 문제 있음 - 마지막에 시도
     "nuku.trabun.org",
 ]
 
 _current_instance_idx = 0
-REQUEST_DELAY = 0.3  # 요청 간 딜레이 단축
+REQUEST_DELAY = 0.3  # 요청 간 딜레이
 
 
 def get_nitter_rss(username: str, instance: str) -> Optional[str]:
@@ -36,8 +36,9 @@ def get_nitter_rss(username: str, instance: str) -> Optional[str]:
     url = f"https://{instance}/{username}/rss"
     cmd = [
         "curl", "-sL", "--max-time", "15",
-        "-H", "User-Agent: RSS-Reader/1.0",
-        "-H", "Accept: application/rss+xml, application/xml, text/xml",
+        "-H", "User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+        "-H", "Accept: application/rss+xml, application/xml, text/xml, */*",
+        "-H", "Accept-Language: en-US,en;q=0.9",
         url
     ]
     try:
@@ -48,6 +49,12 @@ def get_nitter_rss(username: str, instance: str) -> Optional[str]:
             except Exception:
                 out = result.stdout.decode('latin-1', errors='replace')
             out = out.lstrip('\ufeff')
+            
+            # 화이트리스트 에러 필터링
+            if "RSS reader not yet whitelist" in out or "Plain request with just the ID" in out:
+                logger.warning(f"RSS 화이트리스트 에러 ({instance}/{username})")
+                return None
+            
             first_lt = out.find('<')
             if first_lt > 0:
                 out = out[first_lt:]
@@ -86,9 +93,20 @@ def parse_rss_tweets(rss_content: str, username: str) -> List[Dict]:
             match = re.search(r'/status/(\d+)', link)
             tweet_id = match.group(1) if match else ""
 
-            # 설명 정리
+            # 설명 정리 - 에러 메시지 필터링
             desc = (desc_elem.text or "").strip() if desc_elem is not None else ""
+            
+            # HTML 태그 제거
             clean_desc = re.sub(r'<[^>]+>', '', desc).strip()
+            
+            # 에러 메시지 필터링
+            if "RSS reader not yet whitelist" in clean_desc or "Plain request with just the ID" in clean_desc:
+                logger.warning(f"에러 메시지 필터링 ({username}): {clean_desc[:50]}")
+                continue
+            
+            # 빈 내용 필터링
+            if not clean_desc and not title:
+                continue
 
             # 날짜 파싱
             created_at = pub_date
@@ -130,27 +148,35 @@ def parse_rss_tweets(rss_content: str, username: str) -> List[Dict]:
     return tweets
 
 
-def get_user_last_tweets(username: str) -> List[Dict]:
-    """특정 사용자의 최신 트윗을 Nitter RSS로 가져옵니다."""
+def rotate_instance() -> str:
+    """다음 Nitter 인스턴스로 로테이션합니다."""
     global _current_instance_idx
+    _current_instance_idx = (_current_instance_idx + 1) % len(NITTER_INSTANCES)
+    return NITTER_INSTANCES[_current_instance_idx]
 
-    instances_to_try = (
-        NITTER_INSTANCES[_current_instance_idx:] +
-        NITTER_INSTANCES[:_current_instance_idx]
-    )
 
-    for instance in instances_to_try:
+def fetch_tweets_from_account(username: str) -> List[Dict]:
+    """계정에서 최신 트윗을 수집합니다."""
+    tweets = []
+    
+    # 여러 인스턴스 시도
+    for attempt in range(len(NITTER_INSTANCES)):
+        instance = NITTER_INSTANCES[attempt]
+        
         rss_content = get_nitter_rss(username, instance)
         if rss_content:
-            tweets = parse_rss_tweets(rss_content, username)
-            if tweets:
-                _current_instance_idx = NITTER_INSTANCES.index(instance)
-                return tweets
-            logger.debug(f"@{username}: {instance}에서 트윗 없음")
-            return []
-
-    logger.warning(f"@{username}: 모든 Nitter 인스턴스 실패")
-    return []
+            parsed_tweets = parse_rss_tweets(rss_content, username)
+            if parsed_tweets:
+                tweets.extend(parsed_tweets)
+                logger.info(f"  -> {len(parsed_tweets)}개 최신 트윗 수집 ({instance})")
+                break
+        
+        time.sleep(REQUEST_DELAY)
+    
+    if not tweets:
+        logger.warning(f"  -> 트윗 수집 실패 (모든 인스턴스)")
+    
+    return tweets
 
 
 def parse_tweet_time(created_at_str: str) -> Optional[datetime]:
@@ -194,31 +220,24 @@ def filter_recent_tweets(tweets: List[Dict], hours: int = FETCH_HOURS) -> List[D
 
 def fetch_all_tweets() -> List[Dict]:
     """모든 계정에서 최신 트윗을 수집합니다."""
-    logger.info(f"총 {len(ACCOUNTS_FLAT)}개 계정에서 트윗 수집 시작 (Nitter RSS 방식)...")
-    
     all_tweets = []
+    total_accounts = len(ACCOUNTS_FLAT)
+    
+    logger.info(f"===== 트윗 수집 시작: {total_accounts}개 계정 =====")
     
     for idx, account in enumerate(ACCOUNTS_FLAT, 1):
-        logger.info(f"[{idx}/{len(ACCOUNTS_FLAT)}] @{account} 수집 중...")
+        logger.info(f"[{idx}/{total_accounts}] @{account} 수집 중...")
         
-        try:
-            tweets = get_user_last_tweets(account)
-            recent_tweets = filter_recent_tweets(tweets)
-            
-            if recent_tweets:
-                logger.info(f"  -> {len(recent_tweets)}개 최신 트윗 수집")
-                all_tweets.extend(recent_tweets)
-            else:
-                logger.debug(f"  -> 최근 트윗 없음")
-            
-            time.sleep(REQUEST_DELAY)
-            
-        except Exception as e:
-            logger.error(f"@{account} 수집 오류: {e}")
-            continue
+        tweets = fetch_tweets_from_account(account)
+        all_tweets.extend(tweets)
+        
+        time.sleep(REQUEST_DELAY)
     
-    logger.info(f"총 {len(all_tweets)}개 트윗 수집 완료")
-    return all_tweets
+    # 최근 트윗만 필터링
+    recent_tweets = filter_recent_tweets(all_tweets)
+    
+    logger.info(f"총 {len(recent_tweets)}개 트윗 수집 완료")
+    return recent_tweets
 
 
 if __name__ == "__main__":
@@ -226,4 +245,4 @@ if __name__ == "__main__":
     tweets = fetch_all_tweets()
     print(f"수집된 트윗: {len(tweets)}개")
     for tweet in tweets[:3]:
-        print(f"  - {tweet['_account']}: {tweet['text'][:50]}")
+        print(f"  - {tweet.get('_account')}: {tweet.get('text', '')[:50]}")
