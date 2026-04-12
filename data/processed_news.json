@@ -1,12 +1,12 @@
 {
-  "timestamp": "2026-04-13T03:58:47.343343+09:00",
-  "tweets_collected": 552,
+  "timestamp": "2026-04-13T07:41:22.031247+09:00",
+  "tweets_collected": 564,
   "news_processed": 40,
   "categories": {
     "지정학": 10,
     "뉴스": 10,
-    "경제": 10,
-    "암호화폐": 10
+    "암호화폐": 10,
+    "경제": 10
   },
   "success": true
 }
