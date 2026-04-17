@@ -1,9 +1,97 @@
 {
-  "timestamp": "2026-04-18T04:09:56.856261+09:00",
+  "timestamp": "2026-04-18T07:49:25.776700+09:00",
   "news": [
     {
-      "id": "b1341897-e23c-41d1-8767-d6c025c2a61e",
+      "id": "1f7f113c-021a-4f13-a79c-95d475329fb8",
       "rank": 1,
+      "title": "jeff yan: my early startup failures and what i learned  \n\non february 19, hyperliquid founder jeff y",
+      "summary": "jeff yan: my early startup failures and what i learned  \n\non february 19, hyperliquid founder jeff yan @chameleon_jeff  said in an interview with when shift happens that in 2018 he launched a prediction market project around the same time as kalshi and others, but it ultimately did not succeed. \n\nhe said the \"off-chain matching, on-chain settlement\" infrastructure direction was correct at the time, but ideas account for only a very, very small part - the real difficulty lies in achieving product–market fit. as the market shifted from bull to bear, users were no longer willing to try on-chain products. he added that the team learned a great deal through the cycle. although the project did not succeed, he is glad to see peers from that period who persisted and are now gradually moving toward mass adoption.\n\nvideo",
+      "fullAnalysis": "상승 추세 지속 중",
+      "category": "암호화폐",
+      "priority": "low",
+      "marketImpact": "neutral",
+      "source": "WuBlockchain",
+      "sourceHandle": "@WuBlockchain",
+      "sourceUrl": "https://x.com/WuBlockchain/status/2045265043835535787#m",
+      "timestamp": "2026-04-18T07:49:25.776700+09:00",
+      "engagement": {
+        "likes": 0,
+        "views": 0,
+        "score": 0.0
+      },
+      "relatedAccounts": [],
+      "tags": [],
+      "impactScore": 0
+    },
+    {
+      "id": "3d20a019-52c7-4e42-8804-59912ae9a417",
+      "rank": 2,
+      "title": "source: strategy.com/strc/vote",
+      "summary": "source: strategy.com/strc/vote",
+      "fullAnalysis": "시장 변동성 주목",
+      "category": "암호화폐",
+      "priority": "low",
+      "marketImpact": "neutral",
+      "source": "WuBlockchain",
+      "sourceHandle": "@WuBlockchain",
+      "sourceUrl": "https://x.com/WuBlockchain/status/2045262949770752156#m",
+      "timestamp": "2026-04-18T07:49:25.776700+09:00",
+      "engagement": {
+        "likes": 0,
+        "views": 0,
+        "score": 0.0
+      },
+      "relatedAccounts": [],
+      "tags": [],
+      "impactScore": 0
+    },
+    {
+      "id": "c99bb2fd-173e-4a20-8776-9cc0eb8768e0",
+      "rank": 3,
+      "title": "strategy, largest corporate 비트코인 holder, proposes semi-monthly strc dividends\n\nstrategy proposed to ",
+      "summary": "strategy, largest corporate 비트코인 holder, proposes semi-monthly strc dividends\n\nstrategy proposed to change strc dividend payments from monthly to semi-monthly to reduce reinvestment lag and improve liquidity. a preliminary proxy was filed on april 17, with a 디파이nitive filing expected on april 28 to open voting, which will conclude on june 8. if approved, the new schedule would take effect on june 30, with the first payment on july 15.",
+      "fullAnalysis": "시장 변동성 주목",
+      "category": "암호화폐",
+      "priority": "low",
+      "marketImpact": "neutral",
+      "source": "WuBlockchain",
+      "sourceHandle": "@WuBlockchain",
+      "sourceUrl": "https://x.com/WuBlockchain/status/2045254066100740137#m",
+      "timestamp": "2026-04-18T07:49:25.776700+09:00",
+      "engagement": {
+        "likes": 0,
+        "views": 0,
+        "score": 0.0
+      },
+      "relatedAccounts": [],
+      "tags": [],
+      "impactScore": 0
+    },
+    {
+      "id": "63684f08-4168-4bc2-abd1-6da8588eb7c3",
+      "rank": 4,
+      "title": "cz: my mother traveled 6 hours to see me in prison, but was turned away  \n\nin an april 9 interview w",
+      "summary": "cz: my mother traveled 6 hours to see me in prison, but was turned away  \n\nin an april 9 interview with scott melker, binance founder changpeng zhao (cz) @cz_binance  shared that his prison experience made him value his family more. he was deeply moved when his mother made a 6-hour journey to visit him in prison, only to be turned away. \n\ncz stated that he previously focused his energy entirely on his company, and it wasn't until he lost his freedom that he realized what he missed most wasn't material comforts, but his family. since his release, he has significantly increased the time spent with his loved ones, adding that running a company isn't the only important thing in life having a good family is equally vital.\n\nvideo",
+      "fullAnalysis": "시장 변동성 주목",
+      "category": "암호화폐",
+      "priority": "low",
+      "marketImpact": "neutral",
+      "source": "WuBlockchain",
+      "sourceHandle": "@WuBlockchain",
+      "sourceUrl": "https://x.com/WuBlockchain/status/2045216977296249201#m",
+      "timestamp": "2026-04-18T07:49:25.776700+09:00",
+      "engagement": {
+        "likes": 0,
+        "views": 0,
+        "score": 0.0
+      },
+      "relatedAccounts": [],
+      "tags": [],
+      "impactScore": 0
+    },
+    {
+      "id": "627dff49-6df6-4579-a393-57a9d83b3926",
+      "rank": 5,
       "title": "source: piped.video/watch?v=eyobeqmd…",
       "summary": "source: piped.video/watch?v=eyobeqmd…",
       "fullAnalysis": "시장 변동성 주목",
@@ -13,7 +101,7 @@
       "source": "WuBlockchain",
       "sourceHandle": "@WuBlockchain",
       "sourceUrl": "https://x.com/WuBlockchain/status/2045190458901696526#m",
-      "timestamp": "2026-04-18T04:09:56.856261+09:00",
+      "timestamp": "2026-04-18T07:49:25.776700+09:00",
       "engagement": {
         "likes": 0,
         "views": 0,
@@ -24,8 +112,8 @@
       "impactScore": 0
     },
     {
-      "id": "b6e1de53-04e6-41a1-af85-5cd3e7595a7e",
-      "rank": 2,
+      "id": "1766f520-18e3-4617-ba20-4bb98ecec747",
+      "rank": 6,
       "title": "source: edition.cnn.com/2026/04/17/w…",
       "summary": "source: edition.cnn.com/2026/04/17/w…",
       "fullAnalysis": "시장 변동성 주목",
@@ -35,7 +123,7 @@
       "source": "WuBlockchain",
       "sourceHandle": "@WuBlockchain",
       "sourceUrl": "https://x.com/WuBlockchain/status/2045186113309217102#m",
-      "timestamp": "2026-04-18T04:09:56.856261+09:00",
+      "timestamp": "2026-04-18T07:49:25.776700+09:00",
       "engagement": {
         "likes": 0,
         "views": 0,
@@ -46,8 +134,8 @@
       "impactScore": 0
     },
     {
-      "id": "f4c552af-8d45-405d-84fc-c352b1f3ab6f",
-      "rank": 3,
+      "id": "3436e1c4-eb8a-4bbf-a166-56949decd793",
+      "rank": 7,
       "title": "iran to keep strait of hormuz open during ceasefire, u.s. blockade to remain until deal reached\n\nacc",
       "summary": "iran to keep strait of hormuz open during ceasefire, u.s. blockade to remain until deal reached\n\naccording to cnn, iran announced that the strait of hormuz will be “fully open” to all commercial shipping during the ceasefire period. donald 트럼프 said iran has committed not to close the waterway, but added that the u.s. naval blockade will remain in place until a comprehensive agreement with iran is fully reached. negotiations are ongoing to finalize a broader deal to end the conflict, though key differences persist.",
       "fullAnalysis": "시장 변동성 주목",
@@ -57,7 +145,7 @@
       "source": "WuBlockchain",
       "sourceHandle": "@WuBlockchain",
       "sourceUrl": "https://x.com/WuBlockchain/status/2045176799391563921#m",
-      "timestamp": "2026-04-18T04:09:56.856261+09:00",
+      "timestamp": "2026-04-18T07:49:25.776700+09:00",
       "engagement": {
         "likes": 0,
         "views": 0,
@@ -68,8 +156,8 @@
       "impactScore": 0
     },
     {
-      "id": "6324746e-845b-4686-b77a-ab76c97474ee",
-      "rank": 4,
+      "id": "70ca71c1-08c3-45c8-bc4c-e2ecef3e4d17",
+      "rank": 8,
       "title": "for the complete article and weekly curated reports, subscribe to our substack: open.substack.com/pu",
       "summary": "for the complete article and weekly curated reports, subscribe to our substack: open.substack.com/pub/wubloc…",
       "fullAnalysis": "시장 변동성 주목",
@@ -79,7 +167,7 @@
       "source": "WuBlockchain",
       "sourceHandle": "@WuBlockchain",
       "sourceUrl": "https://x.com/WuBlockchain/status/2045130114233467370#m",
-      "timestamp": "2026-04-18T04:09:56.856261+09:00",
+      "timestamp": "2026-04-18T07:49:25.776700+09:00",
       "engagement": {
         "likes": 0,
         "views": 0,
@@ -90,8 +178,8 @@
       "impactScore": 0
     },
     {
-      "id": "782e3b79-851d-4824-931d-9fe2253d1d48",
-      "rank": 5,
+      "id": "71fdb437-c28f-4579-a265-c376feba17ac",
+      "rank": 9,
       "title": "wu블록체인 weekly: deutsche börse invests in kraken, uk asset manager puts £50 billion fund on-chain, 비트",
       "summary": "wu블록체인 weekly: deutsche börse invests in kraken, uk asset manager puts £50 billion fund on-chain, 비트코인 miners record massive sell-off, bitmine expands ETH holdings, tETHer launches self-custody 지갑, strategy buys more BTC.",
       "fullAnalysis": "시장 변동성 주목",
@@ -101,7 +189,7 @@
       "source": "WuBlockchain",
       "sourceHandle": "@WuBlockchain",
       "sourceUrl": "https://x.com/WuBlockchain/status/2045130089151504836#m",
-      "timestamp": "2026-04-18T04:09:56.856261+09:00",
+      "timestamp": "2026-04-18T07:49:25.776700+09:00",
       "engagement": {
         "likes": 0,
         "views": 0,
@@ -112,8 +200,8 @@
       "impactScore": 0
     },
     {
-      "id": "65674fb6-ed56-4de7-a331-10d54ebc23bc",
-      "rank": 6,
+      "id": "5b429a25-4003-412e-8f48-cb07b3a60fe0",
+      "rank": 10,
       "title": "kraken parent payward to acquire bitnomial for $550m\n\naccording to 코인desk, kraken’s parent company p",
       "summary": "kraken parent payward to acquire bitnomial for $550m\n\naccording to 코인desk, kraken’s parent company payward has agreed to acquire 암호화폐 derivatives platform bitnomial for up to $550 million in cash and stock, gaining a fully licensed u.s. derivatives stack including brokerage, clearing, and 거래소 capabilities. nitter.net/코인desk/status/204511…",
       "fullAnalysis": "상승 추세 지속 중",
@@ -123,7 +211,7 @@
       "source": "WuBlockchain",
       "sourceHandle": "@WuBlockchain",
       "sourceUrl": "https://x.com/WuBlockchain/status/2045119629786272196#m",
-      "timestamp": "2026-04-18T04:09:56.856261+09:00",
+      "timestamp": "2026-04-18T07:49:25.776700+09:00",
       "engagement": {
         "likes": 0,
         "views": 0,
@@ -134,162 +222,8 @@
       "impactScore": 0
     },
     {
-      "id": "d64d94f3-624b-4481-9dee-f301bb1e9ba2",
-      "rank": 7,
-      "title": "singapore gulf bank @sgb_app has launched a stable코인 mint and redeem service, enabling 1:1 usd–usdc ",
-      "summary": "singapore gulf bank @sgb_app has launched a stable코인 mint and redeem service, enabling 1:1 usd–usdc conversion on 솔라나 with 24/7 settlement and waived fees for a limited time. the service currently targets institutional clients and plans to open to individuals by the end of q2. sgb.com/insights/singapore-g…",
-      "fullAnalysis": "시장 변동성 주목",
-      "category": "암호화폐",
-      "priority": "low",
-      "marketImpact": "neutral",
-      "source": "WuBlockchain",
-      "sourceHandle": "@WuBlockchain",
-      "sourceUrl": "https://x.com/WuBlockchain/status/2045077072310108594#m",
-      "timestamp": "2026-04-18T04:09:56.856261+09:00",
-      "engagement": {
-        "likes": 0,
-        "views": 0,
-        "score": 0.0
-      },
-      "relatedAccounts": [],
-      "tags": [],
-      "impactScore": 0
-    },
-    {
-      "id": "f92090eb-067e-4666-9c65-7c7251079c5b",
-      "rank": 8,
-      "title": "source: piped.video/smcynjsa8sw?si=8u5m…",
-      "summary": "source: piped.video/smcynjsa8sw?si=8u5m…",
-      "fullAnalysis": "시장 변동성 주목",
-      "category": "암호화폐",
-      "priority": "low",
-      "marketImpact": "neutral",
-      "source": "WuBlockchain",
-      "sourceHandle": "@WuBlockchain",
-      "sourceUrl": "https://x.com/WuBlockchain/status/2045072167768035384#m",
-      "timestamp": "2026-04-18T04:09:56.856261+09:00",
-      "engagement": {
-        "likes": 0,
-        "views": 0,
-        "score": 0.0
-      },
-      "relatedAccounts": [],
-      "tags": [],
-      "impactScore": 0
-    },
-    {
-      "id": "78a0cc98-0f8e-4331-a422-65f7eff546f1",
-      "rank": 9,
-      "title": "arthur hayes: 90% of my net worth is 비트코인  \n\n on april 10, 2026, bitmex co-founder arthur hayes  @암호",
-      "summary": "arthur hayes: 90% of my net worth is 비트코인  \n\n on april 10, 2026, bitmex co-founder arthur hayes  @암호화폐hayes stated in anthony pompliano's interview that over 90% of his net worth is in 비트코인. given his low cost basis, he remains inactive amid market fluctuations. \n\nwhen discussing capital choices—deploying more fiat or selling some 비트코인 for faster-appreciating alt코인s—he noted he is currently most bullish on zcash and hyperliquid. as for new fiat, he stated he will not put it into 비트코인 today, as he is still waiting for a major \"money printing\" event.\n\nvideo",
-      "fullAnalysis": "시장 변동성 주목",
-      "category": "암호화폐",
-      "priority": "low",
-      "marketImpact": "neutral",
-      "source": "WuBlockchain",
-      "sourceHandle": "@WuBlockchain",
-      "sourceUrl": "https://x.com/WuBlockchain/status/2045034530420224097#m",
-      "timestamp": "2026-04-18T04:09:56.856261+09:00",
-      "engagement": {
-        "likes": 0,
-        "views": 0,
-        "score": 0.0
-      },
-      "relatedAccounts": [],
-      "tags": [],
-      "impactScore": 0
-    },
-    {
-      "id": "c480877d-0acc-4dcb-ba84-3f5c88a306e6",
-      "rank": 10,
-      "title": "source: sosovalue.com/assets/etf/us-…",
-      "summary": "source: sosovalue.com/assets/etf/us-…",
-      "fullAnalysis": "시장 변동성 주목",
-      "category": "암호화폐",
-      "priority": "low",
-      "marketImpact": "neutral",
-      "source": "WuBlockchain",
-      "sourceHandle": "@WuBlockchain",
-      "sourceUrl": "https://x.com/WuBlockchain/status/2045001004895416676#m",
-      "timestamp": "2026-04-18T04:09:56.856261+09:00",
-      "engagement": {
-        "likes": 0,
-        "views": 0,
-        "score": 0.0
-      },
-      "relatedAccounts": [],
-      "tags": [],
-      "impactScore": 0
-    },
-    {
-      "id": "effadcc0-bac0-4b73-be53-7f8ae27a3d55",
+      "id": "c8e2a6fe-3791-491f-80e6-a05e7f02415b",
       "rank": 1,
-      "title": "🇮🇷🇺🇸 iran's parliamentary national security committee just called out the u.s. directly:\n\n\"the ameri",
-      "summary": "🇮🇷🇺🇸 iran's parliamentary national security committee just called out the u.s. directly:\n\n\"the american statements on social media differ from reality.\"\n\ntehran is not just pushing back on nuclear terms. they're signaling that whatever washington is saying publicly about the state of negotiations is being used as leverage, not as fact.\n\nthe specific line that matters: iran will not allow uranium to leave the country, full stop.\n\nthat's a hard red line dressed up as a press statement.\n\nsource: al jazeera mubasher\n\n\n\n\n\n\n\n\nmario nawfal (@marionawfal)\n\n🇮🇳🇮🇱 india has spent a decade becoming the world's most sophisticated geopolitical balancer.  \n\nthe iran conflict just showed exactly where that strategy breaks.  \n\nmodi was lite랠리 in tel aviv when the war started. nobody brie연준 him. that's not a small thing for a country that runs chabahar port on iran's coast, has 10 million workers sending remittances home from gulf states, and routes 90% of its lng through the strait of hormuz.  \n\nwhen the strait got hot, lpg prices inside india spiked hard. black market cooking gas cylinders hit 4,000 rupees. regular indians felt it immediately.  \n\nbut the bigger geopolitical hit was this: pakistan, the country india spent 20 years iSOLating on the world stage, became the primary us-iran mediator.  \n\none conflict. pakistan goes from pariah to power broker. india goes from indispensable partner to surprised observer.  \n\nthe strategy itself isn't broken. india is still what one analyst called \"a geopolitical entrepreneur, able to balance all the opposing factors and maintain diploMATIC relations with each of them.\" no other country of india's size pulls that off at scale.  \n\nbut balancing works best when your partners don't go to war with each other. the moment they do, every side starts asking where you actually stand.  \n\nindia doesn't have a clean answer to that question. and now everyone knows it.  \n\nsource: reuters, us news, al jazeera\n\n\n\n\n\n— https://nitter.net/marionawfal/status/2045208169639788828#m",
-      "fullAnalysis": "상승 추세 지속 중",
-      "category": "경제",
-      "priority": "low",
-      "marketImpact": "neutral",
-      "source": "MarioNawfal",
-      "sourceHandle": "@MarioNawfal",
-      "sourceUrl": "https://x.com/MarioNawfal/status/2045215215248396582#m",
-      "timestamp": "2026-04-18T04:09:56.856261+09:00",
-      "engagement": {
-        "likes": 0,
-        "views": 0,
-        "score": 0.0
-      },
-      "relatedAccounts": [],
-      "tags": [],
-      "impactScore": 0
-    },
-    {
-      "id": "b80d62e5-8aed-4a8b-8599-c52a0fbb9c30",
-      "rank": 2,
-      "title": "🇮🇷🇺🇸 iran just turned the strait of hormuz into a compliance mechanism.\n\nan iranian official told re",
-      "summary": "🇮🇷🇺🇸 iran just turned the strait of hormuz into a compliance mechanism.\n\nan iranian official told reuters that keeping the strait open is \"conditional on u.s. adherence to the terms of the ceasefire.\"\n\nthe same official also confirmed no nuclear deal details have been agreed yet.\n\nso the ceasefire holds the strait open. but the ceasefire itself has no agreed terms on the nuclear file.\n\n\n\n\n\n\n\n\nmario nawfal (@marionawfal)\n\n🇮🇳🇮🇱 india has spent a decade becoming the world's most sophisticated geopolitical balancer.  \n\nthe iran conflict just showed exactly where that strategy breaks.  \n\nmodi was lite랠리 in tel aviv when the war started. nobody brie연준 him. that's not a small thing for a country that runs chabahar port on iran's coast, has 10 million workers sending remittances home from gulf states, and routes 90% of its lng through the strait of hormuz.  \n\nwhen the strait got hot, lpg prices inside india spiked hard. black market cooking gas cylinders hit 4,000 rupees. regular indians felt it immediately.  \n\nbut the bigger geopolitical hit was this: pakistan, the country india spent 20 years iSOLating on the world stage, became the primary us-iran mediator.  \n\none conflict. pakistan goes from pariah to power broker. india goes from indispensable partner to surprised observer.  \n\nthe strategy itself isn't broken. india is still what one analyst called \"a geopolitical entrepreneur, able to balance all the opposing factors and maintain diploMATIC relations with each of them.\" no other country of india's size pulls that off at scale.  \n\nbut balancing works best when your partners don't go to war with each other. the moment they do, every side starts asking where you actually stand.  \n\nindia doesn't have a clean answer to that question. and now everyone knows it.  \n\nsource: reuters, us news, al jazeera\n\n\n\n\n\n— https://nitter.net/marionawfal/status/2045208169639788828#m",
-      "fullAnalysis": "상승 추세 지속 중",
-      "category": "경제",
-      "priority": "low",
-      "marketImpact": "neutral",
-      "source": "MarioNawfal",
-      "sourceHandle": "@MarioNawfal",
-      "sourceUrl": "https://x.com/MarioNawfal/status/2045211691999498670#m",
-      "timestamp": "2026-04-18T04:09:56.856261+09:00",
-      "engagement": {
-        "likes": 0,
-        "views": 0,
-        "score": 0.0
-      },
-      "relatedAccounts": [],
-      "tags": [],
-      "impactScore": 0
-    },
-    {
-      "id": "5bf82651-2392-4b85-b99d-3c5a7b23740b",
-      "rank": 3,
-      "title": "🇮🇷 the strait of hormuz is back open.  \n\nship traffic resumed today after one of the most watched ch",
-      "summary": "🇮🇷 the strait of hormuz is back open.  \n\nship traffic resumed today after one of the most watched chokepoints on the planet went dark.  \n\nevery day it was closed, the world was holding its breath.  \n\nnow the question everyone in the markets is asking: how bad was the damage, and is this actually over?\n\nvideo\n  \n\n\n\n\nmario nawfal (@marionawfal)\n\n🇮🇷🇮🇱 iran reportedly had missile launchers locked on israeli targets last night, ready to fire at 8 pm.\n\nthe only thing that stopped it: a 트럼프 commitment tied to the lebanon ceasefire.\n\nan informed source told tasnim news agency that if 트럼프's commitment was not fulfilled, iran would have struck israel at 8 pm last night, and \"all necessary preparations for this purpose had been made.\"\n\nthe launchers were operational. the targets were pre-selected. the clock was running.\n\n\n\n\n\n\n\n\n\n— https://nitter.net/marionawfal/status/2045202222267646383#m",
-      "fullAnalysis": "시장 변동성 주목",
-      "category": "경제",
-      "priority": "low",
-      "marketImpact": "neutral",
-      "source": "MarioNawfal",
-      "sourceHandle": "@MarioNawfal",
-      "sourceUrl": "https://x.com/MarioNawfal/status/2045207598937550878#m",
-      "timestamp": "2026-04-18T04:09:56.856261+09:00",
-      "engagement": {
-        "likes": 0,
-        "views": 0,
-        "score": 0.0
-      },
-      "relatedAccounts": [],
-      "tags": [],
-      "impactScore": 0
-    },
-    {
-      "id": "572d4d0b-ec14-490e-ae0b-a2e815592a70",
-      "rank": 4,
       "title": "retail got liquidated on the way down longing all 상승s, retail will be liquidated on the way up short",
       "summary": "retail got liquidated on the way down longing all 상승s, retail will be liquidated on the way up shorting all 하락s. thats how the markets work. sheep to the slaughter.",
       "fullAnalysis": "상승 추세 지속 중",
@@ -299,7 +233,7 @@
       "source": "martypartymusic",
       "sourceHandle": "@martypartymusic",
       "sourceUrl": "https://x.com/martypartymusic/status/2045209990924013808#m",
-      "timestamp": "2026-04-18T04:09:56.856261+09:00",
+      "timestamp": "2026-04-18T07:49:25.776700+09:00",
       "engagement": {
         "likes": 0,
         "views": 0,
@@ -310,52 +244,8 @@
       "impactScore": 0
     },
     {
-      "id": "c82903c9-fab1-4ab0-bec0-e1a0b039cfa2",
-      "rank": 5,
-      "title": "#속보: 트럼프 said consultants warned fuel could hit $300 a barrel and trigger a depression—but that didn",
-      "summary": "#속보: 트럼프 said consultants warned fuel could hit $300 a barrel and trigger a depression—but that didn’t happen with markets at record highs, cites tame fuel prices.",
-      "fullAnalysis": "시장 변동성 주목",
-      "category": "경제",
-      "priority": "low",
-      "marketImpact": "neutral",
-      "source": "InsiderWire",
-      "sourceHandle": "@InsiderWire",
-      "sourceUrl": "https://x.com/InsiderWire/status/2044966857375957392#m",
-      "timestamp": "2026-04-18T04:09:56.856261+09:00",
-      "engagement": {
-        "likes": 0,
-        "views": 0,
-        "score": 0.0
-      },
-      "relatedAccounts": [],
-      "tags": [],
-      "impactScore": 0
-    },
-    {
-      "id": "9de7d55e-ce87-4ca9-b06e-c0ee97f72d58",
-      "rank": 6,
-      "title": "#속보: doj launches 연준eral investigation into eric swalwell for sexuai assault.",
-      "summary": "#속보: doj launches 연준eral investigation into eric swalwell for sexuai assault.",
-      "fullAnalysis": "시장 변동성 주목",
-      "category": "경제",
-      "priority": "low",
-      "marketImpact": "neutral",
-      "source": "InsiderWire",
-      "sourceHandle": "@InsiderWire",
-      "sourceUrl": "https://x.com/InsiderWire/status/2044865550271103424#m",
-      "timestamp": "2026-04-18T04:09:56.856261+09:00",
-      "engagement": {
-        "likes": 0,
-        "views": 0,
-        "score": 0.0
-      },
-      "relatedAccounts": [],
-      "tags": [],
-      "impactScore": 0
-    },
-    {
-      "id": "4886024a-c324-4173-9a17-d1d7693ef5c9",
-      "rank": 7,
+      "id": "b20bab72-e372-4ec4-9a64-8370458533b5",
+      "rank": 2,
       "title": "링크\nnewyork연준.org/markets/domes…",
       "summary": "링크\nnewyork연준.org/markets/domes…",
       "fullAnalysis": "시장 변동성 주목",
@@ -365,7 +255,7 @@
       "source": "yang_youngbin",
       "sourceHandle": "@yang_youngbin",
       "sourceUrl": "https://x.com/yang_youngbin/status/2044978813944332478#m",
-      "timestamp": "2026-04-18T04:09:56.856261+09:00",
+      "timestamp": "2026-04-18T07:49:25.776700+09:00",
       "engagement": {
         "likes": 0,
         "views": 0,
@@ -376,8 +266,8 @@
       "impactScore": 0
     },
     {
-      "id": "7c873f91-a5a3-4e3a-9f19-0afb6dd6a6f2",
-      "rank": 8,
+      "id": "93a62f4a-46f9-463b-bc77-0d264920d8f2",
+      "rank": 3,
       "title": "링크\nnewyork연준.org/markets/domes…",
       "summary": "링크\nnewyork연준.org/markets/domes…",
       "fullAnalysis": "시장 변동성 주목",
@@ -387,7 +277,7 @@
       "source": "yang_youngbin",
       "sourceHandle": "@yang_youngbin",
       "sourceUrl": "https://x.com/yang_youngbin/status/2044941223920828714#m",
-      "timestamp": "2026-04-18T04:09:56.856261+09:00",
+      "timestamp": "2026-04-18T07:49:25.776700+09:00",
       "engagement": {
         "likes": 0,
         "views": 0,
@@ -398,8 +288,8 @@
       "impactScore": 0
     },
     {
-      "id": "3979079f-e023-4413-b99c-237536d9e3c3",
-      "rank": 9,
+      "id": "9e96b316-7611-45e1-bba9-8adec11f7364",
+      "rank": 4,
       "title": "4/21 케빈 워시 연준 의장 지명 청문회\n\n1. qt 재개 시점·규모 언급 (유동성 드레인 신호 강도)\n2. ai 생산성 논리의 구체성 (dovish 근거 견고성)\n3. 스테이블",
       "summary": "4/21 케빈 워시 연준 의장 지명 청문회\n\n1. qt 재개 시점·규모 언급 (유동성 드레인 신호 강도)\n2. ai 생산성 논리의 구체성 (dovish 근거 견고성)\n3. 스테이블코인 규제 스탠스 (크립토 포지션 직접 영향)\n4. 재정정책 논평 범위 (연준 역할 축소 vs 확대 시사)\n5. 틸리스 의원의 질문 톤 (투표 의도 선행 지표)",
       "fullAnalysis": "시장 변동성 주목",
@@ -409,7 +299,7 @@
       "source": "Future__Walker",
       "sourceHandle": "@Future__Walker",
       "sourceUrl": "https://x.com/Future__Walker/status/2045097370363593163#m",
-      "timestamp": "2026-04-18T04:09:56.856261+09:00",
+      "timestamp": "2026-04-18T07:49:25.776700+09:00",
       "engagement": {
         "likes": 0,
         "views": 0,
@@ -420,8 +310,8 @@
       "impactScore": 0
     },
     {
-      "id": "6b942558-290a-447d-9442-5ba14f2e3b4f",
-      "rank": 10,
+      "id": "a9840570-de04-450a-824d-8c8640a9258a",
+      "rank": 5,
       "title": "owning a car in america has never been this expensive:\n\nthe total cost of vehicle ownership in the u",
       "summary": "owning a car in america has never been this expensive:\n\nthe total cost of vehicle ownership in the us has risen +36% since january 2020.\n\nmotor vehicle maintenance and repair costs have 급등d +50% over the same period, jumping +6.1% yoy in march alone.\n\nmeanwhile, auto insurance prices are up +56% while motor vehicle parts and equipment are up +27%.\n\nvehicle ownership costs account for nearly 15% of the cpi 인플레이션 formula.\n\nthis means these costs are one of the biggest drivers of the rising cost of living for american households.\n\ncar 인플레이션 is squeezing us consumers.",
       "fullAnalysis": "상승 추세 지속 중",
@@ -431,7 +321,7 @@
       "source": "KobeissiLetter",
       "sourceHandle": "@KobeissiLetter",
       "sourceUrl": "https://x.com/KobeissiLetter/status/2045209245256212820#m",
-      "timestamp": "2026-04-18T04:09:56.856261+09:00",
+      "timestamp": "2026-04-18T07:49:25.776700+09:00",
       "engagement": {
         "likes": 0,
         "views": 0,
@@ -442,7 +332,117 @@
       "impactScore": 0
     },
     {
-      "id": "37dc30e3-badf-45f3-898e-c6bdf7253df8",
+      "id": "99261863-c1de-4784-9075-7b82d7c8f008",
+      "rank": 6,
+      "title": "foreign demand for chinese bonds is surging:\n\ntrading volume of chinese onshore bonds traded by over",
+      "summary": "foreign demand for chinese bonds is surging:\n\ntrading volume of chinese onshore bonds traded by overseas funds via hong kong jumped to a record $179 billion in march.\n\nchinese onshore bonds comprise government and state-backed yuan-denominated bonds, which are accessible to foreign investors through the hong kong market.\n\nat the same time, average daily turnover 급등d to an all-time high of $8.1 billion.\n\ntrading volume has more than doubled since october 2025.\n\nthis comes as the iran war has driven global investors to seek alternatives to traditional safe-haven assets such as us treasuries.\n\nyuan-denominated bonds have outperformed global peers since the conflict began, supported by china's abundant liquidity and limited exposure to the energy shock.\n\nforeign investors are piling into chinese bonds at a record pace.",
+      "fullAnalysis": "상승 추세 지속 중",
+      "category": "경제",
+      "priority": "low",
+      "marketImpact": "neutral",
+      "source": "KobeissiLetter",
+      "sourceHandle": "@KobeissiLetter",
+      "sourceUrl": "https://x.com/KobeissiLetter/status/2045194990490620049#m",
+      "timestamp": "2026-04-18T07:49:25.776700+09:00",
+      "engagement": {
+        "likes": 0,
+        "views": 0,
+        "score": 0.0
+      },
+      "relatedAccounts": [],
+      "tags": [],
+      "impactScore": 0
+    },
+    {
+      "id": "42616350-7af8-48f0-93f2-fd90da8652aa",
+      "rank": 7,
+      "title": "risk appetite among institutional investors is skyrocketing:\n\ninstitutional investors purchased ~22%",
+      "summary": "risk appetite among institutional investors is skyrocketing:\n\ninstitutional investors purchased ~22% more call than put options last week, the largest difference in at least 16 months, according to citadel.\n\nmonday and tuesday also saw significant institutional call option inflows, now on track for the largest weekly bullish reading since october 2024.\n\nas a result, institutional demand for call options is up to the highest level on record.\n\ninstitutional call option purchases over 5 days ending tuesday have exceeded the average since january 2025 by +37%.\n\nby comparison, during the april 2025 market recovery, the average was surpassed by +25%.\n\ninstitutional investors are piling into equities.",
+      "fullAnalysis": "상승 추세 지속 중",
+      "category": "경제",
+      "priority": "low",
+      "marketImpact": "neutral",
+      "source": "KobeissiLetter",
+      "sourceHandle": "@KobeissiLetter",
+      "sourceUrl": "https://x.com/KobeissiLetter/status/2045138813786194118#m",
+      "timestamp": "2026-04-18T07:49:25.776700+09:00",
+      "engagement": {
+        "likes": 0,
+        "views": 0,
+        "score": 0.0
+      },
+      "relatedAccounts": [],
+      "tags": [],
+      "impactScore": 0
+    },
+    {
+      "id": "ce3134dc-edc7-4c8c-a033-fffca1445e1d",
+      "rank": 8,
+      "title": "new: @elonmusk says “universal high income via checks issued by the 연준eral government is the best wa",
+      "summary": "new: @elonmusk says “universal high income via checks issued by the 연준eral government is the best way to deal with 실업률 caused by ai”",
+      "fullAnalysis": "시장 변동성 주목",
+      "category": "경제",
+      "priority": "low",
+      "marketImpact": "neutral",
+      "source": "DegenerateNews",
+      "sourceHandle": "@DegenerateNews",
+      "sourceUrl": "https://x.com/DegenerateNews/status/2044992164946477263#m",
+      "timestamp": "2026-04-18T07:49:25.776700+09:00",
+      "engagement": {
+        "likes": 0,
+        "views": 0,
+        "score": 0.0
+      },
+      "relatedAccounts": [],
+      "tags": [],
+      "impactScore": 0
+    },
+    {
+      "id": "31b2fe84-68b9-45af-86de-e209b29ee67b",
+      "rank": 9,
+      "title": "hormuz message unchanged, market reaction shifts\n\niran’s stance on the strait of hormuz is largely u",
+      "summary": "hormuz message unchanged, market reaction shifts\n\niran’s stance on the strait of hormuz is largely unchanged: ships can pass via coordinated routes but must still coordinate with iranian authorities.\n\ntoday:\n🔸hormuz is “completely” open to all through the “coordinated route”: foreign minister aragchi\n🔸owners still need to contact the iran revolutionary guard corp navy: (state tv citing a senior military official)\n\napril 9:\n🔸iran’s deputy foreign minister told the uk broadcaster itv in a television interview that “anybody who communicates with iranian authorities has got permission”\n\nthe key difference now is a growing sense that both sides may support a ceasefire. market reaction has also flipped—oil prices fell sharply this time, unlike the rise seen on april 9.",
+      "fullAnalysis": "상승 추세 지속 중",
+      "category": "경제",
+      "priority": "low",
+      "marketImpact": "neutral",
+      "source": "DeItaone",
+      "sourceHandle": "@DeItaone",
+      "sourceUrl": "https://x.com/DeItaone/status/2045184361771733026#m",
+      "timestamp": "2026-04-18T07:49:25.776700+09:00",
+      "engagement": {
+        "likes": 0,
+        "views": 0,
+        "score": 0.0
+      },
+      "relatedAccounts": [],
+      "tags": [],
+      "impactScore": 0
+    },
+    {
+      "id": "1c3e899d-5af2-45f9-bda5-ef49c6770347",
+      "rank": 10,
+      "title": "daly: could leave rates where they are; if 인플레이션 took off would need to raise rates; if conflict end",
+      "summary": "daly: could leave rates where they are; if 인플레이션 took off would need to raise rates; if conflict ends quickly could cut",
+      "fullAnalysis": "시장 변동성 주목",
+      "category": "경제",
+      "priority": "low",
+      "marketImpact": "neutral",
+      "source": "DeItaone",
+      "sourceHandle": "@DeItaone",
+      "sourceUrl": "https://x.com/DeItaone/status/2045169034497265890#m",
+      "timestamp": "2026-04-18T07:49:25.776700+09:00",
+      "engagement": {
+        "likes": 0,
+        "views": 0,
+        "score": 0.0
+      },
+      "relatedAccounts": [],
+      "tags": [],
+      "impactScore": 0
+    },
+    {
+      "id": "ff009dea-afbb-4216-a988-a79ac270beb3",
       "rank": 1,
       "title": "악시오스: 미국은 이란 제재로 묶은  200억 달러 풀어줄 테니, 우라늄 농축 포기하라는 딜을 검토중이다.   \n\n* 유가 하락중, 이것저것 상승중\n\n\ngonogo (@gonogo",
       "summary": "악시오스: 미국은 이란 제재로 묶은  200억 달러 풀어줄 테니, 우라늄 농축 포기하라는 딜을 검토중이다.   \n\n* 유가 하락중, 이것저것 상승중\n\n\ngonogo (@gonogo_korea)\n\n악시오스: 미국-이란 협상이 주말에 파키스탄에서 열릴 예정이며, 일요일이 유력한 상황이다.\n\n\n\n— https://nitter.net/gonogo_korea/status/2045118195938542003#m",
@@ -453,7 +453,7 @@
       "source": "GONOGO_Korea",
       "sourceHandle": "@GONOGO_Korea",
       "sourceUrl": "https://x.com/GONOGO_Korea/status/2045119787110649899#m",
-      "timestamp": "2026-04-18T04:09:56.856261+09:00",
+      "timestamp": "2026-04-18T07:49:25.776700+09:00",
       "engagement": {
         "likes": 0,
         "views": 0,
@@ -464,7 +464,7 @@
       "impactScore": 0
     },
     {
-      "id": "9904e1c1-026b-4c87-b742-509a2e32e5ad",
+      "id": "b4b0720f-8c13-4a25-840b-e4b601c2b2ee",
       "rank": 2,
       "title": "악시오스: 미국-이란 협상이 주말에 파키스탄에서 열릴 예정이며, 일요일이 유력한 상황이다.",
       "summary": "악시오스: 미국-이란 협상이 주말에 파키스탄에서 열릴 예정이며, 일요일이 유력한 상황이다.",
@@ -475,7 +475,7 @@
       "source": "GONOGO_Korea",
       "sourceHandle": "@GONOGO_Korea",
       "sourceUrl": "https://x.com/GONOGO_Korea/status/2045118195938542003#m",
-      "timestamp": "2026-04-18T04:09:56.856261+09:00",
+      "timestamp": "2026-04-18T07:49:25.776700+09:00",
       "engagement": {
         "likes": 0,
         "views": 0,
@@ -486,7 +486,7 @@
       "impactScore": 0
     },
     {
-      "id": "9d617beb-e2e5-4088-908b-06f51e163ba7",
+      "id": "80fd2350-fd21-4f67-ac6a-c664e643a415",
       "rank": 3,
       "title": "미선이 오늘도 신고가",
       "summary": "미선이 오늘도 신고가",
@@ -497,7 +497,7 @@
       "source": "GONOGO_Korea",
       "sourceHandle": "@GONOGO_Korea",
       "sourceUrl": "https://x.com/GONOGO_Korea/status/2045116587422970148#m",
-      "timestamp": "2026-04-18T04:09:56.856261+09:00",
+      "timestamp": "2026-04-18T07:49:25.776700+09:00",
       "engagement": {
         "likes": 0,
         "views": 0,
@@ -508,7 +508,7 @@
       "impactScore": 0
     },
     {
-      "id": "9292e8ef-77c2-4377-8e3f-f7306d5dd550",
+      "id": "5de44cd1-6f15-422e-baf0-8ab44c7872e9",
       "rank": 4,
       "title": "스티븐 미란 연준 이사: 고노고의 트윗을 읽고 나니, 아무래도 올해 연준의 금리 인하 횟수 전망을 기존 4회에서 3회로 낮춰야 겠어.",
       "summary": "스티븐 미란 연준 이사: 고노고의 트윗을 읽고 나니, 아무래도 올해 연준의 금리 인하 횟수 전망을 기존 4회에서 3회로 낮춰야 겠어.",
@@ -519,7 +519,7 @@
       "source": "GONOGO_Korea",
       "sourceHandle": "@GONOGO_Korea",
       "sourceUrl": "https://x.com/GONOGO_Korea/status/2044924975099085247#m",
-      "timestamp": "2026-04-18T04:09:56.856261+09:00",
+      "timestamp": "2026-04-18T07:49:25.776700+09:00",
       "engagement": {
         "likes": 0,
         "views": 0,
@@ -530,7 +530,7 @@
       "impactScore": 0
     },
     {
-      "id": "32336bbc-3cf7-48df-98e5-a4b7a98d7417",
+      "id": "ba501d99-ac50-45e6-a750-41ad97d9c927",
       "rank": 5,
       "title": "넷플릭스 실적은 잘 나왔는데, 가이던스가 별로라서 \n\n박살났구나",
       "summary": "넷플릭스 실적은 잘 나왔는데, 가이던스가 별로라서 \n\n박살났구나",
@@ -541,7 +541,7 @@
       "source": "GONOGO_Korea",
       "sourceHandle": "@GONOGO_Korea",
       "sourceUrl": "https://x.com/GONOGO_Korea/status/2044919350998765921#m",
-      "timestamp": "2026-04-18T04:09:56.856261+09:00",
+      "timestamp": "2026-04-18T07:49:25.776700+09:00",
       "engagement": {
         "likes": 0,
         "views": 0,
@@ -552,7 +552,7 @@
       "impactScore": 0
     },
     {
-      "id": "d4862475-9209-428d-85a5-2e5ddfe5e853",
+      "id": "59a79a3b-329c-4864-aa5a-e1231608bdd7",
       "rank": 6,
       "title": "팔로워 3.6만인 사람이 실제로 해보지도않고 경험인마냥 올리네요. \n\n제가 갖고 있는 m3 8gb ram 맥북으로 아래 모델 돌려봤는데 안돌아가요. \n\n참고하세요! 저는 직접 해본",
       "summary": "팔로워 3.6만인 사람이 실제로 해보지도않고 경험인마냥 올리네요. \n\n제가 갖고 있는 m3 8gb ram 맥북으로 아래 모델 돌려봤는데 안돌아가요. \n\n참고하세요! 저는 직접 해본것만 공유드립니다.\n\n\nberryxia.ai (@berryxia)\n\n🤯 又一枚核弹级开源模型来了！@leftcurvedev_ 刚分享的 qwen3.5-9b-glm5.1-distill-v1 直接把本地ai拉到新高度！\n\n🧠 用 glm-5.1 顶级推理蒸馏，思考深度完爆基础版  \n⚡ 仅需 8gb vram 就能跑，普通显卡直接起飞  \n🍎 还有 mlx 苹果原生版已上线  \n🔥 作者刚蒸馏完 claude opus 4.6，现在又干翻最强开源模型！\n\n27b 大版本据说也在路上了… \n这波真要卷死一堆闭源模型啊\n\n模型直达：huggingface.co/jackrong/qwen…\n\n\n\n\n— https://nitter.net/berryxia/status/2044792772100853842#m",
@@ -563,7 +563,7 @@
       "source": "ralralbral",
       "sourceHandle": "@ralralbral",
       "sourceUrl": "https://x.com/ralralbral/status/2044945262477775096#m",
-      "timestamp": "2026-04-18T04:09:56.856261+09:00",
+      "timestamp": "2026-04-18T07:49:25.776700+09:00",
       "engagement": {
         "likes": 0,
         "views": 0,
@@ -574,7 +574,7 @@
       "impactScore": 0
     },
     {
-      "id": "3b2d0887-c9d5-47c1-8527-6b6222a100a3",
+      "id": "3590a14c-410f-4514-825e-6b1fdf08dfe2",
       "rank": 7,
       "title": "hermes 다좋고 맘에 드는데 너무 바이럴이나 유료 구독 제안이 심하네…\n\n\nnous research (@nousresearch)\n\ntool gateway is now live ",
       "summary": "hermes 다좋고 맘에 드는데 너무 바이럴이나 유료 구독 제안이 심하네…\n\n\nnous research (@nousresearch)\n\ntool gateway is now live in nous portal.\n\nno separate accounts, no api key juggling. all you need is one subscription, and everything works.\n\na paid nous portal subscription now includes access to 300+ models and a growing set of third-party tools.\n\nlaunching with:\n→ web scraping\n→ browser automation\n→ image generation\n→ cloud terminal backend\n→ text-to-speech\n\nvideo\n  \n\n\n\n\n\n— https://nitter.net/nousresearch/status/2044878344592699744#m",
@@ -585,7 +585,7 @@
       "source": "ralralbral",
       "sourceHandle": "@ralralbral",
       "sourceUrl": "https://x.com/ralralbral/status/2044944285863440632#m",
-      "timestamp": "2026-04-18T04:09:56.856261+09:00",
+      "timestamp": "2026-04-18T07:49:25.776700+09:00",
       "engagement": {
         "likes": 0,
         "views": 0,
@@ -596,7 +596,7 @@
       "impactScore": 0
     },
     {
-      "id": "5cc9db19-f8c1-4aa6-86ff-0cda255b3063",
+      "id": "81336c39-403c-4502-8c5b-42abf8de0047",
       "rank": 8,
       "title": "인당 3만원 이상 주문해야하는데 이 중요한게 안써있네\n\n\n이거살게요 (@iris_yeon0)\n\n오늘부터 스타벅스가면 가방걸이 무료로 제공해준다함\n\n\n\n\n\n\n\n— https://ni",
       "summary": "인당 3만원 이상 주문해야하는데 이 중요한게 안써있네\n\n\n이거살게요 (@iris_yeon0)\n\n오늘부터 스타벅스가면 가방걸이 무료로 제공해준다함\n\n\n\n\n\n\n\n— https://nitter.net/iris_yeon0/status/2044821016032260423#m",
@@ -607,7 +607,7 @@
       "source": "ralralbral",
       "sourceHandle": "@ralralbral",
       "sourceUrl": "https://x.com/ralralbral/status/2044938583958847578#m",
-      "timestamp": "2026-04-18T04:09:56.856261+09:00",
+      "timestamp": "2026-04-18T07:49:25.776700+09:00",
       "engagement": {
         "likes": 0,
         "views": 0,
@@ -618,7 +618,7 @@
       "impactScore": 0
     },
     {
-      "id": "d1aa9512-87bb-4cb3-9e61-5c2f2f1fcb40",
+      "id": "d0fc3207-e626-4f0f-8daa-e00dd9755102",
       "rank": 9,
       "title": "[속보] 트럼프 \"이란 봉쇄, 거래 100% 완료 전까지 유지…호르무즈는 개방\" bloomingbit.io/feed/news/110…",
       "summary": "[속보] 트럼프 \"이란 봉쇄, 거래 100% 완료 전까지 유지…호르무즈는 개방\" bloomingbit.io/feed/news/110…",
@@ -629,7 +629,7 @@
       "source": "bloomingbit_io",
       "sourceHandle": "@bloomingbit_io",
       "sourceUrl": "https://x.com/bloomingbit_io/status/2045135108945178982#m",
-      "timestamp": "2026-04-18T04:09:56.856261+09:00",
+      "timestamp": "2026-04-18T07:49:25.776700+09:00",
       "engagement": {
         "likes": 0,
         "views": 0,
@@ -640,7 +640,7 @@
       "impactScore": 0
     },
     {
-      "id": "b54c0231-5f65-429e-b4ee-59119fc5f7d3",
+      "id": "c2e61a08-474b-4b58-9425-55e3f8d0d4f2",
       "rank": 10,
       "title": "[속보] 이란 외무장관 \"휴전 기간 동안 호르무즈 해협 전면 개방\" bloomingbit.io/feed/news/110…",
       "summary": "[속보] 이란 외무장관 \"휴전 기간 동안 호르무즈 해협 전면 개방\" bloomingbit.io/feed/news/110…",
@@ -651,7 +651,7 @@
       "source": "bloomingbit_io",
       "sourceHandle": "@bloomingbit_io",
       "sourceUrl": "https://x.com/bloomingbit_io/status/2045133545975456236#m",
-      "timestamp": "2026-04-18T04:09:56.856261+09:00",
+      "timestamp": "2026-04-18T07:49:25.776700+09:00",
       "engagement": {
         "likes": 0,
         "views": 0,
@@ -662,8 +662,206 @@
       "impactScore": 0
     },
     {
-      "id": "7c9109d7-5029-4e45-be7b-922384e70f60",
+      "id": "7af87ede-90b5-4a40-a59c-e16c07832c78",
       "rank": 1,
+      "title": "the palestinian flag has just been hoisted on the city hall of la courneuve, paris, by the newly ele",
+      "summary": "the palestinian flag has just been hoisted on the city hall of la courneuve, paris, by the newly elected mayor aly diouara! 🇫🇷🇵🇸\n\nvideo",
+      "fullAnalysis": "시장 변동성 주목",
+      "category": "지정학",
+      "priority": "low",
+      "marketImpact": "neutral",
+      "source": "visegrad24",
+      "sourceHandle": "@visegrad24",
+      "sourceUrl": "https://x.com/visegrad24/status/2045271400491913372#m",
+      "timestamp": "2026-04-18T07:49:25.776700+09:00",
+      "engagement": {
+        "likes": 0,
+        "views": 0,
+        "score": 0.0
+      },
+      "relatedAccounts": [],
+      "tags": [],
+      "impactScore": 0
+    },
+    {
+      "id": "e676c1a3-38e8-4440-9080-1af428698d9a",
+      "rank": 2,
+      "title": "a 19-year-old afghan refugee has been arrested in france over a series of brutal rapes of sheep and ",
+      "summary": "a 19-year-old afghan refugee has been arrested in france over a series of brutal rapes of sheep and goats that were found tied up and bleeding. 🇫🇷🇦🇫",
+      "fullAnalysis": "상승 추세 지속 중",
+      "category": "지정학",
+      "priority": "low",
+      "marketImpact": "neutral",
+      "source": "visegrad24",
+      "sourceHandle": "@visegrad24",
+      "sourceUrl": "https://x.com/visegrad24/status/2045270649564791268#m",
+      "timestamp": "2026-04-18T07:49:25.776700+09:00",
+      "engagement": {
+        "likes": 0,
+        "views": 0,
+        "score": 0.0
+      },
+      "relatedAccounts": [],
+      "tags": [],
+      "impactScore": 0
+    },
+    {
+      "id": "501ecae3-c027-4be9-83f0-2ce6e13e2e1b",
+      "rank": 3,
+      "title": "the bbc has announced plans to cut between 1,800 and 2,000 jobs in order to close a £500 million fun",
+      "summary": "the bbc has announced plans to cut between 1,800 and 2,000 jobs in order to close a £500 million funding gap. this is their largest wave of redundancies since 2011.\n\nthe bbc loses over £1 billion a year in potential revenue due to a significant increase in british households refusing to pay the compulsory tv licence fee. recent reports show a sharp rise in both evasion and declarations that a licence is 'not needed'.\n\nthe corporation is often accused of left-wing political bias and a lack of impartiality, which is arguably the biggest factor in public dissatisfaction.",
+      "fullAnalysis": "시장 변동성 주목",
+      "category": "지정학",
+      "priority": "low",
+      "marketImpact": "neutral",
+      "source": "visegrad24",
+      "sourceHandle": "@visegrad24",
+      "sourceUrl": "https://x.com/visegrad24/status/2045268707274838174#m",
+      "timestamp": "2026-04-18T07:49:25.776700+09:00",
+      "engagement": {
+        "likes": 0,
+        "views": 0,
+        "score": 0.0
+      },
+      "relatedAccounts": [],
+      "tags": [],
+      "impactScore": 0
+    },
+    {
+      "id": "1f88d417-a471-4b35-b0cd-d9dbc3d47b79",
+      "rank": 4,
+      "title": "🇱🇹 lithuanian border guards have detained 30 migrants who crossed from an underground tunnel at the ",
+      "summary": "🇱🇹 lithuanian border guards have detained 30 migrants who crossed from an underground tunnel at the border with belarus.\n\non april 6, in the afternoon, the video surveillance system in the vilnius district recorded an unusual case of border violation. a group of 30 migrants illegally crossed the border within a few minutes through an underground tunnel.\n\naccording to reports, they are citizens of afghanistan, iraq, and pakistan, with only some presenting identity documents.",
+      "fullAnalysis": "상승 추세 지속 중",
+      "category": "지정학",
+      "priority": "low",
+      "marketImpact": "neutral",
+      "source": "visegrad24",
+      "sourceHandle": "@visegrad24",
+      "sourceUrl": "https://x.com/visegrad24/status/2045268131145257217#m",
+      "timestamp": "2026-04-18T07:49:25.776700+09:00",
+      "engagement": {
+        "likes": 0,
+        "views": 0,
+        "score": 0.0
+      },
+      "relatedAccounts": [],
+      "tags": [],
+      "impactScore": 0
+    },
+    {
+      "id": "4133037f-b8f3-42e5-a12d-d5e6cb906585",
+      "rank": 5,
+      "title": "🇺🇸🇮🇷 donald 트럼프 said that iran is ready to refrain from obtaining nuclear weapons for more than 20 y",
+      "summary": "🇺🇸🇮🇷 donald 트럼프 said that iran is ready to refrain from obtaining nuclear weapons for more than 20 years.\n\n“we have a very strong statement that they will not have nuclear weapons for over 20 years. iran wants to make a deal, and we’re getting along very well with them,” 트럼프 told reporters at the 백악관.\n\nhe added that a u.s.-iran agreement to end the war is getting closer, with negotiating teams potentially meeting again as soon as this weekend.",
+      "fullAnalysis": "시장 변동성 주목",
+      "category": "지정학",
+      "priority": "low",
+      "marketImpact": "neutral",
+      "source": "visegrad24",
+      "sourceHandle": "@visegrad24",
+      "sourceUrl": "https://x.com/visegrad24/status/2045267980947259430#m",
+      "timestamp": "2026-04-18T07:49:25.776700+09:00",
+      "engagement": {
+        "likes": 0,
+        "views": 0,
+        "score": 0.0
+      },
+      "relatedAccounts": [],
+      "tags": [],
+      "impactScore": 0
+    },
+    {
+      "id": "a874c57f-0737-48f4-97b5-77ceb3cc5b0e",
+      "rank": 6,
+      "title": "🇩🇪🇬🇧🇫🇷🇮🇹",
+      "summary": "🇩🇪🇬🇧🇫🇷🇮🇹",
+      "fullAnalysis": "시장 변동성 주목",
+      "category": "지정학",
+      "priority": "low",
+      "marketImpact": "neutral",
+      "source": "visegrad24",
+      "sourceHandle": "@visegrad24",
+      "sourceUrl": "https://x.com/visegrad24/status/2045267850739249317#m",
+      "timestamp": "2026-04-18T07:49:25.776700+09:00",
+      "engagement": {
+        "likes": 0,
+        "views": 0,
+        "score": 0.0
+      },
+      "relatedAccounts": [],
+      "tags": [],
+      "impactScore": 0
+    },
+    {
+      "id": "d1e8f9cb-d99a-45e3-811a-ca7ae6cb01f3",
+      "rank": 7,
+      "title": "the muslim brotherhood should be banned worldwide.",
+      "summary": "the muslim brotherhood should be banned worldwide.",
+      "fullAnalysis": "시장 변동성 주목",
+      "category": "지정학",
+      "priority": "low",
+      "marketImpact": "neutral",
+      "source": "visegrad24",
+      "sourceHandle": "@visegrad24",
+      "sourceUrl": "https://x.com/visegrad24/status/2045267286257238151#m",
+      "timestamp": "2026-04-18T07:49:25.776700+09:00",
+      "engagement": {
+        "likes": 0,
+        "views": 0,
+        "score": 0.0
+      },
+      "relatedAccounts": [],
+      "tags": [],
+      "impactScore": 0
+    },
+    {
+      "id": "599183f0-7a2f-48f5-a6f2-21ff6db82b81",
+      "rank": 8,
+      "title": "image",
+      "summary": "image",
+      "fullAnalysis": "시장 변동성 주목",
+      "category": "지정학",
+      "priority": "low",
+      "marketImpact": "neutral",
+      "source": "visegrad24",
+      "sourceHandle": "@visegrad24",
+      "sourceUrl": "https://x.com/visegrad24/status/2045267100910932401#m",
+      "timestamp": "2026-04-18T07:49:25.776700+09:00",
+      "engagement": {
+        "likes": 0,
+        "views": 0,
+        "score": 0.0
+      },
+      "relatedAccounts": [],
+      "tags": [],
+      "impactScore": 0
+    },
+    {
+      "id": "cb5cbb24-4087-4e56-bbf5-6cf6c6136c31",
+      "rank": 9,
+      "title": "more than 40 000 iranian anti-regime protesters were murdered by the islamic regime just over a coup",
+      "summary": "more than 40 000 iranian anti-regime protesters were murdered by the islamic regime just over a couple of days in january.\n\nnow, iranian dissidents call on european countries to do right thing and expel all “ambassadors” of the regime.\n\nonly the regime’s fall and crown prince @pahlavireza return to iran will bring peace, stability and prosperity to the region.\n\na message from:\n\n🇮🇷 @neginhamedi \n🇮🇷 @layyasara \n🇮🇷 @tech_for_iran \n🇮🇷  @benjimehr20\n\nvideo",
+      "fullAnalysis": "상승 추세 지속 중",
+      "category": "지정학",
+      "priority": "low",
+      "marketImpact": "neutral",
+      "source": "visegrad24",
+      "sourceHandle": "@visegrad24",
+      "sourceUrl": "https://x.com/visegrad24/status/2045220960815493329#m",
+      "timestamp": "2026-04-18T07:49:25.776700+09:00",
+      "engagement": {
+        "likes": 0,
+        "views": 0,
+        "score": 0.0
+      },
+      "relatedAccounts": [],
+      "tags": [],
+      "impactScore": 0
+    },
+    {
+      "id": "da7d9fb2-c168-43e4-a064-47c3b0641312",
+      "rank": 10,
       "title": "i’d end islamic immigration. \n\ni’d end qatari and iranian money. abSOLutely end it.\n\nthe muslim brot",
       "summary": "i’d end islamic immigration. \n\ni’d end qatari and iranian money. abSOLutely end it.\n\nthe muslim brotherhood would no longer have a base in the uk,”\n\nsays tommy robinson when asked what policies he would implement in the uk. 🇬🇧\n\nvideo",
       "fullAnalysis": "시장 변동성 주목",
@@ -673,205 +871,7 @@
       "source": "visegrad24",
       "sourceHandle": "@visegrad24",
       "sourceUrl": "https://x.com/visegrad24/status/2045211972677829092#m",
-      "timestamp": "2026-04-18T04:09:56.856261+09:00",
-      "engagement": {
-        "likes": 0,
-        "views": 0,
-        "score": 0.0
-      },
-      "relatedAccounts": [],
-      "tags": [],
-      "impactScore": 0
-    },
-    {
-      "id": "61ad429e-cfbd-4be1-ae6c-d2d221f8e6d7",
-      "rank": 2,
-      "title": "england means everything to me.\n\nsays tommy robinson in an interview with v24 filmed just weeks befo",
-      "summary": "england means everything to me.\n\nsays tommy robinson in an interview with v24 filmed just weeks before he was sentenced to prison in 2024.\n\nvideo",
-      "fullAnalysis": "시장 변동성 주목",
-      "category": "지정학",
-      "priority": "low",
-      "marketImpact": "neutral",
-      "source": "visegrad24",
-      "sourceHandle": "@visegrad24",
-      "sourceUrl": "https://x.com/visegrad24/status/2045211845024223474#m",
-      "timestamp": "2026-04-18T04:09:56.856261+09:00",
-      "engagement": {
-        "likes": 0,
-        "views": 0,
-        "score": 0.0
-      },
-      "relatedAccounts": [],
-      "tags": [],
-      "impactScore": 0
-    },
-    {
-      "id": "7b834c76-d538-4fba-a521-cba0da33af9d",
-      "rank": 3,
-      "title": "we need mass-deportations, says tommy robinson in a v24 interview.\n\nvideo",
-      "summary": "we need mass-deportations, says tommy robinson in a v24 interview.\n\nvideo",
-      "fullAnalysis": "시장 변동성 주목",
-      "category": "지정학",
-      "priority": "low",
-      "marketImpact": "neutral",
-      "source": "visegrad24",
-      "sourceHandle": "@visegrad24",
-      "sourceUrl": "https://x.com/visegrad24/status/2045211570393751650#m",
-      "timestamp": "2026-04-18T04:09:56.856261+09:00",
-      "engagement": {
-        "likes": 0,
-        "views": 0,
-        "score": 0.0
-      },
-      "relatedAccounts": [],
-      "tags": [],
-      "impactScore": 0
-    },
-    {
-      "id": "e6ccaa00-e75d-4f5e-bf3c-5b07730c7edb",
-      "rank": 4,
-      "title": ".@trobinsonnewera reacts to a think-tank claiming he’s one of the top terrorists in the world.\n\nvide",
-      "summary": ".@trobinsonnewera reacts to a think-tank claiming he’s one of the top terrorists in the world.\n\nvideo",
-      "fullAnalysis": "시장 변동성 주목",
-      "category": "지정학",
-      "priority": "low",
-      "marketImpact": "neutral",
-      "source": "visegrad24",
-      "sourceHandle": "@visegrad24",
-      "sourceUrl": "https://x.com/visegrad24/status/2045211437065245145#m",
-      "timestamp": "2026-04-18T04:09:56.856261+09:00",
-      "engagement": {
-        "likes": 0,
-        "views": 0,
-        "score": 0.0
-      },
-      "relatedAccounts": [],
-      "tags": [],
-      "impactScore": 0
-    },
-    {
-      "id": "64c3b2bc-b92b-48f4-b64a-52fb2f6489c2",
-      "rank": 5,
-      "title": "🇬🇧 driver avoids jail after 폭락 that overturned a military convoy vehicle and left SOLdier with broke",
-      "summary": "🇬🇧 driver avoids jail after 폭락 that overturned a military convoy vehicle and left SOLdier with broken back\n\ncrenguta aruxandei, 44, received a six-month suspended prison sentence, a 12-month driving ban, and a £154 victim surcharge after a collision in which a military land rover defender flipped over, leaving its driver with a suspected broken back.\n\naccording to northamptonshire police, dashcam footage showed the incident was “completely avoidable.”\n\nthe video shows aruxandei changing lanes in an audi q2 while exiting, forcing the land rover in a convoy to take evasive action, after which it rolled across both lanes.\n\nvideo",
-      "fullAnalysis": "하락 압력 강화",
-      "category": "지정학",
-      "priority": "low",
-      "marketImpact": "neutral",
-      "source": "visegrad24",
-      "sourceHandle": "@visegrad24",
-      "sourceUrl": "https://x.com/visegrad24/status/2045113867823415331#m",
-      "timestamp": "2026-04-18T04:09:56.856261+09:00",
-      "engagement": {
-        "likes": 0,
-        "views": 0,
-        "score": 0.0
-      },
-      "relatedAccounts": [],
-      "tags": [],
-      "impactScore": 0
-    },
-    {
-      "id": "baf52824-d3a6-4573-b8a5-415a05df20e5",
-      "rank": 6,
-      "title": "🇮🇳🇵🇰in 1971, the pakistan army and muslim brotherhood-linked militias killed 500 000+ people and rap",
-      "summary": "🇮🇳🇵🇰in 1971, the pakistan army and muslim brotherhood-linked militias killed 500 000+ people and raped 400 000 women in just 9 months in bangladesh\n\nhindus constituted a large share of the victims murdered in the bangladesh genocide of 1971.\n\n55 years later, pressure is mounting on countries across the west to terror-list both the muslim brotherhood and bangladesh jamaat-e-islami.\n\ntoday, after playing a crucial and violent role in the protests that overthrew the sheikh hasina government in 2024, the main muslim brotherhood-linked group, bangladesh jamaat-e-islami, has 68 seats out of 300 in the parliament and is again the driving force in the persecution of the country's hindu and christian minorities.\n\nduring the 1971 liberation war, jamaat-e-islami sides with pakistan against the bangladeshi nationalists fighting for an independent state. they also never forgave india for defeating pakistan in the war after it was attacked by pakistan, making it possible for bangladesh to be established.\n\nafter overthrowing sheikh hasina, jamaat-e-islami attacked hundreds of hindu villages, burning down many of them while also attacking and killing hindu students at universities on a large scale.\n\noverthrowing the government also created conditions in which the jamaat-e-islami has been able to firmly established itself in bangladesh after having been banned by sheikh hasina in 2013.\n\nthey are now in the process of reestablishing close relations with the muslim brotherhood across the world, particularly through student organizations that they run.\n\nthe ideological links between the two organisations run deep.\n\nsyed abul a'la maududi, who founded jamaat-e-islami in 1941, admitted that he had been inspired to launch the movement by the egyptian hassan al-banna who founded the muslim brotherhood in 1928.\n\nmany senior bji leaders developed direct contact with the mb while studying abroad, particularly at al-azhar university in egypt and in turkey.\n\ntoday, bji maintains active ties with mb-inspired groups in the middle east, such as the islamic constitutional movement in kuwait and various organizations in qatar.\n\none of the bji's main assets is it's student wing bangladesh islami chhatra shibir (ics), which maintains its own relationships with mb-affiliated youth groups across the world and has recently sought to deepen these ties for global outreach and funding.\n\nafter being one of the main perpetrators of the bangladesh genocide, jamaat-e-islami is today the country's 2nd-largest party. in cooperation with the muslim brotherhood, the bji party and movement is quickly spreading islamism in bangladesh.\n\nthe 1971 bangladesh genocide has only been recognised by bangladesh and armenia as well as the regional parliaments of scotland and wales.\n\nthere is however a growing international movement calling on countries to recognise the genocide and ban both the jamaat-e-islami and the muslim brotherhood.\n\na bipartisan reSOLution (h.res. 1430) on recognising the bangladesh genocide was introduced in the u.s. house of representatives in 2022 while congressman greg landsman introduced his own new reSOLution in the same matter just last month.\n\nthe world can no longer ignore the past islamist genocide and current atrocities perpetrated in bangladesh.",
-      "fullAnalysis": "상승 추세 지속 중",
-      "category": "지정학",
-      "priority": "low",
-      "marketImpact": "neutral",
-      "source": "visegrad24",
-      "sourceHandle": "@visegrad24",
-      "sourceUrl": "https://x.com/visegrad24/status/2045175117936804084#m",
-      "timestamp": "2026-04-18T04:09:56.856261+09:00",
-      "engagement": {
-        "likes": 0,
-        "views": 0,
-        "score": 0.0
-      },
-      "relatedAccounts": [],
-      "tags": [],
-      "impactScore": 0
-    },
-    {
-      "id": "cff86522-7c1f-4159-8070-76a2b879a5ae",
-      "rank": 7,
-      "title": "🇮🇹 several armed men robbed a bank in broad daylight in naples, holding 25 people hostage before esc",
-      "summary": "🇮🇹 several armed men robbed a bank in broad daylight in naples, holding 25 people hostage before escaping through a tunnel.\n\nthree armed suspects entered a crédit agricole branch and held employees and customers for nearly two hours. \n\nthe robbers wore masks depicting famous actors.\n\nalthough armed, hostages later said the group acted professionally and did not use physical violence, instead locking everyone in a room while they carried out the robbery.\n\nas elite carabinieri special units were preparing to storm the building, the suspects escaped through a pre-drilled hole in the floor leading into the city’s sewer system.\n\nthe gang targeted safety deposit boxes rather than the main vault, stealing valuables from hundreds of private boxes, making the total loss difficult to estimate.\n\nall 25 hostages were eventually freed. despite a large-scale manhunt involving sniffer dogs and sewer searches, the suspects remain at large.\n\nvideo",
-      "fullAnalysis": "상승 추세 지속 중",
-      "category": "지정학",
-      "priority": "low",
-      "marketImpact": "neutral",
-      "source": "visegrad24",
-      "sourceHandle": "@visegrad24",
-      "sourceUrl": "https://x.com/visegrad24/status/2045107248989409676#m",
-      "timestamp": "2026-04-18T04:09:56.856261+09:00",
-      "engagement": {
-        "likes": 0,
-        "views": 0,
-        "score": 0.0
-      },
-      "relatedAccounts": [],
-      "tags": [],
-      "impactScore": 0
-    },
-    {
-      "id": "c2ebb970-7ecc-45e4-be00-6bbacc9cf416",
-      "rank": 8,
-      "title": "속보:\n\nmerz, starmer, macron and meloni issue joint announcement in paris saying they’re sending a nav",
-      "summary": "속보:\n\nmerz, starmer, macron and meloni issue joint announcement in paris saying they’re sending a naval mission to the hormuz strait to protect freedom of navigation \n\n🇩🇪🇬🇧🇫🇷🇮🇹",
-      "fullAnalysis": "시장 변동성 주목",
-      "category": "지정학",
-      "priority": "low",
-      "marketImpact": "neutral",
-      "source": "visegrad24",
-      "sourceHandle": "@visegrad24",
-      "sourceUrl": "https://x.com/visegrad24/status/2045154073880437203#m",
-      "timestamp": "2026-04-18T04:09:56.856261+09:00",
-      "engagement": {
-        "likes": 0,
-        "views": 0,
-        "score": 0.0
-      },
-      "relatedAccounts": [],
-      "tags": [],
-      "impactScore": 0
-    },
-    {
-      "id": "c1198481-69b0-469b-b584-cf8a245129f3",
-      "rank": 9,
-      "title": "muslim countries are funding mosques all over europe, including my native croatia.\n\nfor example in r",
-      "summary": "muslim countries are funding mosques all over europe, including my native croatia.\n\nfor example in rijeka, the government of qatar fully funded a new islamic centre. \n\nislamists know what they are doing, you could describe it as “reverse colonisation”, says mep @stjepobartulica.\n\nvideo",
-      "fullAnalysis": "시장 변동성 주목",
-      "category": "지정학",
-      "priority": "low",
-      "marketImpact": "neutral",
-      "source": "visegrad24",
-      "sourceHandle": "@visegrad24",
-      "sourceUrl": "https://x.com/visegrad24/status/2045190465922723876#m",
-      "timestamp": "2026-04-18T04:09:56.856261+09:00",
-      "engagement": {
-        "likes": 0,
-        "views": 0,
-        "score": 0.0
-      },
-      "relatedAccounts": [],
-      "tags": [],
-      "impactScore": 0
-    },
-    {
-      "id": "158df8c2-251c-4773-8cc2-9efcd747bf6e",
-      "rank": 10,
-      "title": "🇹🇷 photos of the kahramanmaraş attacker i̇sa aras mersinli, sent by him to friends, have surfaced on",
-      "summary": "🇹🇷 photos of the kahramanmaraş attacker i̇sa aras mersinli, sent by him to friends, have surfaced online.\n\nhe entered the school with a backpack containing five weapons and seven magazines. \n\nthe attack left 9 people dead (8 students and 1 teacher) and 13 injured, with several victims remaining in critical condition.\n\nthe attacker’s father had stated the weapons were kept in a locked safe.",
-      "fullAnalysis": "시장 변동성 주목",
-      "category": "지정학",
-      "priority": "low",
-      "marketImpact": "neutral",
-      "source": "visegrad24",
-      "sourceHandle": "@visegrad24",
-      "sourceUrl": "https://x.com/visegrad24/status/2045187264762822744#m",
-      "timestamp": "2026-04-18T04:09:56.856261+09:00",
+      "timestamp": "2026-04-18T07:49:25.776700+09:00",
       "engagement": {
         "likes": 0,
         "views": 0,
@@ -883,8 +883,8 @@
     }
   ],
   "systemStatus": {
-    "lastUpdate": "2026-04-18T04:09:56.856261+09:00",
-    "nextUpdate": "2026-04-18T08:09:56.856261+09:00",
+    "lastUpdate": "2026-04-18T07:49:25.776700+09:00",
+    "nextUpdate": "2026-04-18T11:49:25.776700+09:00",
     "totalAccounts": 73,
     "activeAccounts": 73,
     "tweetsCollected": 40,
