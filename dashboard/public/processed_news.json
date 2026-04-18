@@ -1,9 +1,53 @@
 {
-  "timestamp": "2026-04-19T04:00:11.402029+09:00",
+  "timestamp": "2026-04-19T07:41:26.189879+09:00",
   "news": [
     {
-      "id": "fa8da70b-84c5-4e83-8ac0-091daf2245d5",
+      "id": "e28ae505-3bbf-4630-9bd6-735c3e012828",
       "rank": 1,
+      "title": "vitalik buterin: 암호화폐 prices are the \"ultimate double-edged sword.\"  \n\non december 5, 2025, 이더리움 fou",
+      "summary": "vitalik buterin: 암호화폐 prices are the \"ultimate double-edged sword.\"  \n\non december 5, 2025, 이더리움 founder vitalik buterin  @vitalikbuterin discussed the original spirit of the 암호화폐 space in a green pill podcast interview. he believes the industry has had three key directions from the beginning: censorship resistance, providing an alternative path for those excluded from traditional systems; \n\nthe \"number go up\" side, which he describes as an ultimate double-edged sword that pays for a lot of things but risks compromising the space's core values; and institution design, ensuring these new systems can maintain themselves without eventually becoming the same as the old boss.\n\nvideo",
+      "fullAnalysis": "상승 추세 지속 중",
+      "category": "암호화폐",
+      "priority": "low",
+      "marketImpact": "neutral",
+      "source": "WuBlockchain",
+      "sourceHandle": "@WuBlockchain",
+      "sourceUrl": "https://x.com/WuBlockchain/status/2045623408336232498#m",
+      "timestamp": "2026-04-19T07:41:26.189879+09:00",
+      "engagement": {
+        "likes": 0,
+        "views": 0,
+        "score": 0.0
+      },
+      "relatedAccounts": [],
+      "tags": [],
+      "impactScore": 0
+    },
+    {
+      "id": "8551ddf0-ca60-46e2-844a-bffe12415d6d",
+      "rank": 2,
+      "title": "kalshi: hedge payroll costs against 인플레이션 pressure \n\non april 8, kalshi research released a clip fro",
+      "summary": "kalshi: hedge payroll costs against 인플레이션 pressure \n\non april 8, kalshi research released a clip from kalshi's founder's @luanalopeslara  recent interview regarding institutional adoption. kalshi has now launched its block trading function, which is only open to eligible contract participants (ecps), i.e., institutional users. \n\n payroll hedging is an innovative tool for enterprises to lock in payroll costs via prediction market contracts. it can effectively hedge the risk of payroll overruns caused by rising 인플레이션, helping enterprises convert uncertain labor costs into controllable fixed expenditures.\n\nvideo",
+      "fullAnalysis": "시장 변동성 주목",
+      "category": "암호화폐",
+      "priority": "low",
+      "marketImpact": "neutral",
+      "source": "WuBlockchain",
+      "sourceHandle": "@WuBlockchain",
+      "sourceUrl": "https://x.com/WuBlockchain/status/2045580874968662417#m",
+      "timestamp": "2026-04-19T07:41:26.189879+09:00",
+      "engagement": {
+        "likes": 0,
+        "views": 0,
+        "score": 0.0
+      },
+      "relatedAccounts": [],
+      "tags": [],
+      "impactScore": 0
+    },
+    {
+      "id": "54030177-efef-42c4-a47b-facd9195c994",
+      "rank": 3,
       "title": "cz: what to do when you hit rock bottom  \n\nbinance founder cz @cz_binance  shared that the best way ",
       "summary": "cz: what to do when you hit rock bottom  \n\nbinance founder cz @cz_binance  shared that the best way to navigate life's lowest points is to simply keep walking. recalling the anxiety of his early days as a freelance consultant and the immense pressure during his 2024 court sentencing, he noted that situations usually improve after just a few days. \n\nhowever, if you realize you are heading in the wrong direction, you must pivot decisively. if you find yourself trapped in a situation, it is time to change your environment or break old habits like overspending.\n\nvideo",
       "fullAnalysis": "시장 변동성 주목",
@@ -13,7 +57,7 @@
       "source": "WuBlockchain",
       "sourceHandle": "@WuBlockchain",
       "sourceUrl": "https://x.com/WuBlockchain/status/2045519470471311624#m",
-      "timestamp": "2026-04-19T04:00:11.402029+09:00",
+      "timestamp": "2026-04-19T07:41:26.189879+09:00",
       "engagement": {
         "likes": 0,
         "views": 0,
@@ -24,8 +68,8 @@
       "impactScore": 0
     },
     {
-      "id": "787b7390-f654-4a53-b638-a8d425202a86",
-      "rank": 2,
+      "id": "c3ae6241-6281-453c-be3c-194ab1c451d4",
+      "rank": 4,
       "title": "source: piped.video/2cc9ijixiww?si=habq…",
       "summary": "source: piped.video/2cc9ijixiww?si=habq…",
       "fullAnalysis": "시장 변동성 주목",
@@ -35,7 +79,7 @@
       "source": "WuBlockchain",
       "sourceHandle": "@WuBlockchain",
       "sourceUrl": "https://x.com/WuBlockchain/status/2045509497276497984#m",
-      "timestamp": "2026-04-19T04:00:11.402029+09:00",
+      "timestamp": "2026-04-19T07:41:26.189879+09:00",
       "engagement": {
         "likes": 0,
         "views": 0,
@@ -46,8 +90,8 @@
       "impactScore": 0
     },
     {
-      "id": "1b611c68-7eed-4a68-9335-26018ac92a08",
-      "rank": 3,
+      "id": "43ba4d33-314b-4565-a634-2c63187204e6",
+      "rank": 5,
       "title": "zachxbt discloses insider manipulation of rave 토큰; offers $25k bounty for evidence\n\nzachxbt tweeted ",
       "summary": "zachxbt discloses insider manipulation of rave 토큰; offers $25k bounty for evidence\n\nzachxbt tweeted that the \"상승 and 하락\" activity for the rave 토큰 originated from binance, bitget, and gate. zachxbt noted that insiders control over 90% of rave's support, utilizing blatant market manipulation to extract value from retail investors. he called upon binance co-founder he yi and bitget managing director gracy chen to conduct internal investigations and offboard the responsible actors. bitget ceo gracy subsequently responded, stating that an investigation into rave had begun. x.com/zachxbt/status/2045403…",
       "fullAnalysis": "상승 추세 지속 중",
@@ -57,7 +101,7 @@
       "source": "WuBlockchain",
       "sourceHandle": "@WuBlockchain",
       "sourceUrl": "https://x.com/WuBlockchain/status/2045476669671297347#m",
-      "timestamp": "2026-04-19T04:00:11.402029+09:00",
+      "timestamp": "2026-04-19T07:41:26.189879+09:00",
       "engagement": {
         "likes": 0,
         "views": 0,
@@ -68,8 +112,8 @@
       "impactScore": 0
     },
     {
-      "id": "7650c6ed-5a5d-4b26-818e-b751f0b001e4",
-      "rank": 4,
+      "id": "29d27ddc-08d1-4e90-af9a-a399c51661d6",
+      "rank": 6,
       "title": "for the complete article and weekly curated reports, subscribe to our substack:  wublock.substack.co",
       "summary": "for the complete article and weekly curated reports, subscribe to our substack:  wublock.substack.com/p/weekl…",
       "fullAnalysis": "시장 변동성 주목",
@@ -79,7 +123,7 @@
       "source": "WuBlockchain",
       "sourceHandle": "@WuBlockchain",
       "sourceUrl": "https://x.com/WuBlockchain/status/2045463108328820849#m",
-      "timestamp": "2026-04-19T04:00:11.402029+09:00",
+      "timestamp": "2026-04-19T07:41:26.189879+09:00",
       "engagement": {
         "likes": 0,
         "views": 0,
@@ -90,8 +134,8 @@
       "impactScore": 0
     },
     {
-      "id": "997c0821-2651-4f4f-9a42-4b366044505d",
-      "rank": 5,
+      "id": "426b2406-5a83-411e-bf1f-2366ad99b1d8",
+      "rank": 7,
       "title": "weekly project updates: wlfi proposes new plan to extend 토큰 unlock schedule, arc explores launch of ",
       "summary": "weekly project updates: wlfi proposes new plan to extend 토큰 unlock schedule, arc explores launch of native 토큰, aptos updates its 토큰omics, 폴리곤 launches native liquid 스테이킹 토큰 ppol, etc",
       "fullAnalysis": "상승 추세 지속 중",
@@ -101,7 +145,7 @@
       "source": "WuBlockchain",
       "sourceHandle": "@WuBlockchain",
       "sourceUrl": "https://x.com/WuBlockchain/status/2045462965827326312#m",
-      "timestamp": "2026-04-19T04:00:11.402029+09:00",
+      "timestamp": "2026-04-19T07:41:26.189879+09:00",
       "engagement": {
         "likes": 0,
         "views": 0,
@@ -112,8 +156,8 @@
       "impactScore": 0
     },
     {
-      "id": "f2518d1a-d64e-4d3b-aae9-69c6e81a16f3",
-      "rank": 6,
+      "id": "b53659a7-52f8-4c8d-b583-f8e5aa34cf8d",
+      "rank": 8,
       "title": "source: intel.arkm.com/explorer/addr…",
       "summary": "source: intel.arkm.com/explorer/addr…",
       "fullAnalysis": "시장 변동성 주목",
@@ -123,7 +167,7 @@
       "source": "WuBlockchain",
       "sourceHandle": "@WuBlockchain",
       "sourceUrl": "https://x.com/WuBlockchain/status/2045369400178725284#m",
-      "timestamp": "2026-04-19T04:00:11.402029+09:00",
+      "timestamp": "2026-04-19T07:41:26.189879+09:00",
       "engagement": {
         "likes": 0,
         "views": 0,
@@ -134,8 +178,8 @@
       "impactScore": 0
     },
     {
-      "id": "4a89cfd6-d836-474a-a515-055caf6d154e",
-      "rank": 7,
+      "id": "f964f415-d6e8-4191-9873-67ccb92b5f73",
+      "rank": 9,
       "title": "aztec team transfers all ETH from public aztec auction to 코인base\n\naztec SOLd 15% of its aztec 토큰s th",
       "summary": "aztec team transfers all ETH from public aztec auction to 코인base\n\naztec SOLd 15% of its aztec 토큰s through a public auction last december, raising 19,388.4 ETH (~$59.13m) at roughly $0.0473 per 토큰, now down around 50% from the sale price. at tge, 4,234.6 ETH from the auction proceeds was allocated to build liquidity, while the remaining ~15,154 ETH has been fully transferred to 코인base over the past three months, with the final transfer completed on april 17 at 16:44 utc. \n\nh/t: @embercn",
       "fullAnalysis": "하락 압력 강화",
@@ -145,7 +189,7 @@
       "source": "WuBlockchain",
       "sourceHandle": "@WuBlockchain",
       "sourceUrl": "https://x.com/WuBlockchain/status/2045369336236487103#m",
-      "timestamp": "2026-04-19T04:00:11.402029+09:00",
+      "timestamp": "2026-04-19T07:41:26.189879+09:00",
       "engagement": {
         "likes": 0,
         "views": 0,
@@ -156,8 +200,8 @@
       "impactScore": 0
     },
     {
-      "id": "e17af667-19fd-4e76-895f-23a444fd84eb",
-      "rank": 8,
+      "id": "84e750cc-3255-4f25-b5c4-0401f562500b",
+      "rank": 10,
       "title": "source: sosovalue.com/zh/assets/etf/…",
       "summary": "source: sosovalue.com/zh/assets/etf/…",
       "fullAnalysis": "시장 변동성 주목",
@@ -167,7 +211,7 @@
       "source": "WuBlockchain",
       "sourceHandle": "@WuBlockchain",
       "sourceUrl": "https://x.com/WuBlockchain/status/2045361494263804060#m",
-      "timestamp": "2026-04-19T04:00:11.402029+09:00",
+      "timestamp": "2026-04-19T07:41:26.189879+09:00",
       "engagement": {
         "likes": 0,
         "views": 0,
@@ -178,51 +222,7 @@
       "impactScore": 0
     },
     {
-      "id": "431ee52c-dc4a-4dcf-bbee-10be7014bc1a",
-      "rank": 9,
-      "title": "on april 17 (et), u.s. spot 비트코인 etfs recorded total net inflows of $664 million, extending the infl",
-      "summary": "on april 17 (et), u.s. spot 비트코인 etfs recorded total net inflows of $664 million, extending the inflow streak to four days. spot 이더리움 etfs posted total net inflows of $127 million, marking seven consecutive days of inflows.",
-      "fullAnalysis": "시장 변동성 주목",
-      "category": "암호화폐",
-      "priority": "low",
-      "marketImpact": "neutral",
-      "source": "WuBlockchain",
-      "sourceHandle": "@WuBlockchain",
-      "sourceUrl": "https://x.com/WuBlockchain/status/2045361439859523724#m",
-      "timestamp": "2026-04-19T04:00:11.402029+09:00",
-      "engagement": {
-        "likes": 0,
-        "views": 0,
-        "score": 0.0
-      },
-      "relatedAccounts": [],
-      "tags": [],
-      "impactScore": 0
-    },
-    {
-      "id": "3eb8b62e-c3a3-4c8a-a789-57dbc4562529",
-      "rank": 10,
-      "title": "source: piped.video/watch?v=celblcz2…",
-      "summary": "source: piped.video/watch?v=celblcz2…",
-      "fullAnalysis": "시장 변동성 주목",
-      "category": "암호화폐",
-      "priority": "low",
-      "marketImpact": "neutral",
-      "source": "WuBlockchain",
-      "sourceHandle": "@WuBlockchain",
-      "sourceUrl": "https://x.com/WuBlockchain/status/2045359408084066408#m",
-      "timestamp": "2026-04-19T04:00:11.402029+09:00",
-      "engagement": {
-        "likes": 0,
-        "views": 0,
-        "score": 0.0
-      },
-      "relatedAccounts": [],
-      "tags": [],
-      "impactScore": 0
-    },
-    {
-      "id": "5ac306a0-d2d7-4e46-aa97-cf65c9dfb015",
+      "id": "73703e1a-e9c6-4c3b-b891-6d5b2aaf880c",
       "rank": 1,
       "title": "마이클 어리버리: 너네 아직 바늘 모양의 뽀족한 고점을 본 적 없지?\n\n\ncassandra unchained (@michaeljburry)\n\nmarkets have never se",
       "summary": "마이클 어리버리: 너네 아직 바늘 모양의 뽀족한 고점을 본 적 없지?\n\n\ncassandra unchained (@michaeljburry)\n\nmarkets have never seen a needle top.\n\n\n\n— https://nitter.net/michaeljburry/status/2045275137126072482#m",
@@ -233,7 +233,7 @@
       "source": "GONOGO_Korea",
       "sourceHandle": "@GONOGO_Korea",
       "sourceUrl": "https://x.com/GONOGO_Korea/status/2045395520647209340#m",
-      "timestamp": "2026-04-19T04:00:11.402029+09:00",
+      "timestamp": "2026-04-19T07:41:26.189879+09:00",
       "engagement": {
         "likes": 0,
         "views": 0,
@@ -244,7 +244,7 @@
       "impactScore": 0
     },
     {
-      "id": "39519cd4-3951-489b-8678-fcf68856ae10",
+      "id": "ba8e028c-4da5-4048-a85d-a901a0e8821a",
       "rank": 2,
       "title": "hostages were released from the supermarket where the terrorist was hiding before being eliminated b",
       "summary": "hostages were released from the supermarket where the terrorist was hiding before being eliminated by the police.\n\nvideo",
@@ -255,7 +255,7 @@
       "source": "visegrad24",
       "sourceHandle": "@visegrad24",
       "sourceUrl": "https://x.com/visegrad24/status/2045524322865860972#m",
-      "timestamp": "2026-04-19T04:00:11.402029+09:00",
+      "timestamp": "2026-04-19T07:41:26.189879+09:00",
       "engagement": {
         "likes": 0,
         "views": 0,
@@ -266,7 +266,7 @@
       "impactScore": 0
     },
     {
-      "id": "74606850-0836-4161-a817-4c0ac8a3d14f",
+      "id": "2559bd33-0d81-4566-80a5-63b5e0d5c704",
       "rank": 3,
       "title": "in kyiv, the death toll has risen following the attack.\n\nmayor vitali klitschko said there are “seve",
       "summary": "in kyiv, the death toll has risen following the attack.\n\nmayor vitali klitschko said there are “several” people killed, while local media reports at least four dead.\n\nthe attacker has not yet been detained and is holding hostages inside a velmart supermarket.",
@@ -277,7 +277,7 @@
       "source": "visegrad24",
       "sourceHandle": "@visegrad24",
       "sourceUrl": "https://x.com/visegrad24/status/2045516296079429707#m",
-      "timestamp": "2026-04-19T04:00:11.402029+09:00",
+      "timestamp": "2026-04-19T07:41:26.189879+09:00",
       "engagement": {
         "likes": 0,
         "views": 0,
@@ -288,7 +288,7 @@
       "impactScore": 0
     },
     {
-      "id": "b975194e-f0af-429c-ac2b-a85373a77aed",
+      "id": "ac2963cf-00b5-4c57-95d9-5d3e58c0ce90",
       "rank": 4,
       "title": "ukrainian special police kord is preparing to storm the supermarket in kyiv, where the attacker is h",
       "summary": "ukrainian special police kord is preparing to storm the supermarket in kyiv, where the attacker is holding hostages.",
@@ -299,7 +299,7 @@
       "source": "visegrad24",
       "sourceHandle": "@visegrad24",
       "sourceUrl": "https://x.com/visegrad24/status/2045515907871465535#m",
-      "timestamp": "2026-04-19T04:00:11.402029+09:00",
+      "timestamp": "2026-04-19T07:41:26.189879+09:00",
       "engagement": {
         "likes": 0,
         "views": 0,
@@ -310,18 +310,18 @@
       "impactScore": 0
     },
     {
-      "id": "dc2bbcfb-5739-479d-8b7e-87702c66bf0d",
+      "id": "e5948d16-8cc0-4b98-a40c-30cc4af9a270",
       "rank": 5,
-      "title": "🇺🇸🇮🇷 between u.s. and iran, neither side has yet hit its 속보 point. here's why:\n\nboth the u.s. and ir",
-      "summary": "🇺🇸🇮🇷 between u.s. and iran, neither side has yet hit its 속보 point. here's why:\n\nboth the u.s. and iran still have room to absorb pain without collapsing domestically or strategically.\n\niran's playbook right now:\n\nthe regime closed the strait of hormuz again today after briefly reopening it yesterday. gunboats fired on commercial ships. khamenei is vowing \"new bitter defeats\" for iran's enemies.\n\nthe irgc benefits from sustained tension. it rallies hardliners, pressures negotiators to hold firm, and turns the strait into a high-stakes bargaining chip for 제재 relief and nuclear concessions. \n\niran survived direct strikes in 2026, still exports oil through workarounds, and has china and russia providing diploMATIC cover. the regime has outlasted tougher 제재 before.\n\n트럼프's calculus:\n\nhe wants a big, visible win on iran's nuclear program without triggering a full-scale war. the naval blockade is squeezing tehran, but escalating further risks spiking global oil prices and pulling in hezbollah, the houthis, and other proxies. \n\nso he keeps the pressure on while staying publicly optimistic about a deal, although that 옵티미즘 makes him seem a little weak. and if he hasn't closed any deals, he's forced to stay in anyway.\n\nthe real sticking points:\n\nhow long iran suspends uranium enrichment and what happens to existing stockpiles. who controls the strait and when the u.s. port blockade lifts. iran's regional proxies, missile program, and the lebanon ceasefire terms.\n\nnobody is desperate enough yet to fold on any of these. both sides are calculating they can outlast the other. until that calculus changes, the war stays in this grinding, high-stakes limbo.\n\n\n\n\nmario nawfal (@marionawfal)\n\n🇺🇸🇮🇷 general dan caine, chairman of the joint chiefs of staff, was spotted leaving the 백악관 following a security meeting on iran.\n\nno details on what was discussed or what triggered it.\n\nvideo\n  \n\n\n\n\n\n— https://nitter.net/marionawfal/status/2045573073013993654#m",
+      "title": "🚨🇮🇷 🇺🇸 ghalibaf lists the exact same four objectives rubio laid out weeks ago and claims iran defeat",
+      "summary": "🚨🇮🇷 🇺🇸 ghalibaf lists the exact same four objectives rubio laid out weeks ago and claims iran defeated every single one:\n\ndestroy the air force and missile capabilities. failed. \ndestroy the navy. failed. \nlaunch a ground attack. failed. \nopen the strait of hormuz. failed.\n\nrubio's version from weeks ago: \n\ndestroy their weapons factories ✓ \ndestroy their navy ✓ \ndestroy their air force ✓ \ndestroy their chances of ever having a nuclear weapon ✓\n\nthe reality is somewhere in between. \n\niran's conventional military took catastrophic damage. \n\nbut the regime survived, the strait is still contested, the ground invasion never happened, and iran is firing on commercial ships.\n\nthis is exactly what iran told the world from day one: all they needed to do was survive. and they did.\n\nvideo\n  \n\n\n\n\nmario nawfal (@marionawfal)\n\n🇮🇷 ghalibaf delivers the most honest and strategically significant statement of the entire war:\n\n\"we are not militarily stronger than america. \n\nthey have more money, equipment, resources, and experience. \n\nbut we fought an asymmetric war in such a way that we pushed the enemy back.\"\n\nthen the line that really cuts deepest: \n\n\"the u.s. government claims america first is important to it, but in practice it has shown that israel is first, because it makes decisions based on false information from israel.\"\n\nhe's not boasting about firepower. \n\nhe's saying iran won because america made bad decisions, and america made bad decisions because israel 연준 it bad intelligence.\n\nthe convergence is remarkable. \n\namerican veterans, american journalists, the american vice president, and iran's parliament speaker have all independently arrived at the same conclusion: this war was fought on israeli intelligence, for israeli objectives, with american blood and money.\n\nsource: @clashreport\n\nvideo\n  \n\n\n\n\n\n— https://nitter.net/marionawfal/status/2045626099489485269#m",
       "fullAnalysis": "시장 변동성 주목",
       "category": "경제",
       "priority": "low",
       "marketImpact": "neutral",
       "source": "MarioNawfal",
       "sourceHandle": "@MarioNawfal",
-      "sourceUrl": "https://x.com/MarioNawfal/status/2045573863665480103#m",
-      "timestamp": "2026-04-19T04:00:11.402029+09:00",
+      "sourceUrl": "https://x.com/MarioNawfal/status/2045626765582971101#m",
+      "timestamp": "2026-04-19T07:41:26.189879+09:00",
       "engagement": {
         "likes": 0,
         "views": 0,
@@ -332,8 +332,96 @@
       "impactScore": 0
     },
     {
-      "id": "8ba72304-e9bb-47b1-8656-20c8491acfa3",
+      "id": "25db7d46-f493-4f80-b7a6-2bb2ccfdcd86",
       "rank": 6,
+      "title": "500 million barrels of oil: gone.\n\n$50 billion wiped out in just 50 days since the iran war kicked o",
+      "summary": "500 million barrels of oil: gone.\n\n$50 billion wiped out in just 50 days since the iran war kicked off.\n\nthat's enough fuel to run the entire global shipping industry for 4 months.\n\nlargest energy shock in modern history. never seen anything like this. \n\nsource: @kobeissiletter\n\n\n\n\nmario nawfal (@marionawfal)\n\n🇺🇸 u.s. oil just 급등d +10% at the open and blasted past $105 a barrel.\n\npeace talks with iran collapsed. no deal, no relief.\n\nhormuz remains choked, and so does the market.\n\nsource: @kobeissiletter\n\n\n\n\n\n— https://nitter.net/marionawfal/status/2043452097476391352#m",
+      "fullAnalysis": "상승 추세 지속 중",
+      "category": "경제",
+      "priority": "low",
+      "marketImpact": "neutral",
+      "source": "MarioNawfal",
+      "sourceHandle": "@MarioNawfal",
+      "sourceUrl": "https://x.com/MarioNawfal/status/2045622030477730087#m",
+      "timestamp": "2026-04-19T07:41:26.189879+09:00",
+      "engagement": {
+        "likes": 0,
+        "views": 0,
+        "score": 0.0
+      },
+      "relatedAccounts": [],
+      "tags": [],
+      "impactScore": 0
+    },
+    {
+      "id": "7f8cb283-60e1-4af9-bc2c-d899bbe425fd",
+      "rank": 7,
+      "title": "the us technology sector is approaching a massive debt maturity wall:\n\nmore than $330 billion in hig",
+      "summary": "the us technology sector is approaching a massive debt maturity wall:\n\nmore than $330 billion in high-yield, leveraged loan, and business development company-linked software and technology debt is set to mature through 2028.\n\n~$142 billion matures in 2028 alone, nearly 3 times the 2026 amount.\n\nof that, ~$65 billion is in high-yield corporate bonds, while ~$77 billion is in leveraged loans.\n\nmost of this debt was issued during the pandemic era of near-zero 금리s, and companies will now have to refinance at significantly higher costs.\n\nmany firms are expected to begin refinancing as early as the 2nd half of this year.\n\nthe tech sector is about to see significantly higher 금리s.",
+      "fullAnalysis": "시장 변동성 주목",
+      "category": "경제",
+      "priority": "low",
+      "marketImpact": "neutral",
+      "source": "KobeissiLetter",
+      "sourceHandle": "@KobeissiLetter",
+      "sourceUrl": "https://x.com/KobeissiLetter/status/2045630498945351771#m",
+      "timestamp": "2026-04-19T07:41:26.189879+09:00",
+      "engagement": {
+        "likes": 0,
+        "views": 0,
+        "score": 0.0
+      },
+      "relatedAccounts": [],
+      "tags": [],
+      "impactScore": 0
+    },
+    {
+      "id": "00d9d092-473d-434e-a334-c8c0daf123c2",
+      "rank": 8,
+      "title": "after a chaotic morning in the strait of hormuz, both sides have gone completely quiet.\n\niran has cl",
+      "summary": "after a chaotic morning in the strait of hormuz, both sides have gone completely quiet.\n\niran has closed the strait of hormuz again and president 트럼프 said he won't be \"blackmailed\" by iran.\n\nas of friday, markets were expecting the us and iran to meet for the second time on sunday.\n\nas of right now, there is no meeting planned and the ceasefire ends in 3 days.\n\nwe continue to believe that both sides will ultimately work toward a deal, as this pre-deal turbulence has been observed many times in previous conflicts involving president 트럼프.\n\nus 주식시장 futures open in 24 hours and both sides know this.\n\nall signs point to a highly eventful sunday ahead.",
+      "fullAnalysis": "시장 변동성 주목",
+      "category": "경제",
+      "priority": "low",
+      "marketImpact": "neutral",
+      "source": "KobeissiLetter",
+      "sourceHandle": "@KobeissiLetter",
+      "sourceUrl": "https://x.com/KobeissiLetter/status/2045618901120127175#m",
+      "timestamp": "2026-04-19T07:41:26.189879+09:00",
+      "engagement": {
+        "likes": 0,
+        "views": 0,
+        "score": 0.0
+      },
+      "relatedAccounts": [],
+      "tags": [],
+      "impactScore": 0
+    },
+    {
+      "id": "9a8c20c1-30ff-42cf-9187-90fcdfabd7f4",
+      "rank": 9,
+      "title": "it's official:\n\nwe are now witnessing the largest energy supply disruption in modern history.\n\nsince",
+      "summary": "it's official:\n\nwe are now witnessing the largest energy supply disruption in modern history.\n\nsince the start of the iran war on february 28th, more than 500 million ​barrels of crude and condensate have been removed form the global market.\n\nin other words, global supply has now lost ~$50 billion ​worth of crude oil production since the iran war began nearly 50 days ago.\n\nthis is the same amount of fuel it takes to run the world's international shipping industry for 4 months.\n\nthe world has never seen anything like this before.",
+      "fullAnalysis": "상승 추세 지속 중",
+      "category": "경제",
+      "priority": "low",
+      "marketImpact": "neutral",
+      "source": "KobeissiLetter",
+      "sourceHandle": "@KobeissiLetter",
+      "sourceUrl": "https://x.com/KobeissiLetter/status/2045602094317711538#m",
+      "timestamp": "2026-04-19T07:41:26.189879+09:00",
+      "engagement": {
+        "likes": 0,
+        "views": 0,
+        "score": 0.0
+      },
+      "relatedAccounts": [],
+      "tags": [],
+      "impactScore": 0
+    },
+    {
+      "id": "1719dc9d-0214-4d78-8ed7-bee3e82c57d3",
+      "rank": 10,
       "title": "bullish bets on us technology stocks are rising at a near-record pace:\n\n나스닥 call options volume is u",
       "summary": "bullish bets on us technology stocks are rising at a near-record pace:\n\n나스닥 call options volume is up to 3.9 million contracts per day, the 2nd-highest on record.\n\nthis is only below the ~4.3 million seen in november 2025.\n\n나스닥 call options volume has more than quadrupled since 2021.\n\nthis comes as the 나스닥 has now closed positive for 13 consecutive sessions, the longest streak since 2013.\n\nover this period, the index has rallied +17.7%, one of its best 13-day returns over the last 20 years.\n\nus technology stocks are making history.",
       "fullAnalysis": "상승 추세 지속 중",
@@ -343,7 +431,7 @@
       "source": "KobeissiLetter",
       "sourceHandle": "@KobeissiLetter",
       "sourceUrl": "https://x.com/KobeissiLetter/status/2045566657968374186#m",
-      "timestamp": "2026-04-19T04:00:11.402029+09:00",
+      "timestamp": "2026-04-19T07:41:26.189879+09:00",
       "engagement": {
         "likes": 0,
         "views": 0,
@@ -354,95 +442,7 @@
       "impactScore": 0
     },
     {
-      "id": "7729c03f-0379-4492-abb7-197054c4b0f9",
-      "rank": 7,
-      "title": "🚨 트럼프 threatens to rip up uk trade deal over iran stance \n\n\"when we asked them for help, they were n",
-      "summary": "🚨 트럼프 threatens to rip up uk trade deal over iran stance \n\n\"when we asked them for help, they were not there. when we needed them, they were not there.\" \n\nputting uk car 관세s, steel exemptions, and pharmaceutical access all at risk.",
-      "fullAnalysis": "상승 추세 지속 중",
-      "category": "경제",
-      "priority": "low",
-      "marketImpact": "neutral",
-      "source": "CryptosR_Us",
-      "sourceHandle": "@CryptosR_Us",
-      "sourceUrl": "https://x.com/CryptosR_Us/status/2045495822553346452#m",
-      "timestamp": "2026-04-19T04:00:11.402029+09:00",
-      "engagement": {
-        "likes": 0,
-        "views": 0,
-        "score": 0.0
-      },
-      "relatedAccounts": [],
-      "tags": [],
-      "impactScore": 0
-    },
-    {
-      "id": "f5510d88-0073-4193-8c0a-e8cd319693b3",
-      "rank": 8,
-      "title": "draMATIC audio: indian tanker was given permission before being fired on by irgc, delhi summons amba",
-      "summary": "draMATIC audio: indian tanker was given permission before being fired on by irgc, delhi summons ambassador zerohedge.com/geopolitical/d…",
-      "fullAnalysis": "시장 변동성 주목",
-      "category": "경제",
-      "priority": "low",
-      "marketImpact": "neutral",
-      "source": "zerohedge",
-      "sourceHandle": "@zerohedge",
-      "sourceUrl": "https://x.com/zerohedge/status/2045571844460233178#m",
-      "timestamp": "2026-04-19T04:00:11.402029+09:00",
-      "engagement": {
-        "likes": 0,
-        "views": 0,
-        "score": 0.0
-      },
-      "relatedAccounts": [],
-      "tags": [],
-      "impactScore": 0
-    },
-    {
-      "id": "4fff0af3-eefd-4a9f-959d-682e816860c1",
-      "rank": 9,
-      "title": "۱. تحویل اورانیوم به آمریکا \n۲. بازگشایی کامل تنگه هرمز\n۳. ادامه محاصره دریایی ایران توسط آمریکا\n۴. ",
-      "summary": "۱. تحویل اورانیوم به آمریکا \n۲. بازگشایی کامل تنگه هرمز\n۳. ادامه محاصره دریایی ایران توسط آمریکا\n۴. غنی سازیِ صفر\nو ...\nاین تنها بخشی از دروغ ها و خیال پردازی های آوریلِ ترامپ است!",
-      "fullAnalysis": "시장 변동성 주목",
-      "category": "경제",
-      "priority": "low",
-      "marketImpact": "neutral",
-      "source": "zerohedge",
-      "sourceHandle": "@zerohedge",
-      "sourceUrl": "https://x.com/Ebrahimazizi33/status/2045554013437882716#m",
-      "timestamp": "2026-04-19T04:00:11.402029+09:00",
-      "engagement": {
-        "likes": 0,
-        "views": 0,
-        "score": 0.0
-      },
-      "relatedAccounts": [],
-      "tags": [],
-      "impactScore": 0
-    },
-    {
-      "id": "64cbed11-3705-4709-bde1-6c097fbbeea5",
-      "rank": 10,
-      "title": "abSOLute massive us airforce airlift ongoing to the middle east today. \n\nreally screaming confidence",
-      "summary": "abSOLute massive us airforce airlift ongoing to the middle east today. \n\nreally screaming confidence in negotiations with iran...\n\nvideo",
-      "fullAnalysis": "시장 변동성 주목",
-      "category": "경제",
-      "priority": "low",
-      "marketImpact": "neutral",
-      "source": "zerohedge",
-      "sourceHandle": "@zerohedge",
-      "sourceUrl": "https://x.com/WarMonitor3/status/2045515702052831672#m",
-      "timestamp": "2026-04-19T04:00:11.402029+09:00",
-      "engagement": {
-        "likes": 0,
-        "views": 0,
-        "score": 0.0
-      },
-      "relatedAccounts": [],
-      "tags": [],
-      "impactScore": 0
-    },
-    {
-      "id": "216ac5d4-e253-42e5-8d27-c6a854d4ce25",
+      "id": "6c7f7ba2-78ce-4195-bb49-4b234cf66478",
       "rank": 1,
       "title": "와...  얼마나 무서울까\n\n\nosinttechnical (@osinttechnical)\n\naudio of the indian oil tanker sanmar herald plea",
       "summary": "와...  얼마나 무서울까\n\n\nosinttechnical (@osinttechnical)\n\naudio of the indian oil tanker sanmar herald pleading with iranian forces to stop shooting at it in the strait of hormuz this morning.\n\nvideo\n  \n\n\n\n\n\n— https://nitter.net/osinttechnical/status/2045503858130956788#m",
@@ -453,7 +453,7 @@
       "source": "GONOGO_Korea",
       "sourceHandle": "@GONOGO_Korea",
       "sourceUrl": "https://x.com/GONOGO_Korea/status/2045515290084352482#m",
-      "timestamp": "2026-04-19T04:00:11.402029+09:00",
+      "timestamp": "2026-04-19T07:41:26.189879+09:00",
       "engagement": {
         "likes": 0,
         "views": 0,
@@ -464,7 +464,7 @@
       "impactScore": 0
     },
     {
-      "id": "b3664226-b7ed-4748-ad31-58d49f5b5def",
+      "id": "07aff023-05d0-45ee-9e45-7d1c27df022e",
       "rank": 2,
       "title": "미 국방부 당국자: 이슬람혁명수비대(irgc)가 토요일 아침, 최소 세 차례 이상 상업용 선박을 공격했다.  \n\n- 악시오스 인용, 블룸버그 보도",
       "summary": "미 국방부 당국자: 이슬람혁명수비대(irgc)가 토요일 아침, 최소 세 차례 이상 상업용 선박을 공격했다.  \n\n- 악시오스 인용, 블룸버그 보도",
@@ -475,7 +475,7 @@
       "source": "GONOGO_Korea",
       "sourceHandle": "@GONOGO_Korea",
       "sourceUrl": "https://x.com/GONOGO_Korea/status/2045503690740752517#m",
-      "timestamp": "2026-04-19T04:00:11.402029+09:00",
+      "timestamp": "2026-04-19T07:41:26.189879+09:00",
       "engagement": {
         "likes": 0,
         "views": 0,
@@ -486,7 +486,7 @@
       "impactScore": 0
     },
     {
-      "id": "afc98ec9-45b1-4869-96bb-c8da75965e29",
+      "id": "49696d5d-3fdc-42fa-a70a-a1cd67d6884b",
       "rank": 3,
       "title": "야 그래도 주식 인플(?)들은 되게 귀엽게 싸우지 않냐?  \n\n나는 작년 초에 이더리움 샀다가 폭락하니까 진짜로 칼 들고 쫓아 오는 애 있었어 ㅋㅋㅋ   \n\n방검복 드립 그거 개그",
       "summary": "야 그래도 주식 인플(?)들은 되게 귀엽게 싸우지 않냐?  \n\n나는 작년 초에 이더리움 샀다가 폭락하니까 진짜로 칼 들고 쫓아 오는 애 있었어 ㅋㅋㅋ   \n\n방검복 드립 그거 개그 아니고 진짜였음 ㅋㅋ",
@@ -497,7 +497,7 @@
       "source": "GONOGO_Korea",
       "sourceHandle": "@GONOGO_Korea",
       "sourceUrl": "https://x.com/GONOGO_Korea/status/2045502060599411054#m",
-      "timestamp": "2026-04-19T04:00:11.402029+09:00",
+      "timestamp": "2026-04-19T07:41:26.189879+09:00",
       "engagement": {
         "likes": 0,
         "views": 0,
@@ -508,7 +508,7 @@
       "impactScore": 0
     },
     {
-      "id": "a58df1a1-36bc-4713-bae0-ce9b412ce789",
+      "id": "d7b21992-fa68-4962-a57c-c59c8c962f7d",
       "rank": 4,
       "title": "금요일 롱 잡은 놈들 머리 뜨겁겠네\n\n\nmr. vix (@yieldsearcher)\n\n😂 did not last 12 hrs\n\n\n\n\n\n— https://nitter.net/yiel",
       "summary": "금요일 롱 잡은 놈들 머리 뜨겁겠네\n\n\nmr. vix (@yieldsearcher)\n\n😂 did not last 12 hrs\n\n\n\n\n\n— https://nitter.net/yieldsearcher/status/2045492297626755501#m",
@@ -519,7 +519,7 @@
       "source": "GONOGO_Korea",
       "sourceHandle": "@GONOGO_Korea",
       "sourceUrl": "https://x.com/GONOGO_Korea/status/2045498497961783454#m",
-      "timestamp": "2026-04-19T04:00:11.402029+09:00",
+      "timestamp": "2026-04-19T07:41:26.189879+09:00",
       "engagement": {
         "likes": 0,
         "views": 0,
@@ -530,7 +530,7 @@
       "impactScore": 0
     },
     {
-      "id": "01af7ac9-35d8-41b8-95d3-391d5cd47a9f",
+      "id": "aaa03560-1eb5-44c7-8154-6357629ffb55",
       "rank": 5,
       "title": "히이익\n\n\nالعربية عاجل (@alarabiya_brk)\n\nهيئة بحرية بريطانية: سفينة حاويات تعرضت لهجوم على بُعد 25 ميلا ",
       "summary": "히이익\n\n\nالعربية عاجل (@alarabiya_brk)\n\nهيئة بحرية بريطانية: سفينة حاويات تعرضت لهجوم على بُعد 25 ميلا بحريا قبالة عُمان #العربية_عاجل\n\n\n\n— https://nitter.net/alarabiya_brk/status/2045482958266474505#m",
@@ -541,7 +541,7 @@
       "source": "GONOGO_Korea",
       "sourceHandle": "@GONOGO_Korea",
       "sourceUrl": "https://x.com/GONOGO_Korea/status/2045483262559264898#m",
-      "timestamp": "2026-04-19T04:00:11.402029+09:00",
+      "timestamp": "2026-04-19T07:41:26.189879+09:00",
       "engagement": {
         "likes": 0,
         "views": 0,
@@ -552,7 +552,7 @@
       "impactScore": 0
     },
     {
-      "id": "eacae0a8-bb22-4b7b-90e4-9db84be827a8",
+      "id": "0220a331-f1ee-4cf6-b95e-dd494865b2d3",
       "rank": 6,
       "title": "엥 분위기 좋았자나??\n호르무즈 해협 상황 ㄷㄷ\n여수행 유조선 시동 걸려다 끔...\n\n\n\n\ngonogo (@gonogo_korea)\n\n다시 닫음 ㅅㄱ\n\n\n\n— https://nit",
       "summary": "엥 분위기 좋았자나??\n호르무즈 해협 상황 ㄷㄷ\n여수행 유조선 시동 걸려다 끔...\n\n\n\n\ngonogo (@gonogo_korea)\n\n다시 닫음 ㅅㄱ\n\n\n\n— https://nitter.net/gonogo_korea/status/2045435630361203002#m",
@@ -563,7 +563,7 @@
       "source": "GONOGO_Korea",
       "sourceHandle": "@GONOGO_Korea",
       "sourceUrl": "https://x.com/kalisGo/status/2045453867173990691#m",
-      "timestamp": "2026-04-19T04:00:11.402029+09:00",
+      "timestamp": "2026-04-19T07:41:26.189879+09:00",
       "engagement": {
         "likes": 0,
         "views": 0,
@@ -574,7 +574,7 @@
       "impactScore": 0
     },
     {
-      "id": "6d001980-1957-4fdb-9d24-e02ce978de4c",
+      "id": "3ce6ffc2-deff-4dea-a7a6-44a96be36386",
       "rank": 7,
       "title": "이란 군 대변인: 고노고의 '빤쮸 입어' 콜에 따라, 호르무즈 해협을 다시 빡세게 통제하겠다.  미군이 해상 봉쇄를 유지하는 한, 고노고의 입어 콜은 지속될 것.",
       "summary": "이란 군 대변인: 고노고의 '빤쮸 입어' 콜에 따라, 호르무즈 해협을 다시 빡세게 통제하겠다.  미군이 해상 봉쇄를 유지하는 한, 고노고의 입어 콜은 지속될 것.",
@@ -585,7 +585,7 @@
       "source": "GONOGO_Korea",
       "sourceHandle": "@GONOGO_Korea",
       "sourceUrl": "https://x.com/GONOGO_Korea/status/2045435013341261948#m",
-      "timestamp": "2026-04-19T04:00:11.402029+09:00",
+      "timestamp": "2026-04-19T07:41:26.189879+09:00",
       "engagement": {
         "likes": 0,
         "views": 0,
@@ -596,7 +596,7 @@
       "impactScore": 0
     },
     {
-      "id": "53ec75e1-389a-4b3b-8127-aa13cf033df8",
+      "id": "23ab2d1e-9176-4b5a-9a05-a987c0beef7b",
       "rank": 8,
       "title": "주말이니 나도 이런거 올려야지\n\nvideo",
       "summary": "주말이니 나도 이런거 올려야지\n\nvideo",
@@ -607,7 +607,7 @@
       "source": "GONOGO_Korea",
       "sourceHandle": "@GONOGO_Korea",
       "sourceUrl": "https://x.com/GONOGO_Korea/status/2045344708973736026#m",
-      "timestamp": "2026-04-19T04:00:11.402029+09:00",
+      "timestamp": "2026-04-19T07:41:26.189879+09:00",
       "engagement": {
         "likes": 0,
         "views": 0,
@@ -618,7 +618,7 @@
       "impactScore": 0
     },
     {
-      "id": "3596b2e9-eceb-40d7-a9ac-19449c01be8a",
+      "id": "8ae026b5-485e-4070-9902-2e1598d13cc7",
       "rank": 9,
       "title": "이란 국회의장: 입어\n\n\nمحمدباقر قالیباف | mb ghalibaf (@mb_ghalibaf)\n\n۱- رئیس جمهور آمریکا در یک ساعت هفت ادع",
       "summary": "이란 국회의장: 입어\n\n\nمحمدباقر قالیباف | mb ghalibaf (@mb_ghalibaf)\n\n۱- رئیس جمهور آمریکا در یک ساعت هفت ادعا مطرح کرد که هر هفت ادعا کذب است. \n۲- با این دروغگویی‌ها در جنگ پیروز نشدند و حتما در مذاکره هم راه به جایی نخواهند برد. \n۳- با ادامهٔ محاصره، تنگهٔ هرمز باز نخواهد ماند.\n\n\n\n— https://nitter.net/mb_ghalibaf/status/2045264713593114970#m",
@@ -629,7 +629,7 @@
       "source": "GONOGO_Korea",
       "sourceHandle": "@GONOGO_Korea",
       "sourceUrl": "https://x.com/GONOGO_Korea/status/2045285936632848642#m",
-      "timestamp": "2026-04-19T04:00:11.402029+09:00",
+      "timestamp": "2026-04-19T07:41:26.189879+09:00",
       "engagement": {
         "likes": 0,
         "views": 0,
@@ -640,7 +640,7 @@
       "impactScore": 0
     },
     {
-      "id": "30f09b8f-168f-43eb-bc38-7afc04ab41dc",
+      "id": "f0302ed4-11e2-45f7-8e0a-83936a427b22",
       "rank": 10,
       "title": "입어",
       "summary": "입어",
@@ -651,7 +651,7 @@
       "source": "GONOGO_Korea",
       "sourceHandle": "@GONOGO_Korea",
       "sourceUrl": "https://x.com/GONOGO_Korea/status/2045284560368501097#m",
-      "timestamp": "2026-04-19T04:00:11.402029+09:00",
+      "timestamp": "2026-04-19T07:41:26.189879+09:00",
       "engagement": {
         "likes": 0,
         "views": 0,
@@ -662,7 +662,7 @@
       "impactScore": 0
     },
     {
-      "id": "b6b56fa3-0558-4769-8eb3-9860f3594b48",
+      "id": "b23eb844-230c-48d9-a3d1-65c9dd674cd2",
       "rank": 1,
       "title": "다시 닫음 ㅅㄱ\n\n\nal jazeera 속보 news (@ajenews)\n\n속보: iran has announced it is again closing the strait of h",
       "summary": "다시 닫음 ㅅㄱ\n\n\nal jazeera 속보 news (@ajenews)\n\n속보: iran has announced it is again closing the strait of hormuz. the military says the us must lift its blockade of iranian ports before the strait is opened again.\n\nvideo\n  \n\n\n\n\n\n— https://nitter.net/ajenews/status/2045425962456932714#m",
@@ -673,7 +673,7 @@
       "source": "GONOGO_Korea",
       "sourceHandle": "@GONOGO_Korea",
       "sourceUrl": "https://x.com/GONOGO_Korea/status/2045435630361203002#m",
-      "timestamp": "2026-04-19T04:00:11.402029+09:00",
+      "timestamp": "2026-04-19T07:41:26.189879+09:00",
       "engagement": {
         "likes": 0,
         "views": 0,
@@ -684,30 +684,8 @@
       "impactScore": 0
     },
     {
-      "id": "f187cdd2-8928-49c4-827f-5bc746657940",
+      "id": "6ab5b90e-4a42-456a-9b7b-9c22af8b63ba",
       "rank": 2,
-      "title": "video from some years ago of a female palestinian terrorist stabbing an israeli SOLdier in jerusalem",
-      "summary": "video from some years ago of a female palestinian terrorist stabbing an israeli SOLdier in jerusalem.\n\nshe lost the fight after taking a front kick to the chest\n\nvideo",
-      "fullAnalysis": "시장 변동성 주목",
-      "category": "지정학",
-      "priority": "low",
-      "marketImpact": "neutral",
-      "source": "visegrad24",
-      "sourceHandle": "@visegrad24",
-      "sourceUrl": "https://x.com/visegrad24/status/2045554787232412060#m",
-      "timestamp": "2026-04-19T04:00:11.402029+09:00",
-      "engagement": {
-        "likes": 0,
-        "views": 0,
-        "score": 0.0
-      },
-      "relatedAccounts": [],
-      "tags": [],
-      "impactScore": 0
-    },
-    {
-      "id": "ae8636ee-c05d-4629-8975-325835c2c33d",
-      "rank": 3,
       "title": "hezbollah killed a french SOLdier in lebanon today",
       "summary": "hezbollah killed a french SOLdier in lebanon today",
       "fullAnalysis": "시장 변동성 주목",
@@ -717,7 +695,7 @@
       "source": "visegrad24",
       "sourceHandle": "@visegrad24",
       "sourceUrl": "https://x.com/visegrad24/status/2045551684185702465#m",
-      "timestamp": "2026-04-19T04:00:11.402029+09:00",
+      "timestamp": "2026-04-19T07:41:26.189879+09:00",
       "engagement": {
         "likes": 0,
         "views": 0,
@@ -728,18 +706,40 @@
       "impactScore": 0
     },
     {
-      "id": "80d03eb6-521b-4a6a-bfab-c654f5a4b148",
+      "id": "5aeeca62-07b7-45ca-b295-28a3ee9ceec7",
+      "rank": 3,
+      "title": "true\nnitter.net/i/grok/share/c6e6e6b9b…",
+      "summary": "true\nnitter.net/i/grok/share/c6e6e6b9b…",
+      "fullAnalysis": "시장 변동성 주목",
+      "category": "지정학",
+      "priority": "low",
+      "marketImpact": "neutral",
+      "source": "visegrad24",
+      "sourceHandle": "@visegrad24",
+      "sourceUrl": "https://x.com/elonmusk/status/2045595627485339649#m",
+      "timestamp": "2026-04-19T07:41:26.189879+09:00",
+      "engagement": {
+        "likes": 0,
+        "views": 0,
+        "score": 0.0
+      },
+      "relatedAccounts": [],
+      "tags": [],
+      "impactScore": 0
+    },
+    {
+      "id": "0fd3ce6e-bc31-4d1a-a4c5-db6a2151e5ce",
       "rank": 4,
-      "title": "india is furious with iran after irgc gunboats fired on the indian-flagged oil tanker the sanmar har",
-      "summary": "india is furious with iran after irgc gunboats fired on the indian-flagged oil tanker the sanmar harald today as it was passing through the strait of hormuz.\n\nthe ship was trying to transport iraqi oil to india.\n\nindia has summoned the iranian ambassador to protest",
+      "title": "a polish immigrant in the uk is shocked by how mass-immigration to the uk has filled the streets wit",
+      "summary": "a polish immigrant in the uk is shocked by how mass-immigration to the uk has filled the streets with garbage.\n\nhe says that the city he lives in (southhampton) looks like pakistan or jalalabad (a city in afghanistan).\n\n🇬🇧🇵🇱🇵🇰\n\nvideo",
       "fullAnalysis": "시장 변동성 주목",
       "category": "지정학",
       "priority": "low",
       "marketImpact": "neutral",
       "source": "visegrad24",
       "sourceHandle": "@visegrad24",
-      "sourceUrl": "https://x.com/visegrad24/status/2045515343473332550#m",
-      "timestamp": "2026-04-19T04:00:11.402029+09:00",
+      "sourceUrl": "https://x.com/visegrad24/status/2045587582612803873#m",
+      "timestamp": "2026-04-19T07:41:26.189879+09:00",
       "engagement": {
         "likes": 0,
         "views": 0,
@@ -750,118 +750,8 @@
       "impactScore": 0
     },
     {
-      "id": "c3861a97-ccff-4eab-9343-5cd3106212fc",
+      "id": "0db21c71-f28e-4d01-a574-aea679bac152",
       "rank": 5,
-      "title": "the uss gerald r. ford has returned to the middle east, entering the red sea escorted by two destroy",
-      "summary": "the uss gerald r. ford has returned to the middle east, entering the red sea escorted by two destroyers, according to associated press, citing u.s. defense officials.\n\nthe carrier had spent over a month at souda bay following a fire on march 12 in a laundry area.\n\npreviously, the vessel, the largest aircraft carrier in the world, set a u.s. record for the longest deployment in a combat zone since the vietnam war, taking part in operations in venezuela and the conflict involving iran.",
-      "fullAnalysis": "시장 변동성 주목",
-      "category": "지정학",
-      "priority": "low",
-      "marketImpact": "neutral",
-      "source": "visegrad24",
-      "sourceHandle": "@visegrad24",
-      "sourceUrl": "https://x.com/visegrad24/status/2045529394018709718#m",
-      "timestamp": "2026-04-19T04:00:11.402029+09:00",
-      "engagement": {
-        "likes": 0,
-        "views": 0,
-        "score": 0.0
-      },
-      "relatedAccounts": [],
-      "tags": [],
-      "impactScore": 0
-    },
-    {
-      "id": "98974297-28c6-4f06-b316-7e97f291c769",
-      "rank": 6,
-      "title": "american apache helicopters over the strait of hormuz",
-      "summary": "american apache helicopters over the strait of hormuz",
-      "fullAnalysis": "시장 변동성 주목",
-      "category": "지정학",
-      "priority": "low",
-      "marketImpact": "neutral",
-      "source": "visegrad24",
-      "sourceHandle": "@visegrad24",
-      "sourceUrl": "https://x.com/visegrad24/status/2045527448259842091#m",
-      "timestamp": "2026-04-19T04:00:11.402029+09:00",
-      "engagement": {
-        "likes": 0,
-        "views": 0,
-        "score": 0.0
-      },
-      "relatedAccounts": [],
-      "tags": [],
-      "impactScore": 0
-    },
-    {
-      "id": "8353f588-c1b6-4165-9f76-97d4b8deb601",
-      "rank": 7,
-      "title": "currently, 5 people are confirmed dead and 10 injured as a result of the shooting in kyiv, according",
-      "summary": "currently, 5 people are confirmed dead and 10 injured as a result of the shooting in kyiv, according to volodymyr zelensky.",
-      "fullAnalysis": "시장 변동성 주목",
-      "category": "지정학",
-      "priority": "low",
-      "marketImpact": "neutral",
-      "source": "visegrad24",
-      "sourceHandle": "@visegrad24",
-      "sourceUrl": "https://x.com/visegrad24/status/2045526182112748013#m",
-      "timestamp": "2026-04-19T04:00:11.402029+09:00",
-      "engagement": {
-        "likes": 0,
-        "views": 0,
-        "score": 0.0
-      },
-      "relatedAccounts": [],
-      "tags": [],
-      "impactScore": 0
-    },
-    {
-      "id": "d69f3329-7158-476a-9d88-ba9073638ca3",
-      "rank": 8,
-      "title": "a photo of the shooter's weapon has emerged\n\n10 people have been hospitalized, including one child, ",
-      "summary": "a photo of the shooter's weapon has emerged\n\n10 people have been hospitalized, including one child, said kyiv's mayor vitali klitschko.",
-      "fullAnalysis": "시장 변동성 주목",
-      "category": "지정학",
-      "priority": "low",
-      "marketImpact": "neutral",
-      "source": "visegrad24",
-      "sourceHandle": "@visegrad24",
-      "sourceUrl": "https://x.com/visegrad24/status/2045523510919934119#m",
-      "timestamp": "2026-04-19T04:00:11.402029+09:00",
-      "engagement": {
-        "likes": 0,
-        "views": 0,
-        "score": 0.0
-      },
-      "relatedAccounts": [],
-      "tags": [],
-      "impactScore": 0
-    },
-    {
-      "id": "035b2efa-ab78-4591-a3f8-4d9597f894b1",
-      "rank": 9,
-      "title": "the attacker in kyiv was killed during the police operation\n\nspecial forces from kord stormed the st",
-      "summary": "the attacker in kyiv was killed during the police operation\n\nspecial forces from kord stormed the store where the suspect was holding hostages. he reportedly opened fire at the police during the operation. negotiators had attempted to establish contact with him beforehand.\n\nthe number of casualties is still being clarified, with both dead and wounded reported.\n\nvideo",
-      "fullAnalysis": "시장 변동성 주목",
-      "category": "지정학",
-      "priority": "low",
-      "marketImpact": "neutral",
-      "source": "visegrad24",
-      "sourceHandle": "@visegrad24",
-      "sourceUrl": "https://x.com/visegrad24/status/2045523110653296794#m",
-      "timestamp": "2026-04-19T04:00:11.402029+09:00",
-      "engagement": {
-        "likes": 0,
-        "views": 0,
-        "score": 0.0
-      },
-      "relatedAccounts": [],
-      "tags": [],
-      "impactScore": 0
-    },
-    {
-      "id": "b966bb2d-ca7e-4187-a3e4-84fca948eddd",
-      "rank": 10,
       "title": "a special unit of the kyiv police begins an assault on the place where the shooter is holding hostag",
       "summary": "a special unit of the kyiv police begins an assault on the place where the shooter is holding hostages\n\nfastest updates on the kyiv attack are on our telegram channel.\n\n➡️ t.me/visegrad_24/7859\n\nvideo",
       "fullAnalysis": "상승 추세 지속 중",
@@ -871,7 +761,117 @@
       "source": "visegrad24",
       "sourceHandle": "@visegrad24",
       "sourceUrl": "https://x.com/visegrad24/status/2045518602959213044#m",
-      "timestamp": "2026-04-19T04:00:11.402029+09:00",
+      "timestamp": "2026-04-19T07:41:26.189879+09:00",
+      "engagement": {
+        "likes": 0,
+        "views": 0,
+        "score": 0.0
+      },
+      "relatedAccounts": [],
+      "tags": [],
+      "impactScore": 0
+    },
+    {
+      "id": "c1d998cb-21eb-43fe-a23b-2be765400edb",
+      "rank": 6,
+      "title": "video from some years ago of a female palestinian terrorist stabbing an israeli SOLdier in jerusalem",
+      "summary": "video from some years ago of a female palestinian terrorist stabbing an israeli SOLdier in jerusalem.\n\nshe lost the fight after taking a front kick to the chest\n\nvideo",
+      "fullAnalysis": "시장 변동성 주목",
+      "category": "지정학",
+      "priority": "low",
+      "marketImpact": "neutral",
+      "source": "visegrad24",
+      "sourceHandle": "@visegrad24",
+      "sourceUrl": "https://x.com/visegrad24/status/2045554787232412060#m",
+      "timestamp": "2026-04-19T07:41:26.189879+09:00",
+      "engagement": {
+        "likes": 0,
+        "views": 0,
+        "score": 0.0
+      },
+      "relatedAccounts": [],
+      "tags": [],
+      "impactScore": 0
+    },
+    {
+      "id": "4560dd37-1f78-49b4-a4e6-239fed237f5f",
+      "rank": 7,
+      "title": "india is furious with iran after irgc gunboats fired on the indian-flagged oil tanker the sanmar har",
+      "summary": "india is furious with iran after irgc gunboats fired on the indian-flagged oil tanker the sanmar harald today as it was passing through the strait of hormuz.\n\nthe ship was trying to transport iraqi oil to india.\n\nindia has summoned the iranian ambassador to protest",
+      "fullAnalysis": "시장 변동성 주목",
+      "category": "지정학",
+      "priority": "low",
+      "marketImpact": "neutral",
+      "source": "visegrad24",
+      "sourceHandle": "@visegrad24",
+      "sourceUrl": "https://x.com/visegrad24/status/2045515343473332550#m",
+      "timestamp": "2026-04-19T07:41:26.189879+09:00",
+      "engagement": {
+        "likes": 0,
+        "views": 0,
+        "score": 0.0
+      },
+      "relatedAccounts": [],
+      "tags": [],
+      "impactScore": 0
+    },
+    {
+      "id": "80f4668c-a69f-42f0-90cf-3b2a7f7f0cac",
+      "rank": 8,
+      "title": "the uss gerald r. ford has returned to the middle east, entering the red sea escorted by two destroy",
+      "summary": "the uss gerald r. ford has returned to the middle east, entering the red sea escorted by two destroyers, according to associated press, citing u.s. defense officials.\n\nthe carrier had spent over a month at souda bay following a fire on march 12 in a laundry area.\n\npreviously, the vessel, the largest aircraft carrier in the world, set a u.s. record for the longest deployment in a combat zone since the vietnam war, taking part in operations in venezuela and the conflict involving iran.",
+      "fullAnalysis": "시장 변동성 주목",
+      "category": "지정학",
+      "priority": "low",
+      "marketImpact": "neutral",
+      "source": "visegrad24",
+      "sourceHandle": "@visegrad24",
+      "sourceUrl": "https://x.com/visegrad24/status/2045529394018709718#m",
+      "timestamp": "2026-04-19T07:41:26.189879+09:00",
+      "engagement": {
+        "likes": 0,
+        "views": 0,
+        "score": 0.0
+      },
+      "relatedAccounts": [],
+      "tags": [],
+      "impactScore": 0
+    },
+    {
+      "id": "2d0438f0-6f5c-465e-90e6-115cfa7e8bd6",
+      "rank": 9,
+      "title": "american apache helicopters over the strait of hormuz",
+      "summary": "american apache helicopters over the strait of hormuz",
+      "fullAnalysis": "시장 변동성 주목",
+      "category": "지정학",
+      "priority": "low",
+      "marketImpact": "neutral",
+      "source": "visegrad24",
+      "sourceHandle": "@visegrad24",
+      "sourceUrl": "https://x.com/visegrad24/status/2045527448259842091#m",
+      "timestamp": "2026-04-19T07:41:26.189879+09:00",
+      "engagement": {
+        "likes": 0,
+        "views": 0,
+        "score": 0.0
+      },
+      "relatedAccounts": [],
+      "tags": [],
+      "impactScore": 0
+    },
+    {
+      "id": "57f42ca4-aeb9-4175-996b-f82eeda99e58",
+      "rank": 10,
+      "title": "currently, 5 people are confirmed dead and 10 injured as a result of the shooting in kyiv, according",
+      "summary": "currently, 5 people are confirmed dead and 10 injured as a result of the shooting in kyiv, according to volodymyr zelensky.",
+      "fullAnalysis": "시장 변동성 주목",
+      "category": "지정학",
+      "priority": "low",
+      "marketImpact": "neutral",
+      "source": "visegrad24",
+      "sourceHandle": "@visegrad24",
+      "sourceUrl": "https://x.com/visegrad24/status/2045526182112748013#m",
+      "timestamp": "2026-04-19T07:41:26.189879+09:00",
       "engagement": {
         "likes": 0,
         "views": 0,
@@ -883,8 +883,8 @@
     }
   ],
   "systemStatus": {
-    "lastUpdate": "2026-04-19T04:00:11.402029+09:00",
-    "nextUpdate": "2026-04-19T08:00:11.402029+09:00",
+    "lastUpdate": "2026-04-19T07:41:26.189879+09:00",
+    "nextUpdate": "2026-04-19T11:41:26.189879+09:00",
     "totalAccounts": 73,
     "activeAccounts": 73,
     "tweetsCollected": 40,
