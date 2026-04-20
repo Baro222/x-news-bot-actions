@@ -1,31 +1,9 @@
 {
-  "timestamp": "2026-04-21T04:15:27.757616+09:00",
+  "timestamp": "2026-04-21T07:52:17.323124+09:00",
   "news": [
     {
-      "id": "53b27c9d-a745-4daa-b6df-f0f32914ae7f",
+      "id": "61addd48-9dfa-4c33-8416-035a7a4cd4d1",
       "rank": 1,
-      "title": "계속 2개 라인이야.  \n\n외교부 라인은 벗  \n군부 라인은 입  \n\n아직 확실하지 않아.\n\n\nrookie.BTC (@rookieBTC)\n\n가능성은? 벗 입 벗 입?\n\n\n\n— ht",
-      "summary": "계속 2개 라인이야.  \n\n외교부 라인은 벗  \n군부 라인은 입  \n\n아직 확실하지 않아.\n\n\nrookie.BTC (@rookieBTC)\n\n가능성은? 벗 입 벗 입?\n\n\n\n— https://nitter.net/rookieBTC/status/2045998762657816704#m",
-      "fullAnalysis": "시장 변동성 주목",
-      "category": "암호화폐",
-      "priority": "low",
-      "marketImpact": "neutral",
-      "source": "GONOGO_Korea",
-      "sourceHandle": "@GONOGO_Korea",
-      "sourceUrl": "https://x.com/GONOGO_Korea/status/2045998915376513286#m",
-      "timestamp": "2026-04-21T04:15:27.757616+09:00",
-      "engagement": {
-        "likes": 0,
-        "views": 0,
-        "score": 0.0
-      },
-      "relatedAccounts": [],
-      "tags": [],
-      "impactScore": 0
-    },
-    {
-      "id": "63d4bf8a-a281-4c4d-9fda-da66677df562",
-      "rank": 2,
       "title": "🇫🇷 telegram founder pavel durov: france, under the leadership of emmanuel macron \"is losing legitima",
       "summary": "🇫🇷 telegram founder pavel durov: france, under the leadership of emmanuel macron \"is losing legitimacy\"\n\nelon musk has been summoned again for questioning by the paris prosecutor's office in connection with allegations of distributing illegal sexualized images.\n\naccording to the times, the questioning is considered \"voluntary,\" and the prosecutor's office has also summoned linda yaccarino, the former ceo of x, the social media platform owned by musk.\n\nthis procedure was initiated as part of a case opened earlier last year regarding the distribution of illegal sexualized images and deepfakes on the social media platform. the allegations are based on the premise that grok may be capable of generating sexualized images.\n\nthe authorities have not specified whETHer musk will face penalties if he fails to appear for questioning, but they noted that his absence will not halt the investigation.\n\naccording to the newspaper, other employees of x are expected to be summoned for questioning this week.\n\nmeanwhile, pavel durov, against whom french authorities have also brought several charges, stated that france, under the leadership of emmanuel macron, \"is losing legitimacy because it is using criminal investigations to suppress freedom of speech and privacy.\"",
       "fullAnalysis": "상승 추세 지속 중",
@@ -35,7 +13,7 @@
       "source": "visegrad24",
       "sourceHandle": "@visegrad24",
       "sourceUrl": "https://x.com/visegrad24/status/2046261902532120607#m",
-      "timestamp": "2026-04-21T04:15:27.757616+09:00",
+      "timestamp": "2026-04-21T07:52:17.323124+09:00",
       "engagement": {
         "likes": 0,
         "views": 0,
@@ -46,18 +24,18 @@
       "impactScore": 0
     },
     {
-      "id": "1514f7e7-5def-43cf-af23-a070e9eef818",
-      "rank": 3,
-      "title": "🇬🇧 british police have arrested two teenagers over an attempted arson attack on the kenton united sy",
-      "summary": "🇬🇧 british police have arrested two teenagers over an attempted arson attack on the kenton united synagogue in northwest london\n\na 17-year-old boy and a 19-year-old man were detained after a “firebomb”, a bottle containing accelerant, was thrown through a window into a medical room. the fire caused minor smoke damage, and no injuries were reported.\n\ncounter terrorism policing is investigating whETHer the suspects are linked to a group with ties to the iranian islamic regime.\n\nthe incident is part of a series of recent arson attacks targeting jewish sites in london. \n\npolice also reported an attempted arson at a business linked to the jewish community on friday, and earlier arrests were made over another synagogue attack last week. \n\nin a separate incident last month, ambulances belonging to the volunteer emergency service hatzola were set on fire in golders green.",
-      "fullAnalysis": "상승 추세 지속 중",
+      "id": "4e74611b-5d84-43d6-b3c9-da32b525eebf",
+      "rank": 2,
+      "title": "vitalik: l2s that only copy 이더리움 make no sense\n\n이더리움 founder vitalik buterin @vitalikbuterin stated ",
+      "summary": "vitalik: l2s that only copy 이더리움 make no sense\n\n이더리움 founder vitalik buterin @vitalikbuterin stated during his speech at the 4th hong kong web3 festival on april 20 that an l2 that merely clones 이더리움 and makes it more centralized is meaningless. a truly meaningful l2 should examine application needs and build the required off-chain components outside of 이더리움 l1. \n\nfurthermore, vitalik noted that future scaling remains a key focus: first, data scaling, which requires further advancing the peerdas technology introduced in a previous hard fork; second, compute scaling, which allows different applications to compose and communicate with each other without the need for any intermediaries.\n\nvideo",
+      "fullAnalysis": "시장 변동성 주목",
       "category": "암호화폐",
       "priority": "low",
       "marketImpact": "neutral",
-      "source": "visegrad24",
-      "sourceHandle": "@visegrad24",
-      "sourceUrl": "https://x.com/visegrad24/status/2046185061691584752#m",
-      "timestamp": "2026-04-21T04:15:27.757616+09:00",
+      "source": "WuBlockchain",
+      "sourceHandle": "@WuBlockchain",
+      "sourceUrl": "https://x.com/WuBlockchain/status/2046357750549238040#m",
+      "timestamp": "2026-04-21T07:52:17.323124+09:00",
       "engagement": {
         "likes": 0,
         "views": 0,
@@ -68,8 +46,74 @@
       "impactScore": 0
     },
     {
-      "id": "357fed3f-7da2-407b-a7db-cde7dc17dd56",
+      "id": "08f9cdb9-2bfa-4ea2-9ca3-484cca1be2d2",
+      "rank": 3,
+      "title": "llamarisk, an aave dao risk service provider, released its rsETH incident report, quantifying the po",
+      "summary": "llamarisk, an aave dao risk service provider, released its rsETH incident report, quantifying the potential bad debt impact on aave under two scenarios:\n\n1. uniform loss socialization across all rsETH\n\n~15.12% haircut, resulting in approximately $123.7 million in bad debt, with the largest abSOLute loss on 이더리움 core and the highest proportional shortfall on mantle.\n\n2. losses iSOLated to l2 rsETH\n\n~73.54% haircut, resulting in approximately $230.1 million in bad debt, concentrated on l2s. mantle would face a 71.45% wETH shortfall and 아비트럼 a 26.67% shortfall, while 이더리움 core would remain unaffected.\n\nthe report also notes that wETH reserves across chains are at 100% utilization with under $20 of idle liquidity, limiting liquidation capacity and potentially amplifying risk. it recommends pausing the wETH umbrella module, with bad debt to be addressed jointly by the aave dao treasury and ecosystem participants.\n\nnitter.net/aave/status/2046321565…",
+      "fullAnalysis": "시장 변동성 주목",
+      "category": "암호화폐",
+      "priority": "low",
+      "marketImpact": "neutral",
+      "source": "WuBlockchain",
+      "sourceHandle": "@WuBlockchain",
+      "sourceUrl": "https://x.com/WuBlockchain/status/2046347614283764036#m",
+      "timestamp": "2026-04-21T07:52:17.323124+09:00",
+      "engagement": {
+        "likes": 0,
+        "views": 0,
+        "score": 0.0
+      },
+      "relatedAccounts": [],
+      "tags": [],
+      "impactScore": 0
+    },
+    {
+      "id": "d35cebb1-3290-404c-93b1-d9c5fb510f97",
       "rank": 4,
+      "title": "디파이 losses exceed $600 million in three weeks as tvl falls 25% to $82.4 billion\n\nrecent security inc",
+      "summary": "디파이 losses exceed $600 million in three weeks as tvl falls 25% to $82.4 billion\n\nrecent security incidents have pushed 디파이 losses above $600 million over the past three weeks, with the $292 million kelp dao bridge exploit accelerating the downturn. total value locked (tvl) has fallen to around $82.4 billion, down about 25% from roughly $110 billion at the start of 2026, alongside a 5.6% single-day drawdown. lending markets have been hit the hardest, with tvl declining about 13%.",
+      "fullAnalysis": "하락 압력 강화",
+      "category": "암호화폐",
+      "priority": "low",
+      "marketImpact": "neutral",
+      "source": "WuBlockchain",
+      "sourceHandle": "@WuBlockchain",
+      "sourceUrl": "https://x.com/WuBlockchain/status/2046321610534314097#m",
+      "timestamp": "2026-04-21T07:52:17.323124+09:00",
+      "engagement": {
+        "likes": 0,
+        "views": 0,
+        "score": 0.0
+      },
+      "relatedAccounts": [],
+      "tags": [],
+      "impactScore": 0
+    },
+    {
+      "id": "d7a4328d-67d1-444c-be5d-94b4e5aaec24",
+      "rank": 5,
+      "title": "source: theblock.co/post/398154/디파이…",
+      "summary": "source: theblock.co/post/398154/디파이…",
+      "fullAnalysis": "시장 변동성 주목",
+      "category": "암호화폐",
+      "priority": "low",
+      "marketImpact": "neutral",
+      "source": "WuBlockchain",
+      "sourceHandle": "@WuBlockchain",
+      "sourceUrl": "https://x.com/WuBlockchain/status/2046330324502954359#m",
+      "timestamp": "2026-04-21T07:52:17.323124+09:00",
+      "engagement": {
+        "likes": 0,
+        "views": 0,
+        "score": 0.0
+      },
+      "relatedAccounts": [],
+      "tags": [],
+      "impactScore": 0
+    },
+    {
+      "id": "5311322a-081b-4b47-bcf7-d13f2d742a50",
+      "rank": 6,
       "title": "vitalik buterin: 이더리움 must withstand the day all core developers leave\n\nspeaking at the 4th hong kon",
       "summary": "vitalik buterin: 이더리움 must withstand the day all core developers leave\n\nspeaking at the 4th hong kong web3 festival on april 20, 2026, vitalik buterin @vitalikbuterin stated that 이더리움's goal is not to be the fastest chain or compete with high-frequency trading platforms, but to serve as a secure, decentralized, and reliable network. \n\nto support long-term digital assets, he noted that 이더리움 is advancing formal verification through ai and pursuing quantum resistance. ultimately, 이더리움 strives to pass the \"walkaway test\" similar to 비트코인, ensuring the network can function stably as a long-term foundation even without the ongoing involvement of core developers.\n\nvideo",
       "fullAnalysis": "상승 추세 지속 중",
@@ -79,7 +123,7 @@
       "source": "WuBlockchain",
       "sourceHandle": "@WuBlockchain",
       "sourceUrl": "https://x.com/WuBlockchain/status/2046302884430749935#m",
-      "timestamp": "2026-04-21T04:15:27.757616+09:00",
+      "timestamp": "2026-04-21T07:52:17.323124+09:00",
       "engagement": {
         "likes": 0,
         "views": 0,
@@ -90,8 +134,30 @@
       "impactScore": 0
     },
     {
-      "id": "55418076-0c75-4fd9-95b1-dab1e278ff71",
-      "rank": 5,
+      "id": "b344d7af-e169-4462-8101-61c5e2e06c19",
+      "rank": 7,
+      "title": "source: piped.video/live/acjs9fd6dtu…",
+      "summary": "source: piped.video/live/acjs9fd6dtu…",
+      "fullAnalysis": "시장 변동성 주목",
+      "category": "암호화폐",
+      "priority": "low",
+      "marketImpact": "neutral",
+      "source": "WuBlockchain",
+      "sourceHandle": "@WuBlockchain",
+      "sourceUrl": "https://x.com/WuBlockchain/status/2046318298632220677#m",
+      "timestamp": "2026-04-21T07:52:17.323124+09:00",
+      "engagement": {
+        "likes": 0,
+        "views": 0,
+        "score": 0.0
+      },
+      "relatedAccounts": [],
+      "tags": [],
+      "impactScore": 0
+    },
+    {
+      "id": "8b2aaa25-5ff3-4ab3-953b-c7fc51f937f5",
+      "rank": 8,
       "title": "sonic research states that most pos 블록체인s rely on elliptic-curve signatures and aggregation schemes ",
       "summary": "sonic research states that most pos 블록체인s rely on elliptic-curve signatures and aggregation schemes that are vulnerable to quantum attacks and difficult to replace without significant protocol changes and performance trade-offs, while soniccs, which relies only on per-event signatures and hash functions, can transition to post-quantum security by replacing its signature scheme without altering its core consensus design.",
       "fullAnalysis": "시장 변동성 주목",
@@ -101,7 +167,7 @@
       "source": "WuBlockchain",
       "sourceHandle": "@WuBlockchain",
       "sourceUrl": "https://x.com/WuBlockchain/status/2046298701606662421#m",
-      "timestamp": "2026-04-21T04:15:27.757616+09:00",
+      "timestamp": "2026-04-21T07:52:17.323124+09:00",
       "engagement": {
         "likes": 0,
         "views": 0,
@@ -112,18 +178,18 @@
       "impactScore": 0
     },
     {
-      "id": "22f5bc70-a3e4-40ab-b1f1-6a025cac7ccf",
-      "rank": 6,
-      "title": "source: 코인desk.com/business/2026/0…",
-      "summary": "source: 코인desk.com/business/2026/0…",
+      "id": "9e149217-224c-4d0e-b8fa-71b995302ce0",
+      "rank": 9,
+      "title": "source: blog.soniclabs.com/sonics-ro…",
+      "summary": "source: blog.soniclabs.com/sonics-ro…",
       "fullAnalysis": "시장 변동성 주목",
       "category": "암호화폐",
       "priority": "low",
       "marketImpact": "neutral",
       "source": "WuBlockchain",
       "sourceHandle": "@WuBlockchain",
-      "sourceUrl": "https://x.com/WuBlockchain/status/2046247468149461380#m",
-      "timestamp": "2026-04-21T04:15:27.757616+09:00",
+      "sourceUrl": "https://x.com/WuBlockchain/status/2046307294179418216#m",
+      "timestamp": "2026-04-21T07:52:17.323124+09:00",
       "engagement": {
         "likes": 0,
         "views": 0,
@@ -134,8 +200,8 @@
       "impactScore": 0
     },
     {
-      "id": "466c5fe5-ffb7-40ed-8613-aca04f366af7",
-      "rank": 7,
+      "id": "224ccf11-4e4c-4116-9b09-b31e863692fe",
+      "rank": 10,
       "title": "코인base, bybit explore bringing u.s. stocks on-chain\n\n코인base is in discussions with bybit to explore ",
       "summary": "코인base, bybit explore bringing u.s. stocks on-chain\n\n코인base is in discussions with bybit to explore 토큰ization, custody, and global distribution of assets including u.s. public and pre-ipo stocks.\n\nthe talks do not involve any equity investment or bybit’s u.s. market entry, sources said. bybit’s u.s. expansion is expected to proceed via a separate entity led by former co-ceo helen liu with a local partner providing licensing and compliance. both 코인base and bybit declined to comment. \n\npreviously, wu 블록체인 exclusively reported that 코인base and bybit were in talks regarding an investment cooperation agreement, through which bybit aims to enter the u.s. regulated market.",
       "fullAnalysis": "시장 변동성 주목",
@@ -145,7 +211,7 @@
       "source": "WuBlockchain",
       "sourceHandle": "@WuBlockchain",
       "sourceUrl": "https://x.com/WuBlockchain/status/2046247390680654271#m",
-      "timestamp": "2026-04-21T04:15:27.757616+09:00",
+      "timestamp": "2026-04-21T07:52:17.323124+09:00",
       "engagement": {
         "likes": 0,
         "views": 0,
@@ -156,96 +222,8 @@
       "impactScore": 0
     },
     {
-      "id": "4558f385-a51c-4390-9a06-00d42acf9afc",
-      "rank": 8,
-      "title": "source: prnewswire.com/news-releases…",
-      "summary": "source: prnewswire.com/news-releases…",
-      "fullAnalysis": "시장 변동성 주목",
-      "category": "암호화폐",
-      "priority": "low",
-      "marketImpact": "neutral",
-      "source": "WuBlockchain",
-      "sourceHandle": "@WuBlockchain",
-      "sourceUrl": "https://x.com/WuBlockchain/status/2046209955024220261#m",
-      "timestamp": "2026-04-21T04:15:27.757616+09:00",
-      "engagement": {
-        "likes": 0,
-        "views": 0,
-        "score": 0.0
-      },
-      "relatedAccounts": [],
-      "tags": [],
-      "impactScore": 0
-    },
-    {
-      "id": "2e50d955-4039-4bf0-a6de-387838f49a18",
-      "rank": 9,
-      "title": "bitmine adds 101,627 ETH in biggest weekly accumulation in 4 months  \n\nbitmine immersion technologie",
-      "summary": "bitmine adds 101,627 ETH in biggest weekly accumulation in 4 months  \n\nbitmine immersion technologies added 101,627 ETH last week, marking its fastest pace of accumulation since the week of december 15, 2025. as of april 19, 2026, the company holds a total of 4,976,485 ETH, representing approximately 4.12% of 이더리움’s total supply.  \n\nbitmine’s total 암호화폐, cash, and investment holdings are valued at approximately $12.9 billion, including $1.12 billion in cash, 199 BTC, a $200 million stake in beast industries, and a $107 million investment in eightco holdings (orbs).",
-      "fullAnalysis": "상승 추세 지속 중",
-      "category": "암호화폐",
-      "priority": "low",
-      "marketImpact": "neutral",
-      "source": "WuBlockchain",
-      "sourceHandle": "@WuBlockchain",
-      "sourceUrl": "https://x.com/WuBlockchain/status/2046209850124763512#m",
-      "timestamp": "2026-04-21T04:15:27.757616+09:00",
-      "engagement": {
-        "likes": 0,
-        "views": 0,
-        "score": 0.0
-      },
-      "relatedAccounts": [],
-      "tags": [],
-      "impactScore": 0
-    },
-    {
-      "id": "8f5a9770-2957-477b-a239-e8bbeff168f0",
-      "rank": 10,
-      "title": "strategy adds $2.54b in BTC, holdings exceed 815k 코인s\n\nstrategy announced it has acquired 34,164 BTC",
-      "summary": "strategy adds $2.54b in BTC, holdings exceed 815k 코인s\n\nstrategy announced it has acquired 34,164 BTC for approximately $2.54 billion at an average price of $74,395 per 비트코인, bringing its total holdings to 815,061 BTC. the total acquisition cost reaching about $61.56 billion at an average price of $75,527 per 비트코인. nitter.net/strategy/status/204619…",
-      "fullAnalysis": "시장 변동성 주목",
-      "category": "암호화폐",
-      "priority": "low",
-      "marketImpact": "neutral",
-      "source": "WuBlockchain",
-      "sourceHandle": "@WuBlockchain",
-      "sourceUrl": "https://x.com/WuBlockchain/status/2046199736382693841#m",
-      "timestamp": "2026-04-21T04:15:27.757616+09:00",
-      "engagement": {
-        "likes": 0,
-        "views": 0,
-        "score": 0.0
-      },
-      "relatedAccounts": [],
-      "tags": [],
-      "impactScore": 0
-    },
-    {
-      "id": "f6a1c495-7c46-4a35-9fba-f0169b5b7418",
+      "id": "be6d350c-1357-4987-9e7a-a59ad5d743f7",
       "rank": 1,
-      "title": "협상 초안이래\n\n\nsulaiman ahmed (@shaykhsulaiman)\n\nceasefire update: iran-u.s draft proposal\n\n✅ iran agrees",
-      "summary": "협상 초안이래\n\n\nsulaiman ahmed (@shaykhsulaiman)\n\nceasefire update: iran-u.s draft proposal\n\n✅ iran agrees to a 15-year enrichment suspension, with the exception of research reactors for medical isotopes.\n\n✅ iran’s stockpile of 60% and 20% uranium would be partially converted to reactor fuel, and partially ‘downblended’ to a lower enrichment level. however, it won’t leave iran.\n\n✅ full iaea supervison on iran’s nuclear sites.\n\n✅ opening the strait of hormuz, with the possibility of collecting tolls.\n\n✅ the u.s. will offer iran phased 제재 relief\n\n✅ the u.s. will unfreeze all iranian assets currently frozen abroad, amounting to $20 billion or more.\n\n✅ the u.s. will commit to a non-aggression pact with iran that is ensured through a un national security council reSOLution and a treaty ratified by congress.\n\n✅ the u.s. will withdraw all its military forces from the persian gulf.\n\nsource: amit segal israel channel 12\n\n\n\n\n\n\n\n— https://nitter.net/shaykhsulaiman/status/2045943074040197137#m",
-      "fullAnalysis": "상승 추세 지속 중",
-      "category": "경제",
-      "priority": "low",
-      "marketImpact": "neutral",
-      "source": "GONOGO_Korea",
-      "sourceHandle": "@GONOGO_Korea",
-      "sourceUrl": "https://x.com/GONOGO_Korea/status/2045998525230833963#m",
-      "timestamp": "2026-04-21T04:15:27.757616+09:00",
-      "engagement": {
-        "likes": 0,
-        "views": 0,
-        "score": 0.0
-      },
-      "relatedAccounts": [],
-      "tags": [],
-      "impactScore": 0
-    },
-    {
-      "id": "647debba-bf68-4652-b646-c5a2cc8a795f",
-      "rank": 2,
       "title": "🇩🇪 germany’s economic motor shifts from global car giant to europe’s military industrial hub\n\ngerman",
       "summary": "🇩🇪 germany’s economic motor shifts from global car giant to europe’s military industrial hub\n\ngermany is experiencing its longest period of stagnation since world war ii. the manufacturing sector is reportedly losing around 15,000 jobs per month, while major carmakers such as volkswagen and mercedes-benz have seen profit declines of over 40%.\n\nin response, berlin has committed more than $500 billion (€460 billion) in defense spending over the next decade, with annual military expenditure projected to reach around $190 billion by 2029.\n\nseveral industrial conversions are already underway:\n\n- rheinmetall is repurposing former auto-parts facilities in berlin and neuss for military production.\n\n- volkswagen is reportedly discussing converting its osnabrück plant to produce defense-related components, including transport vehicles and missile systems.\n\n- knds has acquired a former alstom rail factory in görlitz to produce components for leopard 2 tanks and puma infantry fighting vehicles.\n\ndefense companies such as henSOLdt are also recruiting engineers and technicians from automotive suppliers like continental and bosch.\n\nthe german defense industry association has nearly doubled its membership in a year, as civilian suppliers shift toward military contracts. some firms, such as schaeffler, are also expanding production into drones.\n\nanalysts estimate that raising defense spending to 3% of GDP could generate tens of billions in annual output and create up to 245,000 jobs.\n\n📰: wsj",
       "fullAnalysis": "상승 추세 지속 중",
@@ -255,7 +233,7 @@
       "source": "visegrad24",
       "sourceHandle": "@visegrad24",
       "sourceUrl": "https://x.com/visegrad24/status/2046207505009676641#m",
-      "timestamp": "2026-04-21T04:15:27.757616+09:00",
+      "timestamp": "2026-04-21T07:52:17.323124+09:00",
       "engagement": {
         "likes": 0,
         "views": 0,
@@ -266,18 +244,40 @@
       "impactScore": 0
     },
     {
-      "id": "1b8a58ae-2ec8-4421-93fc-3e40f849172b",
+      "id": "e94ce1c7-c757-4d2b-96b5-65f5a6b9e5ad",
+      "rank": 2,
+      "title": "🇮🇷🇸🇦🇦🇪 iran is reportedly planning a single coordinated strike that could wipe out 32% of global oil",
+      "summary": "🇮🇷🇸🇦🇦🇪 iran is reportedly planning a single coordinated strike that could wipe out 32% of global oil supply.\n\nthe targets, according to tasnim news agency:\n- yanbu pipeline in saudi arabia\n- fujairah oil facility in the uae\n- full houthi closure of the bab el-mandeb strait\n\nif even half of this plays out alongside a hormuz blockade, the global energy market won’t adjust gradually and may collapse all at once.\n\nbab el-mandeb alone handles roughly 6 million barrels a day.\nfujairah is one of the world's largest bunkering hubs.\nyanbu is the artery connecting saudi oil fields to the red sea.\n\nhit all three simultaneously and you're looking at a structural rupture that would take months to stabilize, if it stabilizes at all.\n\nsource: tasnim news agency\n\n\n\n\nmario nawfal (@marionawfal)\n\n🇺🇸🇮🇷 the u.s. navy boarded and seized an iranian-flagged vessel in the arabian sea yestarday. \n\nthe m/v touska tried to run the blockade. it didn't get through.\n\nthis is now a daily pattern. iran probes. the u.s. intercepts. neither side is backing down.\n\nthe blockade is a pressure valve.\n\nevery ship iran loses is a message to tehran that the economic squeeze is real and enforceable at sea.\n\nsource: centcom\n\nvideo\n  \n\n\n\n\n\n\n\n\n\n\n\n— https://nitter.net/marionawfal/status/2046355257727283355#m",
+      "fullAnalysis": "상승 추세 지속 중",
+      "category": "경제",
+      "priority": "low",
+      "marketImpact": "neutral",
+      "source": "MarioNawfal",
+      "sourceHandle": "@MarioNawfal",
+      "sourceUrl": "https://x.com/MarioNawfal/status/2046358122273370596#m",
+      "timestamp": "2026-04-21T07:52:17.323124+09:00",
+      "engagement": {
+        "likes": 0,
+        "views": 0,
+        "score": 0.0
+      },
+      "relatedAccounts": [],
+      "tags": [],
+      "impactScore": 0
+    },
+    {
+      "id": "e6853bb6-4bbc-4ee3-93e2-6ceab2001e80",
       "rank": 3,
-      "title": "🇮🇶🇮🇷 iran just picked iraq's next prime minister.  \n\nbassem al-badri is now the coordination framewo",
-      "summary": "🇮🇶🇮🇷 iran just picked iraq's next prime minister.  \n\nbassem al-badri is now the coordination framework's unified candidate after nour al-maliki stepped aside and endorsed him. \n\nthat alone would be notable. but the detail that matters: esmail qaani flew to baghdad and personally backed al-badri during the visit.  \n\ntehran doesn't make that kind of trip for nothing.  \n\niraq's shia factions are notoriously fractured. getting them to conSOLidate behind a single candidate requires either a very long negotiation or a very clear signal from the top. \n\nthis looks like the latter.  \n\nal-maliki doesn't withdraw quietly unless he's been told to. his endorsement of al-badri reads less like political generosity and more like instructions received.  \n\nthe iraqi parliament will go through the motions. but the real conversation already happened in a room with qaani.  \n\nsource: al jazeera\n\n\n\n\n\n\n\n\nmario nawfal (@marionawfal)\n\n🇮🇷 the iranian foreign minister declared the strait of hormuz open. the irgc publicly called his tweet \"bad and incomplete.\" \n\nthis is not a good cop bad cop routine but a clear power struggle happening in public, in real time, over the most valuable waterway on earth.\n\nhere's exactly what happened in the last 72 hours.\n\naraghchi posted on x that the strait was completely open for commercial vessels for the remainder of the ceasefire. markets 급등d, oil dropped, 트럼프 thanked tehran. \n\nit looked like the biggest diploMATIC breakthrough of the war.\n\nthen tasnim news, the outlet directly linked to the irgc, posted a series of attacks on iran's own foreign minister. \n\nthe headline: \"bad and incomplete tweet by araghchi and incorrect ambiguity-creation regarding the reopening of the strait of hormuz.\"\n\nthe irgc's argument was specific and deliberate. araghchi published his declaration without explaining the conditions, the coordinated route requirements, or the military oversight mechanisms. \n\nmore importantly, tasnim warned that passage is \"null and void in the event of the continuation of the claimed naval blockade.\" the us blockade is still in place. therefore, per the irgc, the strait is not actually open.\n\nthen came the line that reveals the real message. tasnim wrote: \n\n\"the tweets that officials publish, even if they write them in english, are not seen only by foreign officials. the great nation of iran is fully monitoring the scene in accordance with its revolutionary duty.\"\n\nthat is the irgc telling the foreign ministry that its communications are being watched for ideological compliance. \n\nwhat this means for the negotiations is significant.\n\naraghchi was the man in the room in islamabad for 21 hours. he is the one conducting the diploMATIC track with pakistan, egypt and turkey acting as mediators. he is the face of whatever deal might be possible before april 21. \n\nand the irgc publicly undermined his credibility and his authority to make commitments on open radio and state-linked media simultaneously.\n\nthe structural problem has always been this. any deal araghchi signs has to survive contact with an irgc that answers to the supreme leader's office, not the foreign ministry. \n\nin the past iran managed this division quietly. what's different now is they're airing it publicly\n\nsource: jerusalem post\n\n\n\n\n\n\n\n\n\n\n\n— https://nitter.net/marionawfal/status/2046284903415947508#m",
+      "title": "🚨🇨🇳 tungsten just spiked 640% in a year. almost nobody is talking about it...\n\nthe metal is used in ",
+      "summary": "🚨🇨🇳 tungsten just spiked 640% in a year. almost nobody is talking about it...\n\nthe metal is used in armor-piercing tank rounds, bunker busters, artillery shells, and the warheads of every tomahawk cruise missile currently being fired in the middle east. \n\nhighest melting point of any known element. \n\nnearly twice as dense as lead. \n\nit is the backbone of modern kinetic warfare.\n\nchina controls 83 to 85% of global supply and nearly all the processing.\n\nthe chart shows the smoking gun...\n\nrotterdam prices are exploding while chinese domestic prices stayed flat. \n\nthat's beijing deliberately choking off exports to the west while keeping the same metal cheap for its own defense industry.\n\nthe u.s. and nato burned through stockpiles supplying ukraine.\n\nnow they're burning through more sustaining the iran war.\n\ncongress can appropriate whatever it wants for munitions.\n\ndefense contractors physically cannot build the shells without tungsten.\n\neveryone is watching the navy blockade iran.\n\nchina is running a quieter more devastating blockade on the metals that make every weapon the west fires.\n\nsource: bloomberg\n\n\n\nvideo\n  \n\n\n\n\nmario nawfal (@marionawfal)\n\n🇺🇸 트럼프 just invoked the defense production act to 급등 연준eral resources into petroleum, lng, coal, and grid infrastructure.\n\ntranslation: energy prices are spiking and he's treating it like a wartime emergency.\n\nbecause it basically is...\n\nvideo\n  \n\n\n\n\n\n— https://nitter.net/marionawfal/status/2046349681010077722#m",
       "fullAnalysis": "상승 추세 지속 중",
       "category": "경제",
       "priority": "low",
       "marketImpact": "neutral",
       "source": "MarioNawfal",
       "sourceHandle": "@MarioNawfal",
-      "sourceUrl": "https://x.com/MarioNawfal/status/2046303148831285504#m",
-      "timestamp": "2026-04-21T04:15:27.757616+09:00",
+      "sourceUrl": "https://x.com/MarioNawfal/status/2046355858402267439#m",
+      "timestamp": "2026-04-21T07:52:17.323124+09:00",
       "engagement": {
         "likes": 0,
         "views": 0,
@@ -288,18 +288,18 @@
       "impactScore": 0
     },
     {
-      "id": "1ec632f6-3ce2-4bc5-9bab-d14f52b718a2",
+      "id": "b09f3efa-d270-40f6-8967-6b59c17fd838",
       "rank": 4,
-      "title": "🇺🇸🇮🇷 day 51 of the iran war and the oil shock is getting real.\n\nroughly 600m barrels are now off the",
-      "summary": "🇺🇸🇮🇷 day 51 of the iran war and the oil shock is getting real.\n\nroughly 600m barrels are now off the market, around $50b wiped from global supply. \n\nthe strait of hormuz normally carries about 20% of the world’s oil, and flows have collapsed.\n\nthe international energy agency has labeled this the largest oil supply shock in history, triggering record releases from global strategic reserves (including a massive 400m barrel drawdown coordinated by iea members).\n\nsource: @kobeissiletter\n\n\n\n\n\n\n\n\n\n\nmario nawfal (@marionawfal)\n\n🇺🇸 diesel prices are spiking while consumer sentiment collapses.\n\ntrucking costs are up 30%, and americans spent an extra $10b on gas in just 50 days, hitting everyday costs hard.\n\nas fuel rises, everything else follows.\n\nsource: @kobeissiletter\n\nvideo\n  \n\n\n\n\n\n— https://nitter.net/marionawfal/status/2046293310797734286#m",
+      "title": "🇺🇸 트럼프 just invoked the defense production act to 급등 연준eral resources into petroleum, lng, coal, and",
+      "summary": "🇺🇸 트럼프 just invoked the defense production act to 급등 연준eral resources into petroleum, lng, coal, and grid infrastructure.\n\ntranslation: energy prices are spiking and he's treating it like a wartime emergency.\n\nbecause it basically is...\n\nvideo\n  \n\n\n\n\nmario nawfal (@marionawfal)\n\n🇺🇸🇮🇷 3 in 4 americans don't support the war in iran.\n\nthat's from an april poll, and it's a number worth sitting with.\n\nlow public support doesn't stop military operations. but it does fuel opposition at home, tighten the political window for escalation, and build pressure for an exit faster than any battlefield development.\n\n트럼프 can keep going. the question is for how long before the domestic cost outweighs the strategic one.\n\nsource: moreincommon us\n\n\n\n\n\n— https://nitter.net/marionawfal/status/2046337359395140084#m",
       "fullAnalysis": "상승 추세 지속 중",
       "category": "경제",
       "priority": "low",
       "marketImpact": "neutral",
       "source": "MarioNawfal",
       "sourceHandle": "@MarioNawfal",
-      "sourceUrl": "https://x.com/MarioNawfal/status/2046295333408244013#m",
-      "timestamp": "2026-04-21T04:15:27.757616+09:00",
+      "sourceUrl": "https://x.com/MarioNawfal/status/2046349681010077722#m",
+      "timestamp": "2026-04-21T07:52:17.323124+09:00",
       "engagement": {
         "likes": 0,
         "views": 0,
@@ -310,7 +310,7 @@
       "impactScore": 0
     },
     {
-      "id": "6dcbbd57-6418-48ae-8d6e-039a3720bf5c",
+      "id": "ecec8009-1376-4c98-bee8-9470003cb7b4",
       "rank": 5,
       "title": "#속보: $166 billion in 관세 refunds to kick in, mostly to globalist companies as a result of the supreme",
       "summary": "#속보: $166 billion in 관세 refunds to kick in, mostly to globalist companies as a result of the supreme court ruling.",
@@ -321,7 +321,7 @@
       "source": "InsiderWire",
       "sourceHandle": "@InsiderWire",
       "sourceUrl": "https://x.com/InsiderWire/status/2046214276843483590#m",
-      "timestamp": "2026-04-21T04:15:27.757616+09:00",
+      "timestamp": "2026-04-21T07:52:17.323124+09:00",
       "engagement": {
         "likes": 0,
         "views": 0,
@@ -332,7 +332,7 @@
       "impactScore": 0
     },
     {
-      "id": "47755d09-85f0-4af4-bebc-13f45664a5ab",
+      "id": "1d4ef886-95c0-47ed-8dab-e89d9c3b289c",
       "rank": 6,
       "title": "skanda amarnath의 적절한 비판\n\n아래 차트는 amarnath가 인용한 1000달러 GDP를 창출하는데 필요한 석유 \n\n이 차트의 저자는 \n\n\"1965년에 5.3배럴, ",
       "summary": "skanda amarnath의 적절한 비판\n\n아래 차트는 amarnath가 인용한 1000달러 GDP를 창출하는데 필요한 석유 \n\n이 차트의 저자는 \n\n\"1965년에 5.3배럴, 2024년에 0.3배럴이 필요 ➡️ 따라서 석유의 중요도는 하락했다\"는 그럴 듯한 결론을 내리고 있음\n\n그러나 실제 석유화학 제품 등을 고려하면 여러 연구들은 전세계 GDP에서 7.4% 정도로 추정하고 있음\n\n\n\n\nskanda amarnath (@irvingswisher)\n\nthis would be good for an interview question to test basic statistical reasoning\n\n“how valid is this claim based on this chart?” \n“what else would you need to know to feel confident making this claim”\n\n[it is a dumb slide that misses the relevance of petroleum products to growth]\n\n\n\n— https://nitter.net/irvingswisher/status/2046071945901273099#m",
@@ -343,7 +343,7 @@
       "source": "yang_youngbin",
       "sourceHandle": "@yang_youngbin",
       "sourceUrl": "https://x.com/yang_youngbin/status/2046082818158334173#m",
-      "timestamp": "2026-04-21T04:15:27.757616+09:00",
+      "timestamp": "2026-04-21T07:52:17.323124+09:00",
       "engagement": {
         "likes": 0,
         "views": 0,
@@ -354,8 +354,30 @@
       "impactScore": 0
     },
     {
-      "id": "1c538d1a-5c40-4129-863b-0f99639b3912",
+      "id": "4bcb57ed-da87-4090-b91b-f863429c4688",
       "rank": 7,
+      "title": "the housing market is running out of buyers:\n\nthere were an estimated 46.3% more home sellers than b",
+      "summary": "the housing market is running out of buyers:\n\nthere were an estimated 46.3% more home sellers than buyers in february 2026, the biggest difference since redfin data began in 2013.\n\nthis gap has widened sharply from 29.8% a year ago, marking the strongest market for buyers in over a decade.\n\nby comparison, there were a record 36.0% more buyers than sellers in november 2022.\n\nthis comes as the number of active homebuyers fell -2.4% mom, to ~1.36 million, the lowest since at least 2013.\n\nat the same time, the number of sellers declined -0.4% mom to ~1.99 million, posting a smaller decrease than homebuyers.\n\nfurther home price cuts are likely coming.",
+      "fullAnalysis": "시장 변동성 주목",
+      "category": "경제",
+      "priority": "low",
+      "marketImpact": "neutral",
+      "source": "KobeissiLetter",
+      "sourceHandle": "@KobeissiLetter",
+      "sourceUrl": "https://x.com/KobeissiLetter/status/2046316344996471293#m",
+      "timestamp": "2026-04-21T07:52:17.323124+09:00",
+      "engagement": {
+        "likes": 0,
+        "views": 0,
+        "score": 0.0
+      },
+      "relatedAccounts": [],
+      "tags": [],
+      "impactScore": 0
+    },
+    {
+      "id": "558d7ef4-cbfb-447b-b01a-61e5f1c28905",
+      "rank": 8,
       "title": "us small businesses are pulling back on investment as if we are in a crisis:\n\nin march, only 16% of ",
       "summary": "us small businesses are pulling back on investment as if we are in a crisis:\n\nin march, only 16% of small businesses said that they plan on investing in capex over the next 6 months, the lowest reading since november 2009.\n\nthis percentage has declined -12 points since november 2024.\n\nby comparison, the pre-2008 financial crisis and the 2020 pandemic levels were 30-35%.\n\nfurthermore, the proportion of firms investing in capex over the last 6 months has declined -9 points since january, and remains below the long-term historical average.\n\nthis comes as policy uncertainty and elevated energy costs are weighing on small businesses.\n\nall while they cite taxes, quality of labor, and 인플레이션 as their most important problems.\n\nsmall businesses are struggling in the us.",
       "fullAnalysis": "시장 변동성 주목",
@@ -365,7 +387,7 @@
       "source": "KobeissiLetter",
       "sourceHandle": "@KobeissiLetter",
       "sourceUrl": "https://x.com/KobeissiLetter/status/2046299655672041974#m",
-      "timestamp": "2026-04-21T04:15:27.757616+09:00",
+      "timestamp": "2026-04-21T07:52:17.323124+09:00",
       "engagement": {
         "likes": 0,
         "views": 0,
@@ -376,8 +398,8 @@
       "impactScore": 0
     },
     {
-      "id": "0565bdb4-4b1d-4370-afc0-12067f60fbd6",
-      "rank": 8,
+      "id": "9fdb5845-726b-44a6-ac79-be1fee87a1dd",
+      "rank": 9,
       "title": "there is strong inverse correlation between spikes us diesel prices and consumer sentiment.\n\ntruckin",
       "summary": "there is strong inverse correlation between spikes us diesel prices and consumer sentiment.\n\ntrucking costs are up +30%, americans have spent an extra $10 billion on gaSOLine over the last 50 days, and consumer sentiment hit a record low.\n\nasset owners will be the only winners.\n\nvideo\n  \n\n\n\n\nthe kobeissi letter (@kobeissiletter)\n\nit's official:\n\nthe world is now experiencing its biggest energy crisis in history, with 600 million barrels of lost oil supply.\n\nus gas prices are up +47% since december and 인플레이션 is nearing 4% in a similar path to the 1970s.\n\nwhat happens next? let us explain.\n\n(a thread)\n\n\n\n\n\n— https://nitter.net/kobeissiletter/status/2046260833395630409#m",
       "fullAnalysis": "상승 추세 지속 중",
@@ -387,7 +409,7 @@
       "source": "KobeissiLetter",
       "sourceHandle": "@KobeissiLetter",
       "sourceUrl": "https://x.com/KobeissiLetter/status/2046272431912874004#m",
-      "timestamp": "2026-04-21T04:15:27.757616+09:00",
+      "timestamp": "2026-04-21T07:52:17.323124+09:00",
       "engagement": {
         "likes": 0,
         "views": 0,
@@ -398,8 +420,8 @@
       "impactScore": 0
     },
     {
-      "id": "f7802933-b80f-45dd-be8b-28f820cd0542",
-      "rank": 9,
+      "id": "f9b0b817-5480-41f4-91b7-8049092603a7",
+      "rank": 10,
       "title": "there has arguably never been a market with more disruption than now.\n\nfor investors, this means mor",
       "summary": "there has arguably never been a market with more disruption than now.\n\nfor investors, this means more opportunity to capitalize on volatility.\n\nwant to see how we are approaching it?\n\nsubscribe to access our premium analysis and 알림s at the link below:\n\nthekobeissiletter.com/subscr…",
       "fullAnalysis": "상승 추세 지속 중",
@@ -409,7 +431,7 @@
       "source": "KobeissiLetter",
       "sourceHandle": "@KobeissiLetter",
       "sourceUrl": "https://x.com/KobeissiLetter/status/2046260852022489523#m",
-      "timestamp": "2026-04-21T04:15:27.757616+09:00",
+      "timestamp": "2026-04-21T07:52:17.323124+09:00",
       "engagement": {
         "likes": 0,
         "views": 0,
@@ -420,29 +442,7 @@
       "impactScore": 0
     },
     {
-      "id": "56a5ee41-8c45-4261-a4ad-5f5088288c1b",
-      "rank": 10,
-      "title": "furthermore, amid the iran war volatility, us ai and technology companies have only gotten bigger.\n\n",
-      "summary": "furthermore, amid the iran war volatility, us ai and technology companies have only gotten bigger.\n\nthe 나스닥 100's forward p/e ratio has fallen from ~29x to ~22x in months, below the 10y average.\n\nnvidia and microsoft are now half as cheap as walmart on a forward p/e basis.",
-      "fullAnalysis": "시장 변동성 주목",
-      "category": "경제",
-      "priority": "low",
-      "marketImpact": "neutral",
-      "source": "KobeissiLetter",
-      "sourceHandle": "@KobeissiLetter",
-      "sourceUrl": "https://x.com/KobeissiLetter/status/2046260849031975040#m",
-      "timestamp": "2026-04-21T04:15:27.757616+09:00",
-      "engagement": {
-        "likes": 0,
-        "views": 0,
-        "score": 0.0
-      },
-      "relatedAccounts": [],
-      "tags": [],
-      "impactScore": 0
-    },
-    {
-      "id": "4731bfe8-fa26-49fb-9b13-647e547dfba3",
+      "id": "2f9eacb6-b47a-484f-9057-40f16e399806",
       "rank": 1,
       "title": "화요일 (우리 시간으론 수요일 아침) 회담은 이미 모.. 사실상 타결된 분위기야.  밴스도 곧 싸인하러 파키스탄 도착하고.  \n\n퀘스천은, 이란 군부가 지금 꺵판 치는게 의도적인 ",
       "summary": "화요일 (우리 시간으론 수요일 아침) 회담은 이미 모.. 사실상 타결된 분위기야.  밴스도 곧 싸인하러 파키스탄 도착하고.  \n\n퀘스천은, 이란 군부가 지금 꺵판 치는게 의도적인 플레이 인지 아니면 이란 정권이 컨트롤 못하는 상황인건지 잘 모르겠는 상황이야.  \n\n막말로, 화요일 협상 다~ 하고 싸인 다~ 했는데 또 선박들 공격당하면 트럼프 뚜껑 열리고 석기시대 가는거야.\n\n\nj (@show_me_lucky)\n\n형.. 일단 회담은 하긴 한데??\n\n\n\n— https://nitter.net/show_me_lucky/status/2046167945961939107#m",
@@ -453,7 +453,7 @@
       "source": "GONOGO_Korea",
       "sourceHandle": "@GONOGO_Korea",
       "sourceUrl": "https://x.com/GONOGO_Korea/status/2046185623250461019#m",
-      "timestamp": "2026-04-21T04:15:27.757616+09:00",
+      "timestamp": "2026-04-21T07:52:17.323124+09:00",
       "engagement": {
         "likes": 0,
         "views": 0,
@@ -464,7 +464,7 @@
       "impactScore": 0
     },
     {
-      "id": "db9dd397-0e27-43de-8bc0-9fe172f4952c",
+      "id": "dac7a09d-bf04-4c8f-a2a8-4fb715d11ac6",
       "rank": 2,
       "title": "1/2 (2편은 바로 아래 인용게시글)\n드론 비행 허가 / 촬영 허가 신청 방법\n드론 샀다고 그냥 날리면 큰일 납니다.\n특히 서울은 아무 데서나 날렸다간\n드론 값보다 더 큰 벌금 ",
       "summary": "1/2 (2편은 바로 아래 인용게시글)\n드론 비행 허가 / 촬영 허가 신청 방법\n드론 샀다고 그냥 날리면 큰일 납니다.\n특히 서울은 아무 데서나 날렸다간\n드론 값보다 더 큰 벌금 나올 수 있어요.\n\n비행 제한 구역도 많고,\n관제 시스템 때문에 금방 적발될 수 있습니다.\n\n헷갈리는 분들 많아서\n드론 전문 촬영가 손지현이\n비행 승인 / 촬영 승인 방법 쉽게 알려드립니다.\n\n비행 금지 구역은 수시로 바뀌니까\n꼭 확인하세요👇\n드론원스탑 검색\n\ndrone.onestop.go.kr\n\n하늘에서 본 지구 조각 🌎🌱\n항공사진가손지현\n작업만 정리해두는 공간입니다. ➡️ @aerophotoji\n\nvideo\n  \n\n\n\n\njisohn (@sohn_ji)\n\n2/2 (보기 편하게 2편을 먼저 업로드)\n드론 비행 허가 / 촬영 허가 신청 방법\n드론 샀다고 그냥 날리면 큰일 납니다.\n특히 서울은 아무 데서나 날렸다간\n드론 값보다 더 큰 벌금 나올 수 있어요.\n\n비행 제한 구역도 많고,\n관제 시스템 때문에 금방 적발될 수 있습니다.\n\n헷갈리는 분들 많아서\n드론 전문 촬영가 손지현이\n비행 승인 / 촬영 승인 방법 쉽게 알려드립니다.\n\n비행 금지 구역은 수시로 바뀌니까\n꼭 확인하세요👇\n드론원스탑 검색\n\ndrone.onestop.go.kr\n\n하늘에서 본 지구 조각 🌎🌱\n항공사진가손지현\n작업만 정리해두는 공간입니다. ➡️ @aerophotoji\n\nvideo\n  \n\n\n\n\n\n— https://nitter.net/sohn_ji/status/2046102741400146144#m",
@@ -475,7 +475,7 @@
       "source": "GONOGO_Korea",
       "sourceHandle": "@GONOGO_Korea",
       "sourceUrl": "https://x.com/sohn_ji/status/2046124276588437523#m",
-      "timestamp": "2026-04-21T04:15:27.757616+09:00",
+      "timestamp": "2026-04-21T07:52:17.323124+09:00",
       "engagement": {
         "likes": 0,
         "views": 0,
@@ -486,7 +486,7 @@
       "impactScore": 0
     },
     {
-      "id": "2fc12258-dfa8-41d9-9370-af6c316b47ba",
+      "id": "820edfe1-3962-471f-a888-d9a4932d98fe",
       "rank": 3,
       "title": "고노고 님 말이 맞음 지금 안하면. 나중에 원하는 날 하기도 힘들고..  와이프 양도 받은 약국에 에어컨이 안시원해진다길래. 오래되서 그런가 바꿀까 하다가 청소업체 불렀는데. 진짜",
       "summary": "고노고 님 말이 맞음 지금 안하면. 나중에 원하는 날 하기도 힘들고..  와이프 양도 받은 약국에 에어컨이 안시원해진다길래. 오래되서 그런가 바꿀까 하다가 청소업체 불렀는데. 진짜 먼지가 1cm 두께 이상 쌓여서 그런거였음...\n\n\ngonogo (@gonogo_korea)\n\n에어컨 청소 업체 불렀다.    우리동네 시세다.    \n너네도 슬슬 해라.   5월부터 개덥다.\n\n\n\n\n\n— https://nitter.net/gonogo_korea/status/2046107340966072708#m",
@@ -497,7 +497,7 @@
       "source": "GONOGO_Korea",
       "sourceHandle": "@GONOGO_Korea",
       "sourceUrl": "https://x.com/Dr_GIVER/status/2046123064187138223#m",
-      "timestamp": "2026-04-21T04:15:27.757616+09:00",
+      "timestamp": "2026-04-21T07:52:17.323124+09:00",
       "engagement": {
         "likes": 0,
         "views": 0,
@@ -508,7 +508,7 @@
       "impactScore": 0
     },
     {
-      "id": "ba543bf0-1ec4-422c-b48a-4e7f5c3ddf1c",
+      "id": "43b6b189-2177-4e3d-880e-2ce1e2f22187",
       "rank": 4,
       "title": "에어컨 청소 업체 불렀다.    우리동네 시세다.    \n너네도 슬슬 해라.   5월부터 개덥다.",
       "summary": "에어컨 청소 업체 불렀다.    우리동네 시세다.    \n너네도 슬슬 해라.   5월부터 개덥다.",
@@ -519,7 +519,7 @@
       "source": "GONOGO_Korea",
       "sourceHandle": "@GONOGO_Korea",
       "sourceUrl": "https://x.com/GONOGO_Korea/status/2046107340966072708#m",
-      "timestamp": "2026-04-21T04:15:27.757616+09:00",
+      "timestamp": "2026-04-21T07:52:17.323124+09:00",
       "engagement": {
         "likes": 0,
         "views": 0,
@@ -530,7 +530,7 @@
       "impactScore": 0
     },
     {
-      "id": "42c1fe07-513d-4baf-85ab-677032c42426",
+      "id": "f5bfa8d8-7fd7-498a-ac25-7c32ee31eadc",
       "rank": 5,
       "title": "내 추천 피드 환장함",
       "summary": "내 추천 피드 환장함",
@@ -541,7 +541,7 @@
       "source": "GONOGO_Korea",
       "sourceHandle": "@GONOGO_Korea",
       "sourceUrl": "https://x.com/GONOGO_Korea/status/2046106195677810878#m",
-      "timestamp": "2026-04-21T04:15:27.757616+09:00",
+      "timestamp": "2026-04-21T07:52:17.323124+09:00",
       "engagement": {
         "likes": 0,
         "views": 0,
@@ -552,7 +552,7 @@
       "impactScore": 0
     },
     {
-      "id": "3f175fcf-456c-4535-9e56-9eed4efe757c",
+      "id": "df38df57-386b-4cf0-97a9-bb505e9b21bc",
       "rank": 6,
       "title": "제한적 핵 전쟁이 발생한다면, 뭘 사야될까?",
       "summary": "제한적 핵 전쟁이 발생한다면, 뭘 사야될까?",
@@ -563,7 +563,7 @@
       "source": "GONOGO_Korea",
       "sourceHandle": "@GONOGO_Korea",
       "sourceUrl": "https://x.com/GONOGO_Korea/status/2046103950013923608#m",
-      "timestamp": "2026-04-21T04:15:27.757616+09:00",
+      "timestamp": "2026-04-21T07:52:17.323124+09:00",
       "engagement": {
         "likes": 0,
         "views": 0,
@@ -574,7 +574,7 @@
       "impactScore": 0
     },
     {
-      "id": "b33a5734-092d-49ce-924a-7fa6a3195b69",
+      "id": "57f78bf1-28a2-4f67-aab4-bc1f732444c0",
       "rank": 7,
       "title": "오림런 하러 간다.  오늘도 소중한 8천 아데나 벌어야지.  \n\n오림런 후에는 토템 노가다다.  어제 용계 트라우마가 너무 크다.",
       "summary": "오림런 하러 간다.  오늘도 소중한 8천 아데나 벌어야지.  \n\n오림런 후에는 토템 노가다다.  어제 용계 트라우마가 너무 크다.",
@@ -585,7 +585,7 @@
       "source": "GONOGO_Korea",
       "sourceHandle": "@GONOGO_Korea",
       "sourceUrl": "https://x.com/GONOGO_Korea/status/2046045590635868577#m",
-      "timestamp": "2026-04-21T04:15:27.757616+09:00",
+      "timestamp": "2026-04-21T07:52:17.323124+09:00",
       "engagement": {
         "likes": 0,
         "views": 0,
@@ -596,7 +596,7 @@
       "impactScore": 0
     },
     {
-      "id": "216b04d0-94f8-41e5-871a-b4fb7c52567e",
+      "id": "46cdb2ad-c203-4c37-88aa-4f96d195db43",
       "rank": 8,
       "title": "상황 업데이트: \n\n1) 미국이랑 이란 외교부 라인은 협상 확신중.  그래서 시장은 반등 중.  \n\n2) 이란 군부 라인은 계속 꺵판 치는중.  그래서 시원하게 반등은 못하는 중.",
       "summary": "상황 업데이트: \n\n1) 미국이랑 이란 외교부 라인은 협상 확신중.  그래서 시장은 반등 중.  \n\n2) 이란 군부 라인은 계속 꺵판 치는중.  그래서 시원하게 반등은 못하는 중.  \n\n3) 고노고는 아직 팬티 입어 콜 유지중.  애시당초 딱히 전쟁 때문에 입힌게 아님.    \n\n4) 더 많은 정보 필요.  관망중.",
@@ -607,7 +607,7 @@
       "source": "GONOGO_Korea",
       "sourceHandle": "@GONOGO_Korea",
       "sourceUrl": "https://x.com/GONOGO_Korea/status/2046044636800795120#m",
-      "timestamp": "2026-04-21T04:15:27.757616+09:00",
+      "timestamp": "2026-04-21T07:52:17.323124+09:00",
       "engagement": {
         "likes": 0,
         "views": 0,
@@ -618,7 +618,7 @@
       "impactScore": 0
     },
     {
-      "id": "3f255e6d-6ce4-40cc-9c6d-75628b9eecb3",
+      "id": "86e9c1bd-84af-4df1-a983-cbaf236b525d",
       "rank": 9,
       "title": "두바이 많이 힘든가 보네\n\n\nnick timiraos (@nicktimiraos)\n\nthe uae has inquired about a dollar swap line. bessen",
       "summary": "두바이 많이 힘든가 보네\n\n\nnick timiraos (@nicktimiraos)\n\nthe uae has inquired about a dollar swap line. bessent extended one to argentina last year.\n\n\n\n— https://nitter.net/nicktimiraos/status/2046006177020915881#m",
@@ -629,7 +629,7 @@
       "source": "GONOGO_Korea",
       "sourceHandle": "@GONOGO_Korea",
       "sourceUrl": "https://x.com/GONOGO_Korea/status/2046035293690855443#m",
-      "timestamp": "2026-04-21T04:15:27.757616+09:00",
+      "timestamp": "2026-04-21T07:52:17.323124+09:00",
       "engagement": {
         "likes": 0,
         "views": 0,
@@ -640,18 +640,18 @@
       "impactScore": 0
     },
     {
-      "id": "2bd33930-f577-45a6-8536-7d0c17f22e29",
+      "id": "93715bbe-cc3e-41ea-ada9-342cfa0d4fcc",
       "rank": 10,
-      "title": "쐈대\n\n\n오픈컨테이너 (@opencontainerkr)\n\n미 해군 구축함 uss spruance는 아라비아해에서 이란 국적 화물선 touska를 차단하고 약 6시간 동안 반복적으로",
-      "summary": "쐈대\n\n\n오픈컨테이너 (@opencontainerkr)\n\n미 해군 구축함 uss spruance는 아라비아해에서 이란 국적 화물선 touska를 차단하고 약 6시간 동안 반복적으로 정지 명령을 내렸습니다. \n\n선박이 이에 불응하자, 미 해군은 엔진룸을 비우도록 한 뒤 5인치 함포를 발사해 추진력을 무력화했습니다.\n\nvideo\n  \n\n\n\n\n\n— https://nitter.net/opencontainerkr/status/2045984875283623990#m",
+      "title": "\"클래리티법, 또 지연 되나…은행권 반발 속 5월로 연기 가능성\" bloomingbit.io/feed/news/110…",
+      "summary": "\"클래리티법, 또 지연 되나…은행권 반발 속 5월로 연기 가능성\" bloomingbit.io/feed/news/110…",
       "fullAnalysis": "시장 변동성 주목",
       "category": "뉴스",
       "priority": "low",
       "marketImpact": "neutral",
-      "source": "GONOGO_Korea",
-      "sourceHandle": "@GONOGO_Korea",
-      "sourceUrl": "https://x.com/GONOGO_Korea/status/2045998745897341353#m",
-      "timestamp": "2026-04-21T04:15:27.757616+09:00",
+      "source": "bloomingbit_io",
+      "sourceHandle": "@bloomingbit_io",
+      "sourceUrl": "https://x.com/bloomingbit_io/status/2046244924312752423#m",
+      "timestamp": "2026-04-21T07:52:17.323124+09:00",
       "engagement": {
         "likes": 0,
         "views": 0,
@@ -662,7 +662,7 @@
       "impactScore": 0
     },
     {
-      "id": "68f931d3-93a4-4cfa-be99-42c1ad169c58",
+      "id": "463559d3-4f2f-4344-b805-009b3687b421",
       "rank": 1,
       "title": "밴스 부통령 및 협상단, 파키스탄에 곧 도착 예정.  \n\n협상 잘 되면 트럼프도 직접 이란 지도자들을 만나길 희망.\n\n\ncaitlin doornbos (@caitlindoornbo",
       "summary": "밴스 부통령 및 협상단, 파키스탄에 곧 도착 예정.  \n\n협상 잘 되면 트럼프도 직접 이란 지도자들을 만나길 희망.\n\n\ncaitlin doornbos (@caitlindoornbos)\n\nvice president jd vance and the us delegation will land in pakistan within hours, president 트럼프 just told me — adding that he was willing to meet with senior iranian leaders if a breakthrough is reached. nypost.com/2026/04/20/us-new…\n\n\n\n— https://nitter.net/caitlindoornbos/status/2046219145339973922#m",
@@ -673,7 +673,7 @@
       "source": "GONOGO_Korea",
       "sourceHandle": "@GONOGO_Korea",
       "sourceUrl": "https://x.com/GONOGO_Korea/status/2046228417830670691#m",
-      "timestamp": "2026-04-21T04:15:27.757616+09:00",
+      "timestamp": "2026-04-21T07:52:17.323124+09:00",
       "engagement": {
         "likes": 0,
         "views": 0,
@@ -684,7 +684,7 @@
       "impactScore": 0
     },
     {
-      "id": "5c09e7dc-e0ca-4cb3-bb22-42f565679e2e",
+      "id": "f15dcb50-3ba8-425e-91a4-d6acdf289ded",
       "rank": 2,
       "title": "크다\n\n\nnhk world news (@nhkworld_news)\n\nthe japan meteorological agency has issued a tsunami warning f",
       "summary": "크다\n\n\nnhk world news (@nhkworld_news)\n\nthe japan meteorological agency has issued a tsunami warning for iwate prefecture and parts of hokkaido.\n\nstay updated: nhk.or.jp/nhkworld/en/news/\n\n\n\n\n\n— https://nitter.net/nhkworld_news/status/2046138285312131373#m",
@@ -695,7 +695,7 @@
       "source": "GONOGO_Korea",
       "sourceHandle": "@GONOGO_Korea",
       "sourceUrl": "https://x.com/GONOGO_Korea/status/2046152384452411505#m",
-      "timestamp": "2026-04-21T04:15:27.757616+09:00",
+      "timestamp": "2026-04-21T07:52:17.323124+09:00",
       "engagement": {
         "likes": 0,
         "views": 0,
@@ -706,7 +706,7 @@
       "impactScore": 0
     },
     {
-      "id": "0b301e4b-5291-4d94-8909-76623773ce4e",
+      "id": "be08ab8b-ec9a-40be-9c5f-89e6a917e355",
       "rank": 3,
       "title": "일본 지진 후 쓰나미 경보\n\n\nvisegrád 24 (@visegrad24)\n\n🇯🇵 earthquakes have struck hokkaido, aomori, and iwate i",
       "summary": "일본 지진 후 쓰나미 경보\n\n\nvisegrád 24 (@visegrad24)\n\n🇯🇵 earthquakes have struck hokkaido, aomori, and iwate in japan, with a tsunami warning currently in effect. \n\nfishing vessels are evacuating offshore. \n\na 7.4 magnitude quake occurred offshore at a depth of 10 km, with a tsunami warning of 3m for iwate and hokkaido.\n\nvideo\n  \n\n\n\n\n\n— https://nitter.net/visegrad24/status/2046144931178184830#m",
@@ -717,7 +717,7 @@
       "source": "GONOGO_Korea",
       "sourceHandle": "@GONOGO_Korea",
       "sourceUrl": "https://x.com/GONOGO_Korea/status/2046152096676991262#m",
-      "timestamp": "2026-04-21T04:15:27.757616+09:00",
+      "timestamp": "2026-04-21T07:52:17.323124+09:00",
       "engagement": {
         "likes": 0,
         "views": 0,
@@ -728,7 +728,7 @@
       "impactScore": 0
     },
     {
-      "id": "17380390-4862-4709-8f2d-18c9b4632291",
+      "id": "34109c98-fdaf-4983-9884-85e58e18e660",
       "rank": 4,
       "title": "눈물핑\n\n\nbrics news (@bricsinfo)\n\njust in: 🇺🇦🇷🇺 major fire breaks out at russia's tuapse oil refinery f",
       "summary": "눈물핑\n\n\nbrics news (@bricsinfo)\n\njust in: 🇺🇦🇷🇺 major fire breaks out at russia's tuapse oil refinery following ukrainian drone attack.\n\nvideo\n  \n\n\n\n\n\n— https://nitter.net/bricsinfo/status/2046054779386830954#m",
@@ -739,7 +739,7 @@
       "source": "GONOGO_Korea",
       "sourceHandle": "@GONOGO_Korea",
       "sourceUrl": "https://x.com/GONOGO_Korea/status/2046064931037126955#m",
-      "timestamp": "2026-04-21T04:15:27.757616+09:00",
+      "timestamp": "2026-04-21T07:52:17.323124+09:00",
       "engagement": {
         "likes": 0,
         "views": 0,
@@ -750,8 +750,74 @@
       "impactScore": 0
     },
     {
-      "id": "534b4320-9694-41e4-a0a5-c03cf54269a3",
+      "id": "e9248704-abb3-4c26-a31c-1a64046bf950",
       "rank": 5,
+      "title": "tim cook will step down as ceo of apple in september\n\nhe will be succeeded by john ternus, currently",
+      "summary": "tim cook will step down as ceo of apple in september\n\nhe will be succeeded by john ternus, currently senior vice president of hardware engineering.\n\ncook will transition to the role of executive chairman. he was appointed ceo in 2011 following the resignation of steve jobs.",
+      "fullAnalysis": "하락 압력 강화",
+      "category": "지정학",
+      "priority": "low",
+      "marketImpact": "neutral",
+      "source": "visegrad24",
+      "sourceHandle": "@visegrad24",
+      "sourceUrl": "https://x.com/visegrad24/status/2046342570108678643#m",
+      "timestamp": "2026-04-21T07:52:17.323124+09:00",
+      "engagement": {
+        "likes": 0,
+        "views": 0,
+        "score": 0.0
+      },
+      "relatedAccounts": [],
+      "tags": [],
+      "impactScore": 0
+    },
+    {
+      "id": "ba8e8b32-b25f-4332-b8e8-9dc6635c8e3a",
+      "rank": 6,
+      "title": "🇲🇽 at least 2 dead and 3 wounded after a shooting in the teotihuacán archaeological zone in mexico\n\n",
+      "summary": "🇲🇽 at least 2 dead and 3 wounded after a shooting in the teotihuacán archaeological zone in mexico\n\na lone gunman opened fire from atop a major structure, killing one woman of canadian nationality. \n\na total of six individuals were injured.\n\nfour victims suffered gunshot wounds, including citizens from colombia, russia, and canADA. two additional victims were injured from falls during the ensuing chaos.\n\nthe attacker subsequently died from a self-inflicted gunshot wound.\n\nvideo",
+      "fullAnalysis": "시장 변동성 주목",
+      "category": "지정학",
+      "priority": "low",
+      "marketImpact": "neutral",
+      "source": "visegrad24",
+      "sourceHandle": "@visegrad24",
+      "sourceUrl": "https://x.com/visegrad24/status/2046324767196950847#m",
+      "timestamp": "2026-04-21T07:52:17.323124+09:00",
+      "engagement": {
+        "likes": 0,
+        "views": 0,
+        "score": 0.0
+      },
+      "relatedAccounts": [],
+      "tags": [],
+      "impactScore": 0
+    },
+    {
+      "id": "6610888d-e3d8-42ef-8402-66f0540de000",
+      "rank": 7,
+      "title": "we must have the right not to “digitally verify” in order to participate in society.\n\nstep by step, ",
+      "summary": "we must have the right not to “digitally verify” in order to participate in society.\n\nstep by step, a system of digital verification is being built in the uk — without consent, debate, or a clear mandate.\n\n➡️ visegrad24.com/articles/is-t…",
+      "fullAnalysis": "시장 변동성 주목",
+      "category": "지정학",
+      "priority": "low",
+      "marketImpact": "neutral",
+      "source": "visegrad24",
+      "sourceHandle": "@visegrad24",
+      "sourceUrl": "https://x.com/visegrad24/status/2046319429240435018#m",
+      "timestamp": "2026-04-21T07:52:17.323124+09:00",
+      "engagement": {
+        "likes": 0,
+        "views": 0,
+        "score": 0.0
+      },
+      "relatedAccounts": [],
+      "tags": [],
+      "impactScore": 0
+    },
+    {
+      "id": "43afa0e6-457b-4eab-bc94-cade02509587",
+      "rank": 8,
       "title": "citizens are deeply concerned about the eu’s failing migration policy. \n\nintegration is non-committa",
       "summary": "citizens are deeply concerned about the eu’s failing migration policy. \n\nintegration is non-committal and border controls barely exist, says belgian mep @assita_kanko in a v24 interview.\n\nvideo",
       "fullAnalysis": "시장 변동성 주목",
@@ -761,7 +827,7 @@
       "source": "visegrad24",
       "sourceHandle": "@visegrad24",
       "sourceUrl": "https://x.com/visegrad24/status/2046289294806110600#m",
-      "timestamp": "2026-04-21T04:15:27.757616+09:00",
+      "timestamp": "2026-04-21T07:52:17.323124+09:00",
       "engagement": {
         "likes": 0,
         "views": 0,
@@ -772,8 +838,8 @@
       "impactScore": 0
     },
     {
-      "id": "455f4540-9b72-4cb1-9e42-b01461a67def",
-      "rank": 6,
+      "id": "f6625662-c331-4b89-a566-3b9b2749ef88",
+      "rank": 9,
       "title": "트럼프 says that it’s “highly unlikely” he’ll extend the 2-week ceasefire with iran without a deal and ",
       "summary": "트럼프 says that it’s “highly unlikely” he’ll extend the 2-week ceasefire with iran without a deal and that the hormuz strait will stay blocked until an agreement is reached\n\nsource: bloomberg",
       "fullAnalysis": "시장 변동성 주목",
@@ -783,7 +849,7 @@
       "source": "visegrad24",
       "sourceHandle": "@visegrad24",
       "sourceUrl": "https://x.com/visegrad24/status/2046273738820259884#m",
-      "timestamp": "2026-04-21T04:15:27.757616+09:00",
+      "timestamp": "2026-04-21T07:52:17.323124+09:00",
       "engagement": {
         "likes": 0,
         "views": 0,
@@ -794,8 +860,8 @@
       "impactScore": 0
     },
     {
-      "id": "5cc1f3f0-9945-436a-9d30-1b8cdbaf01b0",
-      "rank": 7,
+      "id": "301badf2-107f-4fb6-9b25-478bb7a67e19",
+      "rank": 10,
       "title": "in tuapse, black “rain” has been reported following a fire at an oil terminal, while authorities cla",
       "summary": "in tuapse, black “rain” has been reported following a fire at an oil terminal, while authorities claim air quality remains safe.\n\na dark residue has covered cars, roads, and buildings after a drone strike on a local refinery. fuel also entered the black sea, where a large oil slick of about 10,000 square meters has been observed.\n\nrussian authorities said the fire did not lead to significant air pollution.\n\nmany residents have already begun to evacuate the city on their own.\n\nvideo\n  \n\n\n\nvideo\n  \n\n\n\nvideo",
       "fullAnalysis": "시장 변동성 주목",
@@ -805,73 +871,7 @@
       "source": "visegrad24",
       "sourceHandle": "@visegrad24",
       "sourceUrl": "https://x.com/visegrad24/status/2046264809558073412#m",
-      "timestamp": "2026-04-21T04:15:27.757616+09:00",
-      "engagement": {
-        "likes": 0,
-        "views": 0,
-        "score": 0.0
-      },
-      "relatedAccounts": [],
-      "tags": [],
-      "impactScore": 0
-    },
-    {
-      "id": "5483c49d-a94a-4b1d-ae05-d6f4f23b9597",
-      "rank": 8,
-      "title": "sanchez hosted a summit of a new international left-wing group in barcelona yesterday. these top lea",
-      "summary": "sanchez hosted a summit of a new international left-wing group in barcelona yesterday. these top leaders attended:\n\n🇧🇷 lula\n🇨🇴 petro\n🇲🇽 sheinbaum\n🇿🇦 ramaphosa",
-      "fullAnalysis": "상승 추세 지속 중",
-      "category": "지정학",
-      "priority": "low",
-      "marketImpact": "neutral",
-      "source": "visegrad24",
-      "sourceHandle": "@visegrad24",
-      "sourceUrl": "https://x.com/visegrad24/status/2045947960500900017#m",
-      "timestamp": "2026-04-21T04:15:27.757616+09:00",
-      "engagement": {
-        "likes": 0,
-        "views": 0,
-        "score": 0.0
-      },
-      "relatedAccounts": [],
-      "tags": [],
-      "impactScore": 0
-    },
-    {
-      "id": "49b9981a-d83d-4c58-87a4-8aee27a76d68",
-      "rank": 9,
-      "title": "new satellite imagery of the fire at the tuapse oil refinery",
-      "summary": "new satellite imagery of the fire at the tuapse oil refinery",
-      "fullAnalysis": "시장 변동성 주목",
-      "category": "지정학",
-      "priority": "low",
-      "marketImpact": "neutral",
-      "source": "visegrad24",
-      "sourceHandle": "@visegrad24",
-      "sourceUrl": "https://x.com/visegrad24/status/2046259581282599096#m",
-      "timestamp": "2026-04-21T04:15:27.757616+09:00",
-      "engagement": {
-        "likes": 0,
-        "views": 0,
-        "score": 0.0
-      },
-      "relatedAccounts": [],
-      "tags": [],
-      "impactScore": 0
-    },
-    {
-      "id": "41d7fce8-7e95-4612-9688-26c002673a59",
-      "rank": 10,
-      "title": "a massive outage has been detected in chatgpt and gemini, according to downdetector",
-      "summary": "a massive outage has been detected in chatgpt and gemini, according to downdetector",
-      "fullAnalysis": "하락 압력 강화",
-      "category": "지정학",
-      "priority": "low",
-      "marketImpact": "neutral",
-      "source": "visegrad24",
-      "sourceHandle": "@visegrad24",
-      "sourceUrl": "https://x.com/visegrad24/status/2046246441446670842#m",
-      "timestamp": "2026-04-21T04:15:27.757616+09:00",
+      "timestamp": "2026-04-21T07:52:17.323124+09:00",
       "engagement": {
         "likes": 0,
         "views": 0,
@@ -883,8 +883,8 @@
     }
   ],
   "systemStatus": {
-    "lastUpdate": "2026-04-21T04:15:27.757616+09:00",
-    "nextUpdate": "2026-04-21T08:15:27.757616+09:00",
+    "lastUpdate": "2026-04-21T07:52:17.323124+09:00",
+    "nextUpdate": "2026-04-21T11:52:17.323124+09:00",
     "totalAccounts": 73,
     "activeAccounts": 73,
     "tweetsCollected": 40,
