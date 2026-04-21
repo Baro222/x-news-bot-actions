@@ -26,7 +26,7 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Run News Bot (v5 - wojaklisting/baroBTC 포스팅 형식 + 팔로업 리스트)
+      - name: Run News Bot (v6 - wojaklisting + baroBTC 랭크 포스팅 형식)
         env:
           # Gemini API (OpenAI 호환 모드)
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
@@ -40,7 +40,7 @@ jobs:
           TELEGRAM_SESSION: ${{ secrets.TELEGRAM_SESSION }}
           # 로그 디렉토리
           LOG_DIR: ${{ github.workspace }}/logs
-        run: python main_v5.py
+        run: python main_v6.py
 
       - name: Update homepage
         run: |
