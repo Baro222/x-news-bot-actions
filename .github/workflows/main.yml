@@ -26,7 +26,7 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Run News Bot (v6 - wojaklisting + baroBTC 랭크 포스팅 형식)
+      - name: Run News Bot (v7 - 최종 stockhubkr + saveticker 포스팅)
         env:
           # Gemini API (OpenAI 호환 모드)
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
@@ -40,7 +40,7 @@ jobs:
           TELEGRAM_SESSION: ${{ secrets.TELEGRAM_SESSION }}
           # 로그 디렉토리
           LOG_DIR: ${{ github.workspace }}/logs
-        run: python main_v6.py
+        run: python main_v7.py
 
       - name: Update homepage
         run: |
